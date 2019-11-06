@@ -1,3 +1,6 @@
+Project Description: 
+A recipe app in which the user inputs ingredients they have available or may potentially want to use before expiration into the app. Our app generates the best possible list of recipes that utilizes the ingredients.
+
 
 By Tuesday November 12th:
 
