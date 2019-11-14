@@ -16,9 +16,10 @@ ashwinmd
 Aaron Kim
 aakim-git
 
+![StephenPicture](https://avatars1.githubusercontent.com/u/24659025?s=460&v=4)
 
-Stephan Ednave
-StephanEdnave
+Stephen Ednave
+StephenEdnave
 
 Sarmad Farooq
 sarmadf
