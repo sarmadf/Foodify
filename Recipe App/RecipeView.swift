@@ -17,7 +17,7 @@ class RecipeView: UIViewController {
 
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "back", sender: self)
+        performSegue(withIdentifier: "recipeSearch", sender: self)
     }
 }
 

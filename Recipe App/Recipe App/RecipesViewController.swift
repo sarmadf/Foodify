@@ -1,5 +1,5 @@
 //
-//  RecipesViewController.swift
+//  RecipeSearch.swift
 //  Recipe App
 //
 //  Created by User on 11/11/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController {
+class RecipeSearch: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class RecipesViewController: UIViewController {
 
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "back", sender: self)
+        performSegue(withIdentifier: "addIngredients", sender: self)
     }
 }
 

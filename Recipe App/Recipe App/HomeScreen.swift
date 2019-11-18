@@ -19,5 +19,18 @@ class HomeScreen: UIViewController {
     @IBAction func pantryButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }
+    
+    @IBAction func toolBarSearchButtonPressed(_ sender: Any) {
+        // Already on search destination!
+        // Possibly go to ingredient lookup?
+    }
+    
+    @IBAction func toolBarProfileButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "profile", sender: self)
+    }
+    
+    @IBAction func toolBarPantryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "pantry", sender: self)
+    }
 }
 

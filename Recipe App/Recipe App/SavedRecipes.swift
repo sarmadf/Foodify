@@ -16,5 +16,8 @@ class SavedRecipes: UIViewController {
     }
 
 
+    @IBAction func backButtonDown(_ sender: Any) {
+        performSegue(withIdentifier: "profile", sender: self)
+    }
 }
 

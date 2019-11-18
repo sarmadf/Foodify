@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Recipe App.xcodeproj">
+      location = "group:/Users/User/Documents/Apps/ECS189E/project-f19-recipeapp/Recipe App/Recipe App/Profile.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

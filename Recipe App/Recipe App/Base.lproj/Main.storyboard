@@ -133,11 +133,39 @@
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Search" id="QQu-kt-ijg"/>
+                                    <barButtonItem title="Search" style="plain" id="191-6L-LlX">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZS-WQ-sJ1">
+                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Search"/>
+                                            <connections>
+                                                <action selector="toolBarSearchButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="fK5-65-MJ7"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7hT-o1-2bk"/>
-                                    <barButtonItem title="Me" id="WI9-dQ-x2V"/>
+                                    <barButtonItem title="Me" style="plain" id="sZD-g3-y62">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ebb-L3-HTJ">
+                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Me"/>
+                                            <connections>
+                                                <action selector="toolBarProfileButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="pUb-RB-imV"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jh0-pR-70F"/>
-                                    <barButtonItem title="Pantry" id="nTm-aT-Scc"/>
+                                    <barButtonItem title="Pantry" style="plain" id="QU3-ne-8Vw">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uUv-0b-y7b">
+                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Pantry"/>
+                                            <connections>
+                                                <action selector="toolBarPantryButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="M3P-DA-9Ts"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -190,11 +218,39 @@
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Search" id="ook-4U-2yd"/>
+                                    <barButtonItem title="Search" style="plain" id="Vhm-mb-mLr">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q1r-7q-dyf">
+                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Search"/>
+                                            <connections>
+                                                <action selector="toolBarPantryButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="UEi-lB-b7H"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Un9-3R-hDt"/>
-                                    <barButtonItem title="Me" id="kxp-iJ-Hkm"/>
+                                    <barButtonItem title="Me" style="plain" id="zSn-3v-kp9">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rud-yr-eYp">
+                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Me"/>
+                                            <connections>
+                                                <action selector="toolBarProfileButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="Prq-Yc-r84"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4HN-7Y-U0o"/>
-                                    <barButtonItem title="Pantry" id="vnc-fu-upd"/>
+                                    <barButtonItem title="Pantry" style="plain" id="2QH-Q0-stt">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DPy-Gu-8FO">
+                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Pantry"/>
+                                            <connections>
+                                                <action selector="toolBarSearchButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="Z2T-4H-Bji"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-1G-9Wg">
@@ -206,16 +262,25 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1z-vH-oRh">
                                 <rect key="frame" x="20" y="96" width="100" height="30"/>
                                 <state key="normal" title="Sign In/Logout"/>
+                                <connections>
+                                    <action selector="signInButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="el5-Vr-C5G"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-PE-BYh">
                                 <rect key="frame" x="20" y="186" width="166" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Saved Recipes"/>
+                                <connections>
+                                    <action selector="savedRecipesButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="HfK-lf-u7K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-Lu-ceK">
                                 <rect key="frame" x="20" y="238" width="107" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="settingsButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="kNn-Ad-acA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -265,6 +330,9 @@
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonDown:" destination="AtM-bZ-sxg" eventType="touchUpInside" id="xoG-ya-4qp"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -290,10 +358,16 @@
                                 <rect key="frame" x="42" y="310" width="330" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButtonDown:" destination="AtM-bZ-sxg" eventType="touchUpInside" id="7n9-2H-aaT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-Ab-htP">
                                 <rect key="frame" x="42" y="364" width="330" height="30"/>
                                 <state key="normal" title="Forogt Password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordButtonDown:" destination="AtM-bZ-sxg" eventType="touchUpInside" id="bb5-Q2-lXl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDY-Nz-3q7">
                                 <rect key="frame" x="42" y="522" width="330" height="29"/>
@@ -305,6 +379,9 @@
                                 <rect key="frame" x="42" y="559" width="330" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerButtonDown:" destination="AtM-bZ-sxg" eventType="touchUpInside" id="fgz-6b-xXu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -337,6 +414,8 @@
                         <viewLayoutGuide key="safeArea" id="qEm-ug-WTh"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="m3C-2p-Gjr" id="I49-JK-ZBK"/>
+                        <outlet property="usernameTextField" destination="bRq-5M-MUt" id="qV1-dn-9Qa"/>
                         <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="FBr-gm-KPP"/>
                     </connections>
                 </viewController>
@@ -362,6 +441,9 @@
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonDown:" destination="uYd-yr-qhk" eventType="touchUpInside" id="8fs-ae-CQa"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -391,13 +473,16 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKh-yg-YsE">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Settings" id="P1Z-Fk-FY2">
+                                    <navigationItem title="Saved Recipes" id="P1Z-Fk-FY2">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="FVn-A1-mD9">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AZx-O4-MSb">
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                             </button>
+                                            <connections>
+                                                <action selector="backButtonDown:" destination="FB5-ah-00J" id="QJh-2O-FSO"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -551,6 +636,9 @@
                                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zWs-t4-d9N"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -559,11 +647,39 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiW-EN-Qlf">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Search" id="tEi-yi-mqE"/>
+                                    <barButtonItem title="Search" style="plain" id="6Ns-Rj-kNf">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DEo-BH-6ZB">
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Search"/>
+                                            <connections>
+                                                <action selector="toolBarSearchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvh-UB-Mw7"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jEy-5E-rvN"/>
-                                    <barButtonItem title="Me" id="uP9-Ji-GGT"/>
+                                    <barButtonItem title="Me" style="plain" id="qrj-Ai-0Xt">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O6I-8C-lSo">
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Me"/>
+                                            <connections>
+                                                <action selector="toolBarProfileButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEG-UY-K9x"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rf6-Gn-yVV"/>
-                                    <barButtonItem title="Pantry" id="zU5-6l-yFZ"/>
+                                    <barButtonItem title="Pantry" style="plain" id="yLY-SZ-ePE">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hSy-Mi-Iqa">
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Pantry"/>
+                                            <connections>
+                                                <action selector="toolBarPantryButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ueO-TZ-jB5"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-65-WYa">
@@ -612,7 +728,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WQR-fP-DVG"/>
                     <connections>
-                        <segue destination="xtR-iP-crC" kind="show" identifier="recipeList" id="QEF-UU-Szg"/>
+                        <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="QEF-UU-Szg"/>
                         <segue destination="jha-Pf-rFY" kind="presentation" identifier="profile" modalPresentationStyle="fullScreen" id="8PQ-Mq-eq4"/>
                     </connections>
                 </viewController>
@@ -623,7 +739,7 @@
         <!--Add Ingredients-->
         <scene sceneID="PMt-rc-Z3F">
             <objects>
-                <viewController title="Add Ingredients" modalPresentationStyle="fullScreen" id="F31-FE-6bV" customClass="RecipesViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Ingredients" modalPresentationStyle="fullScreen" id="F31-FE-6bV" customClass="IngredientsAdd" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4e-Zr-anx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -665,7 +781,14 @@
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonDown:" destination="F31-FE-6bV" eventType="touchUpInside" id="TGx-0x-av4"/>
+                                                    <action selector="backButtonDown:" destination="cA4-pk-rvG" eventType="touchUpInside" id="Yps-vb-yaO"/>
+                                                </connections>
                                             </button>
+                                            <connections>
+                                                <action selector="backButtonDown:" destination="cA4-pk-rvG" id="Q1X-2h-Zln"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="jxr-R4-eBh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="paC-2z-bUc">
@@ -673,6 +796,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Submit"/>
                                             </button>
+                                            <connections>
+                                                <action selector="submitButtonDown:" destination="F31-FE-6bV" id="hA1-oT-1kJ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -700,13 +826,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P99-4G-XXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cA4-pk-rvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="-200.22321428571428"/>
         </scene>
         <!--Recipe List-->
         <scene sceneID="gbB-PB-x87">
             <objects>
-                <viewController title="Recipe List" modalPresentationStyle="fullScreen" id="xtR-iP-crC" customClass="RecipesViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Recipe List" modalPresentationStyle="fullScreen" id="xtR-iP-crC" customClass="RecipeSearch" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNr-NF-V1S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,8 +973,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="3GR-0c-Zi2"/>
                     <connections>
-                        <segue destination="F31-FE-6bV" kind="showDetail" identifier="backToAddIngredients" id="Mn9-3O-rVU"/>
-                        <segue destination="vRG-tn-2fq" kind="showDetail" identifier="viewRecipe" id="IES-Ou-bJr"/>
+                        <segue destination="F31-FE-6bV" kind="showDetail" identifier="addIngredients" id="Mn9-3O-rVU"/>
+                        <segue destination="vRG-tn-2fq" kind="showDetail" identifier="recipeView" id="IES-Ou-bJr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToPantry" id="kx5-u6-mWB"/>
                     </connections>
                 </viewController>
@@ -959,7 +1086,7 @@
                     <navigationItem key="navigationItem" id="CMp-UC-1Yt"/>
                     <connections>
                         <outlet property="someView" destination="le1-AK-F1f" id="4GB-7r-Dt1"/>
-                        <segue destination="xtR-iP-crC" kind="showDetail" identifier="back" id="kGz-JP-oKP"/>
+                        <segue destination="xtR-iP-crC" kind="showDetail" identifier="recipeSearch" id="kGz-JP-oKP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-OX-Cfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -968,8 +1095,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IES-Ou-bJr"/>
-        <segue reference="kGz-JP-oKP"/>
+        <segue reference="QEF-UU-Szg"/>
         <segue reference="Mn9-3O-rVU"/>
         <segue reference="kx5-u6-mWB"/>
         <segue reference="mG9-LR-FOA"/>

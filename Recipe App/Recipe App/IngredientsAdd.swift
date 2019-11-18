@@ -15,6 +15,12 @@ class IngredientsAdd: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func submitButtonDown(_ sender: Any) {
+        performSegue(withIdentifier: "recipeSearch", sender: self)
+    }
+    
+    @IBAction func backButtonDown(_ sender: Any) {
+        performSegue(withIdentifier: "pantry", sender: self)
+    }
 }
 
