@@ -19,6 +19,10 @@
 		CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FF4237A6DC3009D1D06 /* RecipesViewController.swift */; };
 		CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FF8237A742E009D1D06 /* RecipeView.swift */; };
 		CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E4238331F300CBC08E /* HomeScreen.swift */; };
+		CEE360E723834DFE00CBC08E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E623834DFE00CBC08E /* Profile.swift */; };
+		CEE360E92383509C00CBC08E /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E82383509C00CBC08E /* SignIn.swift */; };
+		CEE360EB238350C100CBC08E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EA238350C100CBC08E /* Settings.swift */; };
+		CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EC238350D600CBC08E /* SavedRecipes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		CE465FF4237A6DC3009D1D06 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		CE465FF8237A742E009D1D06 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeView.swift; path = ../RecipeView.swift; sourceTree = "<group>"; };
 		CEE360E4238331F300CBC08E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		CEE360E623834DFE00CBC08E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CEE360E82383509C00CBC08E /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		CEE360EA238350C100CBC08E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CEE360EC238350D600CBC08E /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 		CE465FD6237A6B73009D1D06 /* Recipe App */ = {
 			isa = PBXGroup;
 			children = (
+				CEE360E623834DFE00CBC08E /* Profile.swift */,
 				CE465FF8237A742E009D1D06 /* RecipeView.swift */,
 				CE465FF0237A6C84009D1D06 /* Pantry.swift */,
 				CE465FF2237A6D8A009D1D06 /* IngredientsAdd.swift */,
@@ -76,6 +85,9 @@
 				CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */,
 				CE465FDB237A6B73009D1D06 /* ViewController.swift */,
 				CE465FDD237A6B73009D1D06 /* Main.storyboard */,
+				CEE360E82383509C00CBC08E /* SignIn.swift */,
+				CEE360EA238350C100CBC08E /* Settings.swift */,
+				CEE360EC238350D600CBC08E /* SavedRecipes.swift */,
 				CE465FE3237A6B79009D1D06 /* Assets.xcassets */,
 				CE465FE5237A6B79009D1D06 /* LaunchScreen.storyboard */,
 				CEE360E4238331F300CBC08E /* HomeScreen.swift */,
@@ -157,10 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
+				CEE360E723834DFE00CBC08E /* Profile.swift in Sources */,
 				CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */,
+				CEE360E92383509C00CBC08E /* SignIn.swift in Sources */,
 				CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */,
 				CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */,
+				CEE360EB238350C100CBC08E /* Settings.swift in Sources */,
 				CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */,
+				CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */,
 				CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */,
 				CE465FF1237A6C84009D1D06 /* Pantry.swift in Sources */,
 				CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */,
