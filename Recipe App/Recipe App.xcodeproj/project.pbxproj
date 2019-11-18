@@ -18,6 +18,7 @@
 		CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FF2237A6D8A009D1D06 /* IngredientsAdd.swift */; };
 		CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FF4237A6DC3009D1D06 /* RecipesViewController.swift */; };
 		CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FF8237A742E009D1D06 /* RecipeView.swift */; };
+		CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E4238331F300CBC08E /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CE465FF2237A6D8A009D1D06 /* IngredientsAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAdd.swift; sourceTree = "<group>"; };
 		CE465FF4237A6DC3009D1D06 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		CE465FF8237A742E009D1D06 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeView.swift; path = ../RecipeView.swift; sourceTree = "<group>"; };
+		CEE360E4238331F300CBC08E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				CE465FDD237A6B73009D1D06 /* Main.storyboard */,
 				CE465FE3237A6B79009D1D06 /* Assets.xcassets */,
 				CE465FE5237A6B79009D1D06 /* LaunchScreen.storyboard */,
+				CEE360E4238331F300CBC08E /* HomeScreen.swift */,
 				CE465FE8237A6B79009D1D06 /* Info.plist */,
 				CE465FE0237A6B73009D1D06 /* Recipe_App.xcdatamodeld */,
 			);
@@ -158,6 +161,7 @@
 				CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */,
 				CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */,
 				CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */,
+				CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */,
 				CE465FF1237A6C84009D1D06 /* Pantry.swift in Sources */,
 				CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */,
 				CE465FE2237A6B73009D1D06 /* Recipe_App.xcdatamodeld in Sources */,
