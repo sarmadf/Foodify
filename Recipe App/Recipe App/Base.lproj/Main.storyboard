@@ -341,7 +341,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uki-cq-oxc">
                                 <rect key="frame" x="20" y="120" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-5M-MUt">
@@ -615,7 +615,7 @@
         <!--Pantry-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Pantry" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="Pantry" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Pantry" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="PantryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -637,7 +637,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Search"/>
                                                 <connections>
-                                                    <action selector="searchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zWs-t4-d9N"/>
+                                                    <action selector="SearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSr-IW-kKg"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -728,6 +728,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WQR-fP-DVG"/>
                     <connections>
+                        <outlet property="IngredientsList" destination="TWU-65-WYa" id="mxw-FF-fZ4"/>
                         <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="QEF-UU-Szg"/>
                         <segue destination="jha-Pf-rFY" kind="presentation" identifier="profile" modalPresentationStyle="fullScreen" id="8PQ-Mq-eq4"/>
                     </connections>
@@ -1098,7 +1099,7 @@
         <segue reference="QEF-UU-Szg"/>
         <segue reference="Mn9-3O-rVU"/>
         <segue reference="kx5-u6-mWB"/>
-        <segue reference="mG9-LR-FOA"/>
+        <segue reference="8PQ-Mq-eq4"/>
         <segue reference="9Cp-kD-oZ5"/>
     </inferredMetricsTieBreakers>
 </document>
