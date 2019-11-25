@@ -11,6 +11,7 @@ import UIKit
 class PantryViewCell: UITableViewCell {
     @IBOutlet weak var NameField: UITextView!
     var tapGesture = UITapGestureRecognizer()
+    @IBOutlet weak var NameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

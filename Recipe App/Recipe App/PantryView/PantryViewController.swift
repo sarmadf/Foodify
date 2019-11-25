@@ -18,7 +18,6 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     var Ingredients: [String] = []
     var tapGesture = UITapGestureRecognizer()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.IngredientsList.dataSource = self
@@ -82,7 +81,7 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
             cell.NameField.isUserInteractionEnabled = false
         }
     }
-    
+
     
     @IBAction func toolBarSearchButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "homeScreen", sender: self)
@@ -96,4 +95,5 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
         // Do nothing, already in target VC
     }
 }
+
 

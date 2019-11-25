@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zvb-kW-yXS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Ck-Jr-CHR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Ck-Jr-CHR" kind="presentation" identifier="homeScreen" modalPresentationStyle="fullScreen" id="omJ-it-5hx"/>
+                        <segue destination="7Ck-Jr-CHR" kind="show" identifier="homeScreen" id="omJ-it-5hx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxS-Fw-XNW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -32,26 +32,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upE-Bo-W8q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="224"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="upE-Bo-W8q">
+                                <rect key="frame" x="0.0" y="46.5" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="UG6-tn-Yue"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Recipes including:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fF0-QY-UgZ">
-                                <rect key="frame" x="38" y="251" width="338" height="34"/>
+                                <rect key="frame" x="38" y="268" width="338" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-RK-fao">
-                                <rect key="frame" x="54" y="343" width="352" height="20"/>
+                                <rect key="frame" x="54" y="326" width="352" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g7m-2a-XuE">
-                                <rect key="frame" x="54" y="371" width="306" height="174"/>
+                                <rect key="frame" x="54" y="354.5" width="306" height="170"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="UgI-hT-eHN"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="30" id="dvW-Oe-VHe">
                                     <size key="itemSize" width="69" height="69"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -116,53 +119,52 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or pick from your Pantry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-Ap-9i4">
-                                <rect key="frame" x="54" y="619" width="187" height="21"/>
+                                <rect key="frame" x="54" y="536.5" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-gI-Mbe">
-                                <rect key="frame" x="54" y="662" width="107" height="36"/>
+                                <rect key="frame" x="54" y="579.5" width="322" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Go to Pantry"/>
                                 <connections>
-                                    <action selector="pantryButtonDown:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="1sR-7U-E7J"/>
+                                    <action selector="pantryButtonDown:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="w8p-Mo-QDf"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-uw-qNn">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-uw-qNn">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Search" style="plain" id="191-6L-LlX">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZS-WQ-sJ1">
-                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
                                             <connections>
-                                                <action selector="toolBarSearchButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="fK5-65-MJ7"/>
+                                                <action selector="toolBarSearchButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="N8h-Yc-eqo"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7hT-o1-2bk"/>
                                     <barButtonItem title="Me" style="plain" id="sZD-g3-y62">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ebb-L3-HTJ">
-                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
-                                                <action selector="toolBarProfileButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="pUb-RB-imV"/>
+                                                <action selector="toolBarProfileButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="myB-ch-Eff"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jh0-pR-70F"/>
                                     <barButtonItem title="Pantry" style="plain" id="QU3-ne-8Vw">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uUv-0b-y7b">
-                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
-                                                <action selector="toolBarPantryButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="M3P-DA-9Ts"/>
+                                                <action selector="toolBarPantryButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="ln2-lH-kdS"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -175,22 +177,22 @@
                             <constraint firstItem="fF0-QY-UgZ" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="38" id="1u3-gJ-C4F"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="fF0-QY-UgZ" secondAttribute="trailing" constant="38" id="3kB-7b-USd"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="uZp-Ap-9i4" secondAttribute="trailing" constant="173" id="7x6-cH-Iq1"/>
-                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="bottom" secondItem="g7m-2a-XuE" secondAttribute="bottom" constant="317" id="8mX-Fu-5e3"/>
                             <constraint firstItem="g7m-2a-XuE" firstAttribute="top" secondItem="HSP-RK-fao" secondAttribute="bottom" constant="8" id="8np-To-tdt"/>
                             <constraint firstItem="Jva-gI-Mbe" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="AfZ-6Y-ftW"/>
                             <constraint firstItem="uZp-Ap-9i4" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="B5E-bg-sYl"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="top" secondItem="Gpl-sg-0kT" secondAttribute="top" id="KGE-d9-wTy"/>
+                            <constraint firstItem="7WH-uw-qNn" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="NRC-AL-TCb"/>
                             <constraint firstItem="Jva-gI-Mbe" firstAttribute="top" secondItem="uZp-Ap-9i4" secondAttribute="bottom" constant="22" id="Nub-Rr-PHq"/>
-                            <constraint firstItem="fF0-QY-UgZ" firstAttribute="top" secondItem="Gpl-sg-0kT" secondAttribute="top" constant="207" id="O6F-2k-xV6"/>
+                            <constraint firstItem="fF0-QY-UgZ" firstAttribute="top" secondItem="upE-Bo-W8q" secondAttribute="bottom" id="O6F-2k-xV6"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="trailing" secondItem="Gpl-sg-0kT" secondAttribute="trailing" id="YSh-Xj-Yx5"/>
-                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="bottom" secondItem="upE-Bo-W8q" secondAttribute="bottom" constant="594" id="Zrr-85-g1t"/>
-                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="bottom" secondItem="HSP-RK-fao" secondAttribute="bottom" constant="499" id="e6w-em-dCG"/>
+                            <constraint firstItem="7WH-uw-qNn" firstAttribute="bottom" secondItem="Gpl-sg-0kT" secondAttribute="bottom" id="bTX-f7-bN8"/>
                             <constraint firstItem="g7m-2a-XuE" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="eoh-JD-c3w"/>
                             <constraint firstItem="HSP-RK-fao" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="h31-mL-sQr"/>
+                            <constraint firstItem="7WH-uw-qNn" firstAttribute="trailing" secondItem="Gpl-sg-0kT" secondAttribute="trailing" id="i9m-JF-Arj"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="HSP-RK-fao" secondAttribute="trailing" constant="8" id="pVB-0R-2v2"/>
-                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="Jva-gI-Mbe" secondAttribute="trailing" constant="253" id="rH5-gK-DOs"/>
-                            <constraint firstItem="uZp-Ap-9i4" firstAttribute="top" secondItem="g7m-2a-XuE" secondAttribute="bottom" constant="74" id="u4i-yM-bjd"/>
-                            <constraint firstItem="HSP-RK-fao" firstAttribute="top" secondItem="fF0-QY-UgZ" secondAttribute="bottom" constant="58" id="vwS-mM-VPA"/>
+                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="Jva-gI-Mbe" secondAttribute="trailing" constant="38" id="rH5-gK-DOs"/>
+                            <constraint firstItem="uZp-Ap-9i4" firstAttribute="top" secondItem="g7m-2a-XuE" secondAttribute="bottom" constant="12" id="u4i-yM-bjd"/>
+                            <constraint firstItem="HSP-RK-fao" firstAttribute="top" secondItem="fF0-QY-UgZ" secondAttribute="bottom" constant="24" id="vwS-mM-VPA"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="wE8-f1-2to"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gpl-sg-0kT"/>
@@ -199,7 +201,7 @@
                     <connections>
                         <segue destination="F31-FE-6bV" kind="show" identifier="searchIngredients" id="GZI-bV-xwz"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="cDw-We-W4e"/>
-                        <segue destination="jha-Pf-rFY" kind="presentation" identifier="profile" modalPresentationStyle="fullScreen" id="4Gb-DW-Xqg"/>
+                        <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="4Gb-DW-Xqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhv-bc-24D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -214,25 +216,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJL-fJ-Yu8">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJL-fJ-Yu8">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Search" style="plain" id="Vhm-mb-mLr">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q1r-7q-dyf">
-                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
                                             <connections>
-                                                <action selector="toolBarPantryButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="UEi-lB-b7H"/>
+                                                <action selector="toolBarSearchButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="Zl7-6E-EAo"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Un9-3R-hDt"/>
                                     <barButtonItem title="Me" style="plain" id="zSn-3v-kp9">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rud-yr-eYp">
-                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
@@ -243,11 +244,11 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4HN-7Y-U0o"/>
                                     <barButtonItem title="Pantry" style="plain" id="2QH-Q0-stt">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DPy-Gu-8FO">
-                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
-                                                <action selector="toolBarSearchButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="Z2T-4H-Bji"/>
+                                                <action selector="toolBarPantryButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="AOI-3k-s7S"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -261,6 +262,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1z-vH-oRh">
                                 <rect key="frame" x="20" y="96" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Z2w-hj-tiv"/>
+                                </constraints>
                                 <state key="normal" title="Sign In/Logout"/>
                                 <connections>
                                     <action selector="signInButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="el5-Vr-C5G"/>
@@ -268,6 +272,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-PE-BYh">
                                 <rect key="frame" x="20" y="186" width="166" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="z37-aI-pwv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Saved Recipes"/>
                                 <connections>
@@ -276,6 +283,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-Lu-ceK">
                                 <rect key="frame" x="20" y="238" width="107" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="v1C-qx-2kb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
@@ -287,24 +297,24 @@
                         <constraints>
                             <constraint firstItem="2ZC-1G-9Wg" firstAttribute="top" secondItem="7BM-yz-9LD" secondAttribute="top" constant="8" id="32i-0G-biy"/>
                             <constraint firstItem="7rI-PE-BYh" firstAttribute="top" secondItem="v1z-vH-oRh" secondAttribute="bottom" constant="60" id="A4g-Jw-KNU"/>
-                            <constraint firstItem="7BM-yz-9LD" firstAttribute="trailing" secondItem="7rI-PE-BYh" secondAttribute="trailing" constant="228" id="DWl-DA-x3j"/>
+                            <constraint firstItem="nJL-fJ-Yu8" firstAttribute="trailing" secondItem="7BM-yz-9LD" secondAttribute="trailing" id="AUq-yn-a1n"/>
                             <constraint firstItem="7rI-PE-BYh" firstAttribute="leading" secondItem="7BM-yz-9LD" secondAttribute="leading" constant="20" id="Fge-sI-pqd"/>
                             <constraint firstItem="D1u-Lu-ceK" firstAttribute="top" secondItem="7rI-PE-BYh" secondAttribute="bottom" constant="8" id="Hbn-WE-SP6"/>
+                            <constraint firstItem="nJL-fJ-Yu8" firstAttribute="leading" secondItem="7BM-yz-9LD" secondAttribute="leading" id="Nnm-Fj-Ddw"/>
                             <constraint firstItem="7BM-yz-9LD" firstAttribute="trailing" secondItem="2ZC-1G-9Wg" secondAttribute="trailing" constant="20" id="U8v-UJ-vAg"/>
                             <constraint firstItem="D1u-Lu-ceK" firstAttribute="leading" secondItem="7BM-yz-9LD" secondAttribute="leading" constant="20" id="W67-xF-KqZ"/>
+                            <constraint firstItem="nJL-fJ-Yu8" firstAttribute="bottom" secondItem="7BM-yz-9LD" secondAttribute="bottom" id="XGa-Q3-gk5"/>
                             <constraint firstItem="v1z-vH-oRh" firstAttribute="top" secondItem="2ZC-1G-9Wg" secondAttribute="bottom" constant="8" id="azr-Cw-F9L"/>
                             <constraint firstItem="v1z-vH-oRh" firstAttribute="leading" secondItem="7BM-yz-9LD" secondAttribute="leading" constant="20" id="bHk-Xa-iXP"/>
-                            <constraint firstItem="7BM-yz-9LD" firstAttribute="trailing" secondItem="D1u-Lu-ceK" secondAttribute="trailing" constant="287" id="j5c-6x-WdV"/>
-                            <constraint firstItem="7BM-yz-9LD" firstAttribute="trailing" secondItem="v1z-vH-oRh" secondAttribute="trailing" constant="294" id="jo0-Xb-m0x"/>
                             <constraint firstItem="2ZC-1G-9Wg" firstAttribute="leading" secondItem="7BM-yz-9LD" secondAttribute="leading" constant="20" id="oT1-HZ-2i2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7BM-yz-9LD"/>
                     </view>
                     <navigationItem key="navigationItem" id="fun-jJ-SSh"/>
                     <connections>
-                        <segue destination="7Ck-Jr-CHR" kind="presentation" identifier="homeScreen" modalPresentationStyle="fullScreen" id="9Cp-kD-oZ5"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="pantry" modalPresentationStyle="fullScreen" id="2KS-hI-uZZ"/>
-                        <segue destination="AtM-bZ-sxg" kind="presentation" identifier="signIn" id="VFZ-PU-NcX"/>
+                        <segue destination="7Ck-Jr-CHR" kind="show" identifier="homeScreen" id="9Cp-kD-oZ5"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="2KS-hI-uZZ"/>
+                        <segue destination="AtM-bZ-sxg" kind="show" identifier="signIn" id="VFZ-PU-NcX"/>
                         <segue destination="uYd-yr-qhk" kind="show" identifier="settings" id="9Zj-5P-CW6"/>
                         <segue destination="FB5-ah-00J" kind="show" identifier="savedRecipes" id="OeR-Vw-jlY"/>
                     </connections>
@@ -341,7 +351,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uki-cq-oxc">
                                 <rect key="frame" x="20" y="120" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-5M-MUt">
@@ -413,6 +423,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qEm-ug-WTh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kCU-6G-l2t"/>
                     <connections>
                         <outlet property="passwordTextField" destination="m3C-2p-Gjr" id="I49-JK-ZBK"/>
                         <outlet property="usernameTextField" destination="bRq-5M-MUt" id="qV1-dn-9Qa"/>
@@ -455,7 +466,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AqG-5p-mGT"/>
                     <connections>
-                        <segue destination="jha-Pf-rFY" kind="show" identifier="back" id="hKj-uj-237"/>
+                        <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="hKj-uj-237"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AiF-Ae-8ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -479,6 +490,9 @@
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="FB5-ah-00J" eventType="touchUpInside" id="frp-wx-txZ"/>
+                                                </connections>
                                             </button>
                                             <connections>
                                                 <action selector="backButtonDown:" destination="FB5-ah-00J" id="QJh-2O-FSO"/>
@@ -590,7 +604,6 @@
                             <constraint firstItem="Uab-R0-o1d" firstAttribute="trailing" secondItem="2Yk-Mi-GTc" secondAttribute="trailing" constant="20" id="6t1-UD-dWc"/>
                             <constraint firstItem="fCM-4E-DHe" firstAttribute="leading" secondItem="Uab-R0-o1d" secondAttribute="leading" constant="20" id="ALU-jL-Rpa"/>
                             <constraint firstItem="L5d-6e-6Ml" firstAttribute="top" secondItem="fCM-4E-DHe" secondAttribute="bottom" constant="8" id="CFo-Ah-L9r"/>
-                            <constraint firstItem="2Yk-Mi-GTc" firstAttribute="leading" secondItem="fCM-4E-DHe" secondAttribute="trailing" constant="302" id="STD-TZ-5Qg"/>
                             <constraint firstItem="zKh-yg-YsE" firstAttribute="leading" secondItem="Uab-R0-o1d" secondAttribute="leading" id="VFA-90-uUM"/>
                             <constraint firstItem="zKh-yg-YsE" firstAttribute="top" secondItem="Uab-R0-o1d" secondAttribute="top" id="dkU-bB-dkx"/>
                             <constraint firstItem="L5d-6e-6Ml" firstAttribute="leading" secondItem="Uab-R0-o1d" secondAttribute="leading" id="fO7-Zm-YC1"/>
@@ -605,7 +618,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3KZ-OF-OW5"/>
                     <connections>
-                        <segue destination="jha-Pf-rFY" kind="show" identifier="back" id="mG9-LR-FOA"/>
+                        <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="mG9-LR-FOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhL-a9-X3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -615,7 +628,7 @@
         <!--Pantry-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Pantry" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="PantryViewController" sceneMemberID="viewController">
+                <viewController title="Pantry" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="PantryViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,10 +638,13 @@
                                 <items>
                                     <navigationItem title="Pantry" id="oyg-1i-sLi">
                                         <barButtonItem key="leftBarButtonItem" title="Add" style="done" id="leT-eC-nhq">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i3d-XZ-tmK">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i3d-XZ-tmK" userLabel="Button">
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="AddButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zn8-bP-qGS"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Search" style="done" id="HpU-qi-a2c">
@@ -637,7 +653,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Search"/>
                                                 <connections>
-                                                    <action selector="SearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSr-IW-kKg"/>
+                                                    <action selector="SearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7md-kB-BGK"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -654,7 +670,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
                                             <connections>
-                                                <action selector="toolBarSearchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvh-UB-Mw7"/>
+                                                <action selector="toolBarSearchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="930-w6-y8I"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -665,7 +681,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
-                                                <action selector="toolBarProfileButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEG-UY-K9x"/>
+                                                <action selector="toolBarProfileButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rh2-j0-iNu"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -676,7 +692,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
-                                                <action selector="toolBarPantryButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ueO-TZ-jB5"/>
+                                                <action selector="toolBarPantryButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0yk-W3-x0F"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -686,7 +702,7 @@
                                 <rect key="frame" x="20" y="112" width="374" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Ingredient" textLabel="siA-aa-hUm" style="IBUITableViewCellStyleDefault" id="4GO-Hk-SLG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PantryViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Ingredient" textLabel="siA-aa-hUm" style="IBUITableViewCellStyleDefault" id="4GO-Hk-SLG" customClass="PantryViewCell" customModule="Recipe_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4GO-Hk-SLG" id="Be7-aT-NcZ">
@@ -707,6 +723,9 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="NameLabel" destination="siA-aa-hUm" id="Xao-Od-uBK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -715,22 +734,26 @@
                         <constraints>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6XO-iO-DG6"/>
                             <constraint firstItem="TWU-65-WYa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NkV-zg-QSe"/>
+                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SRO-Xs-d3A"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SYj-YZ-odr"/>
+                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="top" secondItem="TWU-65-WYa" secondAttribute="bottom" constant="24" id="a2O-vD-8iV"/>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c3O-Vf-Aaf"/>
-                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="top" secondItem="TWU-65-WYa" secondAttribute="bottom" constant="24" id="dyM-gp-q32"/>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="er9-oE-1BZ"/>
+                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gGp-Md-3Bo"/>
                             <constraint firstItem="TWU-65-WYa" firstAttribute="top" secondItem="Ilv-lm-rsN" secondAttribute="bottom" constant="24" id="hfj-kS-LaM"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n1N-wj-Vx5"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nMC-jV-n3z"/>
+                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qOk-44-669"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWU-65-WYa" secondAttribute="trailing" constant="20" id="qfY-LR-rsR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="WQR-fP-DVG"/>
                     <connections>
-                        <outlet property="IngredientsList" destination="TWU-65-WYa" id="mxw-FF-fZ4"/>
+                        <outlet property="IngredientsList" destination="TWU-65-WYa" id="Lg7-rB-klU"/>
                         <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="QEF-UU-Szg"/>
-                        <segue destination="jha-Pf-rFY" kind="presentation" identifier="profile" modalPresentationStyle="fullScreen" id="8PQ-Mq-eq4"/>
+                        <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="8PQ-Mq-eq4"/>
+                        <segue destination="7Ck-Jr-CHR" kind="show" identifier="homeScreen" id="orJ-D7-lMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -822,8 +845,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4V6-TC-q1Z"/>
                     <connections>
-                        <segue destination="xtR-iP-crC" kind="showDetail" identifier="recipeSearch" id="ZPt-Bm-Gh4"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="pantry" id="Fk6-dl-7gP"/>
+                        <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="ZPt-Bm-Gh4"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="Fk6-dl-7gP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P99-4G-XXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -974,8 +997,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="3GR-0c-Zi2"/>
                     <connections>
-                        <segue destination="F31-FE-6bV" kind="showDetail" identifier="addIngredients" id="Mn9-3O-rVU"/>
-                        <segue destination="vRG-tn-2fq" kind="showDetail" identifier="recipeView" id="IES-Ou-bJr"/>
+                        <segue destination="F31-FE-6bV" kind="show" identifier="addIngredients" id="Mn9-3O-rVU"/>
+                        <segue destination="vRG-tn-2fq" kind="show" identifier="recipeView" id="IES-Ou-bJr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToPantry" id="kx5-u6-mWB"/>
                     </connections>
                 </viewController>
@@ -1087,7 +1110,7 @@
                     <navigationItem key="navigationItem" id="CMp-UC-1Yt"/>
                     <connections>
                         <outlet property="someView" destination="le1-AK-F1f" id="4GB-7r-Dt1"/>
-                        <segue destination="xtR-iP-crC" kind="showDetail" identifier="recipeSearch" id="kGz-JP-oKP"/>
+                        <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="kGz-JP-oKP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-OX-Cfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1095,11 +1118,14 @@
             <point key="canvasLocation" x="1469.5652173913045" y="-201.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil" catalog="system" width="64" height="58"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QEF-UU-Szg"/>
-        <segue reference="Mn9-3O-rVU"/>
-        <segue reference="kx5-u6-mWB"/>
+        <segue reference="GZI-bV-xwz"/>
+        <segue reference="cDw-We-W4e"/>
         <segue reference="8PQ-Mq-eq4"/>
-        <segue reference="9Cp-kD-oZ5"/>
+        <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>
 </document>
