@@ -15,7 +15,10 @@ class HomeScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func addItemsCameraButton(_ sender: Any) {
+        performSegue(withIdentifier: "camera", sender: self )
+    }
+    
     @IBAction func pantryButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }

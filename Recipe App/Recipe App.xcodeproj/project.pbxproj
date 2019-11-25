@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46FB139F238B601500CEFFEB /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46FB139E238B601400CEFFEB /* YOLOv3.mlmodel */; };
+		46FB13A1238B689100CEFFEB /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46FB13A0238B689100CEFFEB /* Resnet50.mlmodel */; };
+		46FEF7B9238B2FAF00B1FAAA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FEF7B8238B2FAF00B1FAAA /* Profile.swift */; };
+		46FEF7BB238B34D400B1FAAA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FEF7BA238B34D400B1FAAA /* CameraViewController.swift */; };
 		CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD7237A6B73009D1D06 /* AppDelegate.swift */; };
 		CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */; };
 		CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FDB237A6B73009D1D06 /* ViewController.swift */; };
@@ -22,10 +26,13 @@
 		CEE360E92383509C00CBC08E /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E82383509C00CBC08E /* SignIn.swift */; };
 		CEE360EB238350C100CBC08E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EA238350C100CBC08E /* Settings.swift */; };
 		CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EC238350D600CBC08E /* SavedRecipes.swift */; };
-		CEE3610023835DE000CBC08E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360FF23835DE000CBC08E /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46FB139E238B601400CEFFEB /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3.mlmodel; path = ../../../../../Downloads/YOLOv3.mlmodel; sourceTree = "<group>"; };
+		46FB13A0238B689100CEFFEB /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
+		46FEF7B8238B2FAF00B1FAAA /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		46FEF7BA238B34D400B1FAAA /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		CE465FD4237A6B73009D1D06 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE465FD7237A6B73009D1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +50,6 @@
 		CEE360E82383509C00CBC08E /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		CEE360EA238350C100CBC08E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CEE360EC238350D600CBC08E /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
-		CEE360FF23835DE000CBC08E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = "/Users/User/Documents/Apps/ECS189E/project-f19-recipeapp/Recipe App/Recipe App/Profile.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,9 @@
 		CE465FD6237A6B73009D1D06 /* Recipe App */ = {
 			isa = PBXGroup;
 			children = (
-				CEE360FF23835DE000CBC08E /* Profile.swift */,
+				46FEF7B8238B2FAF00B1FAAA /* Profile.swift */,
+				46FB139E238B601400CEFFEB /* YOLOv3.mlmodel */,
+				46FB13A0238B689100CEFFEB /* Resnet50.mlmodel */,
 				CE465FF8237A742E009D1D06 /* RecipeView.swift */,
 				CE77132B2389D391002DD135 /* PantryView */,
 				CE465FF2237A6D8A009D1D06 /* IngredientsAdd.swift */,
@@ -93,6 +101,7 @@
 				CEE360E4238331F300CBC08E /* HomeScreen.swift */,
 				CE465FE8237A6B79009D1D06 /* Info.plist */,
 				CE465FE0237A6B73009D1D06 /* Recipe_App.xcdatamodeld */,
+				46FEF7BA238B34D400B1FAAA /* CameraViewController.swift */,
 			);
 			path = "Recipe App";
 			sourceTree = "<group>";
@@ -170,13 +179,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
+				46FEF7B9238B2FAF00B1FAAA /* Profile.swift in Sources */,
+				46FB139F238B601500CEFFEB /* YOLOv3.mlmodel in Sources */,
 				CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */,
 				CEE360E92383509C00CBC08E /* SignIn.swift in Sources */,
-				CEE3610023835DE000CBC08E /* Profile.swift in Sources */,
+				46FEF7BB238B34D400B1FAAA /* CameraViewController.swift in Sources */,
 				CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */,
 				CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */,
 				CEE360EB238350C100CBC08E /* Settings.swift in Sources */,
 				CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */,
+				46FB13A1238B689100CEFFEB /* Resnet50.mlmodel in Sources */,
 				CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */,
 				CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */,
 				CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */,
@@ -324,15 +336,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7X4546XXFK;
+				DEVELOPMENT_TEAM = 7S4B96TKF6;
 				INFOPLIST_FILE = "Recipe App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.Recipe-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davis.Recipe-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,15 +357,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7X4546XXFK;
+				DEVELOPMENT_TEAM = 7S4B96TKF6;
 				INFOPLIST_FILE = "Recipe App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.Recipe-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davis.Recipe-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
