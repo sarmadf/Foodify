@@ -6,6 +6,9 @@ by entering ingredients or using our built in ML Image recognizer, save recipes 
 ### Trello Link
 The team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e-project).
 
+# Meeting Summary
+Checked in on everyone's progress. Discussed ways to streamline the UI.
+
 # Individual Reports
 ## Ashwin
 ### Accomplishments
