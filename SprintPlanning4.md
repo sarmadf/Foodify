@@ -12,6 +12,9 @@ The team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e
 
 ### Planned
 
+### Issues
+- No issues.
+
 ### Links
 - [Example](https://github.com/ECS189E/project-f19-recipeapp)
 
@@ -20,6 +23,8 @@ The team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e
 
 ### Planned
 
+### Issues
+- No issues.
 
 ### Links
 - [Example](https://github.com/ECS189E/project-f19-recipeapp)
@@ -28,6 +33,9 @@ The team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e
 ### Accomplishments
 
 ### Planned
+
+### Issues
+- No issues.
 
 ### Links
 - [Example](https://github.com/ECS189E/project-f19-recipeapp)
