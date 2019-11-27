@@ -9,8 +9,9 @@ The team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e
 # Individual Reports
 ## Ashwin
 ### Accomplishments
-
+Worked on model for spoonacular API, RecipeViewController, and RecipeListController. Completed a model for the API that supports methods for verifying the existence of an ingredient, and for performing an ingredients-based search for recipes.
 ### Planned
+Complete the RecipeListViewController and RecipeViewController.
 
 ### Issues
 - No issues.
