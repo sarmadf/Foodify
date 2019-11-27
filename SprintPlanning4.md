@@ -20,29 +20,32 @@ Complete the RecipeListViewController and RecipeViewController.
 - No issues.
 
 ### Links
-- [Example](https://github.com/ECS189E/project-f19-recipeapp)
 
 ## Sarmad
 ### Accomplishments
+Worked on image recognition vision API
 
 ### Planned
+Complete the text recognition API, integrate the API call with the IngredientsViewController.
 
 ### Issues
 - No issues.
 
 ### Links
-- [Example](https://github.com/ECS189E/project-f19-recipeapp)
+https://github.com/ECS189E/project-f19-recipeapp/commit/ab56b754e28571b0871790b097b8dab0d48bcb9c
 
 ## Stephen
 ### Accomplishments
+Fixed all merge conflicts between the PantryView and UI branches. Edited segues and view controllers.
 
 ### Planned
+Work on IngredientsViewController, ensure that a successful ingredient input leads to the ingredient showing up in a table view in the IngredientsViewController.
 
 ### Issues
 - No issues.
 
 ### Links
-- [Example](https://github.com/ECS189E/project-f19-recipeapp)
+https://github.com/ECS189E/project-f19-recipeapp/commit/c27344eda12f5292e5f58b48f1faf9e5e82e80ad
 
 
 
