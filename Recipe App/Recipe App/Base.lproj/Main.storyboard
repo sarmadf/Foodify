@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Ck-Jr-CHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F31-FE-6bV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -768,31 +768,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder text input, can replace with Google View API" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5u-n0-srW">
-                                <rect key="frame" x="20" y="112" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-zC-W63">
-                                <rect key="frame" x="20" y="178" width="374" height="692"/>
+                                <rect key="frame" x="20" y="190" width="374" height="680"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" textLabel="jKV-WF-87S" style="IBUITableViewCellStyleDefault" id="zus-z6-Te8">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" id="zus-z6-Te8" customClass="SearchResultCell" customModule="Recipe_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zus-z6-Te8" id="c82-7W-UYj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jKV-WF-87S">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs3-mf-cHM">
+                                                    <rect key="frame" x="20" y="11" width="296" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="296" id="T3p-HC-Yag"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-R0-dHu" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
+                                                    <rect key="frame" x="324" y="4" width="30" height="34.5"/>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="leading" secondItem="c82-7W-UYj" secondAttribute="leadingMargin" id="0bh-Le-djQ"/>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="topMargin" id="AMb-I9-IZg"/>
+                                                <constraint firstAttribute="bottom" secondItem="HOU-R0-dHu" secondAttribute="bottom" constant="9.5" id="B9b-TL-r15"/>
+                                                <constraint firstAttribute="trailing" secondItem="HOU-R0-dHu" secondAttribute="trailing" constant="20" id="DYU-mW-ozW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qs3-mf-cHM" secondAttribute="bottom" constant="1" id="GIe-pd-2pk"/>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="topMargin" id="UDb-e1-Vak"/>
+                                                <constraint firstItem="HOU-R0-dHu" firstAttribute="leading" secondItem="Qs3-mf-cHM" secondAttribute="trailing" constant="8" id="Vjg-1h-y1P"/>
+                                                <constraint firstItem="HOU-R0-dHu" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="top" constant="4" id="csD-um-hAc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qs3-mf-cHM" secondAttribute="bottom" constant="1" id="tg4-Ej-h30"/>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="leading" secondItem="c82-7W-UYj" secondAttribute="leadingMargin" id="vga-9A-Qo7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SearchResultCell"/>
+                                        <connections>
+                                            <outlet property="NameLabel" destination="Qs3-mf-cHM" id="sih-td-CBs"/>
+                                            <outlet property="checked" destination="HOU-R0-dHu" id="MEr-LL-W7b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -819,32 +836,41 @@
                                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonDown:" destination="F31-FE-6bV" eventType="touchUpInside" id="upV-mT-guN"/>
+                                                </connections>
                                             </button>
                                             <connections>
-                                                <action selector="submitButtonDown:" destination="F31-FE-6bV" id="hA1-oT-1kJ"/>
+                                                <action selector="a:" destination="F31-FE-6bV" id="YwW-n0-UkH"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-IB-GL4">
+                                <rect key="frame" x="20" y="107" width="374" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sXQ-Fp-bZD" firstAttribute="trailing" secondItem="F5u-n0-srW" secondAttribute="trailing" constant="20" id="3nx-ao-UCT"/>
                             <constraint firstItem="byC-Dv-wvE" firstAttribute="top" secondItem="sXQ-Fp-bZD" secondAttribute="top" id="7nk-Ji-WNe"/>
-                            <constraint firstItem="jWb-zC-W63" firstAttribute="top" secondItem="F5u-n0-srW" secondAttribute="bottom" constant="32" id="F8q-Uw-vPf"/>
+                            <constraint firstItem="sXQ-Fp-bZD" firstAttribute="trailing" secondItem="SYy-IB-GL4" secondAttribute="trailing" constant="20" id="CPs-fW-hHk"/>
                             <constraint firstItem="sXQ-Fp-bZD" firstAttribute="trailing" secondItem="jWb-zC-W63" secondAttribute="trailing" constant="20" id="GiA-Ln-NBq"/>
                             <constraint firstItem="jWb-zC-W63" firstAttribute="bottom" secondItem="sXQ-Fp-bZD" secondAttribute="bottom" constant="8" id="IE7-6y-Qyb"/>
                             <constraint firstItem="jWb-zC-W63" firstAttribute="leading" secondItem="sXQ-Fp-bZD" secondAttribute="leading" constant="20" id="TjE-4H-IuS"/>
+                            <constraint firstItem="jWb-zC-W63" firstAttribute="top" secondItem="SYy-IB-GL4" secondAttribute="bottom" constant="27" id="W4e-Or-CGI"/>
                             <constraint firstItem="byC-Dv-wvE" firstAttribute="trailing" secondItem="sXQ-Fp-bZD" secondAttribute="trailing" id="Xye-HQ-Ij0"/>
                             <constraint firstItem="byC-Dv-wvE" firstAttribute="leading" secondItem="sXQ-Fp-bZD" secondAttribute="leading" id="Yrd-ar-3bb"/>
-                            <constraint firstItem="F5u-n0-srW" firstAttribute="top" secondItem="byC-Dv-wvE" secondAttribute="bottom" constant="24" id="bmj-id-Jn7"/>
-                            <constraint firstItem="F5u-n0-srW" firstAttribute="leading" secondItem="sXQ-Fp-bZD" secondAttribute="leading" constant="20" id="uVq-aF-5j4"/>
+                            <constraint firstItem="SYy-IB-GL4" firstAttribute="top" secondItem="byC-Dv-wvE" secondAttribute="bottom" constant="19" id="nDl-fb-wcT"/>
+                            <constraint firstItem="SYy-IB-GL4" firstAttribute="leading" secondItem="sXQ-Fp-bZD" secondAttribute="leading" constant="20" id="ylr-kG-St6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sXQ-Fp-bZD"/>
                     </view>
                     <navigationItem key="navigationItem" id="4V6-TC-q1Z"/>
                     <connections>
+                        <outlet property="IngredientsSearch" destination="SYy-IB-GL4" id="DT8-iU-e9T"/>
+                        <outlet property="SearchResultsTable" destination="jWb-zC-W63" id="o61-gH-SMA"/>
                         <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="ZPt-Bm-Gh4"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="Fk6-dl-7gP"/>
                     </connections>
@@ -1122,9 +1148,9 @@
         <image name="pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QEF-UU-Szg"/>
-        <segue reference="GZI-bV-xwz"/>
-        <segue reference="cDw-We-W4e"/>
+        <segue reference="ZPt-Bm-Gh4"/>
+        <segue reference="Mn9-3O-rVU"/>
+        <segue reference="Fk6-dl-7gP"/>
         <segue reference="8PQ-Mq-eq4"/>
         <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>

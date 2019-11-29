@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93F4788D239088540082A6FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4788C239088540082A6FC /* Profile.swift */; };
+		93F4789123908FEF0082A6FC /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4789023908FEF0082A6FC /* checkbox.swift */; };
 		CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD7237A6B73009D1D06 /* AppDelegate.swift */; };
 		CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */; };
 		CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FDB237A6B73009D1D06 /* ViewController.swift */; };
@@ -22,12 +24,13 @@
 		CEE360E92383509C00CBC08E /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360E82383509C00CBC08E /* SignIn.swift */; };
 		CEE360EB238350C100CBC08E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EA238350C100CBC08E /* Settings.swift */; };
 		CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360EC238350D600CBC08E /* SavedRecipes.swift */; };
-		CEE3610023835DE000CBC08E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE360FF23835DE000CBC08E /* Profile.swift */; };
 		CEF23F8D238B471F0086BD14 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF23F8C238B471F0086BD14 /* PantryViewController.swift */; };
 		CEF23F8F238B47580086BD14 /* PantryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF23F8E238B47580086BD14 /* PantryViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93F4788C239088540082A6FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		93F4789023908FEF0082A6FC /* checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
 		CE465FD4237A6B73009D1D06 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE465FD7237A6B73009D1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		CEE360E82383509C00CBC08E /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		CEE360EA238350C100CBC08E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CEE360EC238350D600CBC08E /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
-		CEE360FF23835DE000CBC08E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = "/Users/User/Documents/Apps/ECS189E/project-f19-recipeapp/Recipe App/Recipe App/Profile.swift"; sourceTree = "<absolute>"; };
 		CEF23F8C238B471F0086BD14 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantryViewController.swift; path = "Recipe App/PantryView/PantryViewController.swift"; sourceTree = "<group>"; };
 		CEF23F8E238B47580086BD14 /* PantryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantryViewCell.swift; path = "Recipe App/PantryView/PantryViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +84,7 @@
 		CE465FD6237A6B73009D1D06 /* Recipe App */ = {
 			isa = PBXGroup;
 			children = (
-				CEE360FF23835DE000CBC08E /* Profile.swift */,
+				93F4788C239088540082A6FC /* Profile.swift */,
 				CE465FF8237A742E009D1D06 /* RecipeView.swift */,
 				CE77132B2389D391002DD135 /* PantryView */,
 				CE465FF2237A6D8A009D1D06 /* IngredientsAdd.swift */,
@@ -99,6 +101,7 @@
 				CEE360E4238331F300CBC08E /* HomeScreen.swift */,
 				CE465FE8237A6B79009D1D06 /* Info.plist */,
 				CE465FE0237A6B73009D1D06 /* Recipe_App.xcdatamodeld */,
+				93F4789023908FEF0082A6FC /* checkbox.swift */,
 			);
 			path = "Recipe App";
 			sourceTree = "<group>";
@@ -176,10 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF23F8D238B471F0086BD14 /* PantryViewController.swift in Sources */,
+				93F4788D239088540082A6FC /* Profile.swift in Sources */,
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
 				CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */,
+				93F4789123908FEF0082A6FC /* checkbox.swift in Sources */,
 				CEE360E92383509C00CBC08E /* SignIn.swift in Sources */,
-				CEE3610023835DE000CBC08E /* Profile.swift in Sources */,
 				CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */,
 				CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */,
 				CEE360EB238350C100CBC08E /* Settings.swift in Sources */,
