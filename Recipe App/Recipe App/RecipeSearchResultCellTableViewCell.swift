@@ -1,0 +1,28 @@
+//
+//  RecipeSearchResultCellTableViewCell.swift
+//  Recipe App
+//
+//  Created by Ashwin Muralidharan on 11/23/19.
+//  Copyright © 2019 ECS 189E Group 11. All rights reserved.
+//
+
+import UIKit
+
+class RecipeSearchResultCellTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var missingIngredientsLabel: UILabel!
+    @IBOutlet weak var favoritesLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+    
+}
