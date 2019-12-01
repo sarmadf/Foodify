@@ -38,9 +38,7 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
         self.IngredientsList.backgroundView = UIView()
         self.IngredientsList.backgroundView?.addGestureRecognizer(tapGesture)
         
-        
-        // TODO: Fill in Ingredients array properly
-        self.Ingredients = ["Carrot", "Onion", "Salmon", "Apple Cider Vinegar", "Bob's Red Mill Flour Organic Amazing the Best Flour of all Time"]
+        self.Ingredients = Storage.ingredients
     }
     
     @IBAction func CancelButtonPressed(_ sender: Any) {
@@ -64,15 +62,21 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     }
     
     @IBAction func AddButtonPressed(_ sender: Any) {
-        // TODO: Pull up IngredientsSearch view
+        self.deselectCells()
+        performSegue(withIdentifier: "pantryingredientsadd", sender: self)
     }
     
     
     @IBAction func DeleteButtonPressed(_ sender: Any) {
-        for index in self.IngredientsList.indexPathsForSelectedRows ?? [] {
-            print(index)
-            // TODO: DELETE ITEMS
+        var toDelete:[String] = []
+        let selectedItems = self.IngredientsList.indexPathsForSelectedRows ?? []
+        for index in selectedItems {
+            let temp = self.IngredientsList.cellForRow(at: index) as? PantryViewCell
+            toDelete.append(temp?.NameField.text ?? "")
         }
+        self.CancelButtonPressed(UIButton())
+        removeIngredients(array: toDelete)
+        self.Ingredients = Storage.ingredients
         self.IngredientsList.reloadData()
     }
     
@@ -130,7 +134,11 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     func deselectCells() {
         let selectedItems = self.IngredientsList.indexPathsForSelectedRows ?? []
         for index in selectedItems {
-            self.IngredientsList.deselectRow(at: index, animated:true)
+            self.IngredientsList.deselectRow(at: index, animated:false)
+
+            let cell = self.IngredientsList.cellForRow(at: index) as? PantryViewCell
+            cell?.contentView.backgroundColor = UIColor.white
+            cell?.NameField?.backgroundColor = UIColor.white
         }
     }
     
@@ -146,7 +154,6 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
             let curCell = $0 as? PantryViewCell ?? PantryViewCell()
             curCell.RenameButton.isHidden = false
         }
-        
     }
     
     @IBAction func toolBarSearchButtonDown(_ sender: Any) {
@@ -163,9 +170,6 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
         // Do nothing, already in target VC
     }
 }
-
-
-
 
 class PantryViewCell: UITableViewCell {
     @IBOutlet weak var NameField: UITextView!

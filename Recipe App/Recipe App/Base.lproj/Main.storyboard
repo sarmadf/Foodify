@@ -800,6 +800,7 @@
                         <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="QEF-UU-Szg"/>
                         <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="8PQ-Mq-eq4"/>
                         <segue destination="7Ck-Jr-CHR" kind="show" identifier="homeScreen" id="orJ-D7-lMp"/>
+                        <segue destination="Ee3-fR-CdH" kind="show" identifier="pantryingredientsadd" id="ka8-rh-XND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1189,6 +1190,126 @@
             </objects>
             <point key="canvasLocation" x="1469.5652173913045" y="-201.5625"/>
         </scene>
+        <!--Add Ingredients-->
+        <scene sceneID="Gx5-gg-Uuy">
+            <objects>
+                <viewController storyboardIdentifier="pantryingredientsadd" title="Add Ingredients" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ee3-fR-CdH" customClass="PantryIngredientsAdd" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQq-SU-hmj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zth-JF-LBw">
+                                <rect key="frame" x="20" y="190" width="374" height="680"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" id="RiR-IA-4RF" customClass="SearchResultCell" customModule="Recipe_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RiR-IA-4RF" id="qA2-hD-fqq">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jx-PL-1mh">
+                                                    <rect key="frame" x="20" y="11" width="296" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="296" id="E0Z-OE-i8e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-9R-PTa" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
+                                                    <rect key="frame" x="324" y="4" width="30" height="34.5"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5jx-PL-1mh" firstAttribute="leading" secondItem="qA2-hD-fqq" secondAttribute="leadingMargin" id="0Pe-Hd-PH5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5jx-PL-1mh" secondAttribute="bottom" constant="1" id="5aL-eq-hmB"/>
+                                                <constraint firstItem="5jx-PL-1mh" firstAttribute="leading" secondItem="qA2-hD-fqq" secondAttribute="leadingMargin" id="9qp-mB-cUh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5jx-PL-1mh" secondAttribute="bottom" constant="1" id="F4f-Pv-cGC"/>
+                                                <constraint firstItem="ZbX-9R-PTa" firstAttribute="top" secondItem="qA2-hD-fqq" secondAttribute="top" constant="4" id="Jcl-bY-0fZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZbX-9R-PTa" secondAttribute="bottom" constant="9.5" id="SD7-Gp-hlK"/>
+                                                <constraint firstItem="5jx-PL-1mh" firstAttribute="top" secondItem="qA2-hD-fqq" secondAttribute="topMargin" id="XPH-kc-hgy"/>
+                                                <constraint firstItem="ZbX-9R-PTa" firstAttribute="leading" secondItem="5jx-PL-1mh" secondAttribute="trailing" constant="8" id="Z4G-KM-JvB"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZbX-9R-PTa" secondAttribute="trailing" constant="20" id="gMF-7E-ft5"/>
+                                                <constraint firstItem="5jx-PL-1mh" firstAttribute="top" secondItem="qA2-hD-fqq" secondAttribute="topMargin" id="qPU-el-Pj3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SearchResultCell"/>
+                                        <connections>
+                                            <outlet property="NameLabel" destination="5jx-PL-1mh" id="MhO-Fx-M3q"/>
+                                            <outlet property="checked" destination="ZbX-9R-PTa" id="gkA-87-acp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZc-Ei-mSm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Ingredients" id="UXN-kl-fTB">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="DvT-Ml-XsN">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NTD-Kb-WRX">
+                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonDown:" destination="cA4-pk-rvG" eventType="touchUpInside" id="YCJ-op-UVb"/>
+                                                    <action selector="backButtonDown:" destination="Ee3-fR-CdH" eventType="touchUpInside" id="bcH-dY-Q6U"/>
+                                                    <action selector="backButtonDown:" destination="jC2-ic-drK" eventType="touchUpInside" id="rzb-rx-XcO"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <action selector="backButtonDown:" destination="cA4-pk-rvG" id="9jK-0z-d1s"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="oeN-hu-6bE">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UuE-ff-mn8">
+                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="addButtonDown:" destination="Ee3-fR-CdH" eventType="touchUpInside" id="tfU-uD-aXL"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <action selector="addButtonDown:" destination="Ee3-fR-CdH" id="dJO-qK-JAu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Vfp-Ig-nDh">
+                                <rect key="frame" x="20" y="107" width="374" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u1A-8q-Oyu" firstAttribute="trailing" secondItem="Zth-JF-LBw" secondAttribute="trailing" constant="20" id="8sd-24-sAY"/>
+                            <constraint firstItem="uZc-Ei-mSm" firstAttribute="trailing" secondItem="u1A-8q-Oyu" secondAttribute="trailing" id="BqL-zL-Pe8"/>
+                            <constraint firstItem="Zth-JF-LBw" firstAttribute="top" secondItem="Vfp-Ig-nDh" secondAttribute="bottom" constant="27" id="IG0-lZ-YFW"/>
+                            <constraint firstItem="Vfp-Ig-nDh" firstAttribute="top" secondItem="uZc-Ei-mSm" secondAttribute="bottom" constant="19" id="Ohl-Vt-0f8"/>
+                            <constraint firstItem="uZc-Ei-mSm" firstAttribute="leading" secondItem="u1A-8q-Oyu" secondAttribute="leading" id="c4j-fT-mtm"/>
+                            <constraint firstItem="uZc-Ei-mSm" firstAttribute="top" secondItem="u1A-8q-Oyu" secondAttribute="top" id="dTn-fH-S32"/>
+                            <constraint firstItem="Zth-JF-LBw" firstAttribute="bottom" secondItem="u1A-8q-Oyu" secondAttribute="bottom" constant="8" id="hTg-Ox-SfW"/>
+                            <constraint firstItem="Vfp-Ig-nDh" firstAttribute="leading" secondItem="u1A-8q-Oyu" secondAttribute="leading" constant="20" id="ndb-Hk-dOW"/>
+                            <constraint firstItem="Zth-JF-LBw" firstAttribute="leading" secondItem="u1A-8q-Oyu" secondAttribute="leading" constant="20" id="pcP-zy-D3X"/>
+                            <constraint firstItem="u1A-8q-Oyu" firstAttribute="trailing" secondItem="Vfp-Ig-nDh" secondAttribute="trailing" constant="20" id="wYE-bT-BB8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u1A-8q-Oyu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aon-hb-Cv1"/>
+                    <connections>
+                        <outlet property="IngredientsSearch" destination="Vfp-Ig-nDh" id="6ig-pp-maC"/>
+                        <outlet property="SearchResultsTable" destination="Zth-JF-LBw" id="6hS-g1-zhx"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="woo-qw-nbf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPN-EX-OYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jC2-ic-drK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="674"/>
+        </scene>
     </scenes>
     <resources>
         <image name="pencil" catalog="system" width="64" height="58"/>
@@ -1196,7 +1317,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="QEF-UU-Szg"/>
         <segue reference="Mn9-3O-rVU"/>
-        <segue reference="Fk6-dl-7gP"/>
+        <segue reference="woo-qw-nbf"/>
         <segue reference="8PQ-Mq-eq4"/>
         <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>

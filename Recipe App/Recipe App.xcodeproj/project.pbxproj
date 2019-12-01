@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93F3807D2392698600B6F25F /* PantryIngredientsAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3807C2392698600B6F25F /* PantryIngredientsAdd.swift */; };
 		93F4788D239088540082A6FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4788C239088540082A6FC /* Profile.swift */; };
 		93F4789123908FEF0082A6FC /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4789023908FEF0082A6FC /* checkbox.swift */; };
 		93F86F6F2391A8D500BE68C9 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F86F6E2391A8D500BE68C9 /* PantryViewController.swift */; };
+		93FEB1632393333B00BBA91B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEB1622393333B00BBA91B /* Storage.swift */; };
 		CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD7237A6B73009D1D06 /* AppDelegate.swift */; };
 		CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */; };
 		CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FDB237A6B73009D1D06 /* ViewController.swift */; };
@@ -27,9 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93F3807C2392698600B6F25F /* PantryIngredientsAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryIngredientsAdd.swift; sourceTree = "<group>"; };
 		93F4788C239088540082A6FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		93F4789023908FEF0082A6FC /* checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
 		93F86F6E2391A8D500BE68C9 /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
+		93FEB1622393333B00BBA91B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		CE465FD4237A6B73009D1D06 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE465FD7237A6B73009D1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE465FD9237A6B73009D1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				CE465FE8237A6B79009D1D06 /* Info.plist */,
 				CE465FE0237A6B73009D1D06 /* Recipe_App.xcdatamodeld */,
 				93F4789023908FEF0082A6FC /* checkbox.swift */,
+				93F3807C2392698600B6F25F /* PantryIngredientsAdd.swift */,
+				93FEB1622393333B00BBA91B /* Storage.swift */,
 			);
 			path = "Recipe App";
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F3807D2392698600B6F25F /* PantryIngredientsAdd.swift in Sources */,
 				93F4788D239088540082A6FC /* Profile.swift in Sources */,
 				93F86F6F2391A8D500BE68C9 /* PantryViewController.swift in Sources */,
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
@@ -183,6 +190,7 @@
 				CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */,
 				CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */,
 				CEE360E5238331F300CBC08E /* HomeScreen.swift in Sources */,
+				93FEB1632393333B00BBA91B /* Storage.swift in Sources */,
 				CE465FF9237A742E009D1D06 /* RecipeView.swift in Sources */,
 				CE465FE2237A6B73009D1D06 /* Recipe_App.xcdatamodeld in Sources */,
 			);
