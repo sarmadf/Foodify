@@ -872,63 +872,40 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-2x-398">
-                                                    <rect key="frame" x="20" y="23" width="185.5" height="154"/>
+                                                    <rect key="frame" x="20" y="23" width="229.5" height="154"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVC-s5-mI1">
-                                                    <rect key="frame" x="229.5" y="23" width="164.5" height="154"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-h9-FqR">
+                                                    <rect key="frame" x="257.5" y="12" width="148.5" height="176"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-Tg-Esg">
-                                                            <rect key="frame" x="8" y="8" width="116.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-hN-hcE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="148.5" height="88"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thZ-EM-qh6">
-                                                            <rect key="frame" x="132.5" y="8" width="24" height="22.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="24" id="cLu-2e-SFk"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNE-M7-6Jy">
-                                                            <rect key="frame" x="8" y="38.5" width="148.5" height="107.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvW-fX-bem">
+                                                            <rect key="frame" x="0.0" y="88" width="148.5" height="88"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="oNE-M7-6Jy" secondAttribute="bottom" constant="8" id="0ns-43-Fhm"/>
-                                                        <constraint firstItem="Yte-Tg-Esg" firstAttribute="top" secondItem="HVC-s5-mI1" secondAttribute="top" constant="8" id="ClV-hI-lxl"/>
-                                                        <constraint firstItem="oNE-M7-6Jy" firstAttribute="leading" secondItem="HVC-s5-mI1" secondAttribute="leading" constant="8" id="LQT-DJ-qcX"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oNE-M7-6Jy" secondAttribute="trailing" constant="8" id="c5O-wt-5zo"/>
-                                                        <constraint firstItem="thZ-EM-qh6" firstAttribute="leading" secondItem="Yte-Tg-Esg" secondAttribute="trailing" constant="8" id="dxL-Fw-WHQ"/>
-                                                        <constraint firstItem="oNE-M7-6Jy" firstAttribute="top" secondItem="Yte-Tg-Esg" secondAttribute="bottom" constant="10" id="o3L-j1-h0Q"/>
-                                                        <constraint firstItem="oNE-M7-6Jy" firstAttribute="top" secondItem="thZ-EM-qh6" secondAttribute="bottom" constant="8" id="o3a-Cu-cHe"/>
-                                                        <constraint firstItem="Yte-Tg-Esg" firstAttribute="leading" secondItem="HVC-s5-mI1" secondAttribute="leading" constant="8" id="o6O-2u-yx4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="thZ-EM-qh6" secondAttribute="trailing" constant="8" id="uNP-fi-Huy"/>
-                                                        <constraint firstItem="thZ-EM-qh6" firstAttribute="top" secondItem="HVC-s5-mI1" secondAttribute="top" constant="8" id="yH7-AC-Z56"/>
-                                                    </constraints>
-                                                </view>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HVC-s5-mI1" secondAttribute="bottom" constant="12" id="5Ph-At-ZtS"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="HVC-s5-mI1" secondAttribute="trailing" id="5cv-SI-jOq"/>
-                                                <constraint firstItem="HVC-s5-mI1" firstAttribute="leading" secondItem="3uB-2x-398" secondAttribute="trailing" constant="24" id="6yV-0P-X4w"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ufx-h9-FqR" secondAttribute="trailing" constant="8" id="1a7-cp-kAT"/>
+                                                <constraint firstItem="Ufx-h9-FqR" firstAttribute="leading" secondItem="3uB-2x-398" secondAttribute="trailing" constant="8" id="1lr-Fh-iBO"/>
+                                                <constraint firstItem="Ufx-h9-FqR" firstAttribute="top" secondItem="3A9-Sg-lMu" secondAttribute="top" constant="12" id="4sW-E1-Xvk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3uB-2x-398" secondAttribute="bottom" constant="12" id="IWV-Vc-3Gx"/>
-                                                <constraint firstItem="HVC-s5-mI1" firstAttribute="top" secondItem="3A9-Sg-lMu" secondAttribute="topMargin" constant="12" id="ZdA-Cy-WRY"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ufx-h9-FqR" secondAttribute="bottom" constant="12" id="Whm-xD-TlM"/>
                                                 <constraint firstItem="3uB-2x-398" firstAttribute="top" secondItem="3A9-Sg-lMu" secondAttribute="topMargin" constant="12" id="bg2-Ak-i7v"/>
                                                 <constraint firstItem="3uB-2x-398" firstAttribute="leading" secondItem="3A9-Sg-lMu" secondAttribute="leadingMargin" id="rli-p1-eeG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="favoritesLabel" destination="thZ-EM-qh6" id="Qfe-Q1-JPQ"/>
-                                            <outlet property="missingIngredientsLabel" destination="oNE-M7-6Jy" id="fI3-FG-tcl"/>
+                                            <outlet property="missingIngredientsLabel" destination="cvW-fX-bem" id="dYB-ao-5Ya"/>
                                             <outlet property="recipeImage" destination="3uB-2x-398" id="6Dt-0p-M3g"/>
-                                            <outlet property="recipeNameLabel" destination="Yte-Tg-Esg" id="Rkg-uD-smh"/>
+                                            <outlet property="recipeNameLabel" destination="5lM-hN-hcE" id="zcJ-3U-YgD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1071,7 +1048,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IES-Ou-bJr"/>
         <segue reference="kGz-JP-oKP"/>
         <segue reference="Mn9-3O-rVU"/>
         <segue reference="kx5-u6-mWB"/>

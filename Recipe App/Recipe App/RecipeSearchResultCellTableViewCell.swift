@@ -13,7 +13,6 @@ class RecipeSearchResultCellTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var missingIngredientsLabel: UILabel!
-    @IBOutlet weak var favoritesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -53,7 +53,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITextFiel
         cell.recipeNameLabel.text = recipeSearchResults[indexPath.row].title
         let missedIngredients = recipeSearchResults[indexPath.row].missedIngredients
         let missedIngredientsStr = missedIngredients.reduce("", {$0 + $1.name + "\n"})
-        cell.missingIngredientsLabel.text = "Ingredients: \n \(missedIngredientsStr)"
+        cell.missingIngredientsLabel.text = "Missing Ingredients:\n \(missedIngredientsStr)"
         loadImage(imageURL: recipeSearchResults[indexPath.row].imageURL, completion: {
             image, errorStr in
             if errorStr == nil{
