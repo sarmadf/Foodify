@@ -63,34 +63,34 @@ class ApiModel: NSObject {
         self.apiKey = apiKey
     }
     
-    //Calls the search by ingredients spoonacular api. Takes in a comma-separated list of ingredients and returns an array of recipe search results.
-    func searchRecipes(ingredients:String) -> [RecipeSearchResult]{
+    
+    func searchRecipes(ingredients:String, completion: @escaping ([RecipeSearchResult]?, String?) -> Void){
         let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=2&apiKey=\(self.apiKey)"
         let session = URLSession.shared
         guard let url = URL(string: requestString) else{
-            return []
+            completion(nil, "URL invalid")
+            return
         }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
         
-        var recipeSearchResults:[RecipeSearchResult] = []
         
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             if error != nil{
-                print("Couldn't complete the ingredients recipe search GET request.")
+                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{
-                print("Couldn't complete the ingredients recipe search GET request.")
+                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
             if !(200...299).contains(httpResponse.statusCode){
-                print("Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
+                completion(nil, "Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
                 return
             }
             if httpResponse.statusCode == 402{
-                print("Api quota used up")
+                completion(nil, "Api quota used up")
                 return
             }
             
@@ -98,48 +98,46 @@ class ApiModel: NSObject {
                 if let data = data{
                     //Decode the JSON into an array of RecipeSearchResult structs using Swift's Codable and Decodable protocols
                     let decoder = JSONDecoder()
-                    recipeSearchResults = try decoder.decode(RecipeSearchResults.self, from:data)
-                    print(recipeSearchResults[0])
+                    let recipeSearchResults = try decoder.decode(RecipeSearchResults.self, from:data)
+                    completion(recipeSearchResults, nil)
                 }
                 else{
-                    print("Couldn't complete task")
+                    completion(nil, "Couldn't complete task")
                 }
             } catch{
-                print("Error: \(error.localizedDescription)")
+                completion(nil, "Error: \(error.localizedDescription)")
             }
         })
         task.resume()
-        return recipeSearchResults
     }
     
-    //Calls the spoonacular Get Recipe Information Api. Takes in a unique recipe id and returns an optional Recipe struct, which will be populated if the call completes successfully
-    func getRecipeDetails(recipeId: Int) -> Recipe?{
+    
+    func getRecipeDetails(recipeId: Int, completion: @escaping (Recipe?, String?) -> Void){
         let requestString = "https://api.spoonacular.com/recipes/\(recipeId)/information?apiKey=\(self.apiKey)"
         let session = URLSession.shared
         guard let url = URL(string: requestString) else{
-            return nil
+            completion(nil, "URL invalid")
+            return
         }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
         
-        var recipe:Recipe? = nil
-        
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             if error != nil{
-                print("Couldn't complete the recipe GET request.")
+                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{
-                print("Couldn't complete the recipe GET request.")
+                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
             if !(200...299).contains(httpResponse.statusCode){
-                print(httpResponse.statusCode)
+                completion(nil, "Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
                 return
             }
             if httpResponse.statusCode == 402{
-                print("Api quota used up")
+                completion(nil, "Api quota used up")
                 return
             }
             
@@ -147,22 +145,46 @@ class ApiModel: NSObject {
                 //Decode the JSON into an array of RecipeSearchResult structs using Swift's Codable and Decodable protocols
                 if let data = data{
                     let decoder = JSONDecoder()
-                    recipe = try decoder.decode(Recipe.self, from:data)
-                    print(recipe)
+                    let recipe = try decoder.decode(Recipe.self, from:data)
+                    completion(recipe, nil)
                 }
                 else{
-                    print("Couldn't complete task")
-                    print(recipe)
+                    completion(nil, "Couldn't complete task")
                 }
             } catch{
-                print("Error: \(error.localizedDescription)")
+                completion(nil, "Error: \(error.localizedDescription)")
             }
         })
         task.resume()
-        return recipe
         
     }
-    
-    
 
+}
+
+func loadImage(imageURL: String, completion: @escaping (UIImage?, String?) -> Void ){
+    guard let url = URL(string: imageURL) else{
+        completion(nil, "URL invalid")
+        return
+    }
+    let urlRequest = URLRequest(url: url)
+    let session = URLSession.shared
+    let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+        if error != nil{
+            completion(nil, "Couldn't complete the image request.")
+            return
+        }
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else{
+            completion(nil, "Couldn't complete the image request.")
+            return
+        }
+        if let data = data{
+            let image = UIImage(data: data)
+            print(image)
+            completion(image, nil)
+        }
+        else{
+            completion(nil, "Couldn't the image request")
+        }
+    })
+    task.resume()
 }

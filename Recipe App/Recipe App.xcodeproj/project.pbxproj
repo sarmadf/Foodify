@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4200234623962B1200A35E18 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200234523962B1200A35E18 /* ApiModel.swift */; };
+		42002348239630A700A35E18 /* RecipeSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42002347239630A700A35E18 /* RecipeSearchResultTableViewCell.swift */; };
 		93F4788D239088540082A6FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4788C239088540082A6FC /* Profile.swift */; };
 		93F4789123908FEF0082A6FC /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4789023908FEF0082A6FC /* checkbox.swift */; };
 		CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE465FD7237A6B73009D1D06 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4200234523962B1200A35E18 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		42002347239630A700A35E18 /* RecipeSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		93F4788C239088540082A6FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		93F4789023908FEF0082A6FC /* checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
 		CE465FD4237A6B73009D1D06 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,8 @@
 				CE465FE8237A6B79009D1D06 /* Info.plist */,
 				CE465FE0237A6B73009D1D06 /* Recipe_App.xcdatamodeld */,
 				93F4789023908FEF0082A6FC /* checkbox.swift */,
+				4200234523962B1200A35E18 /* ApiModel.swift */,
+				42002347239630A700A35E18 /* RecipeSearchResultTableViewCell.swift */,
 			);
 			path = "Recipe App";
 			sourceTree = "<group>";
@@ -182,10 +188,12 @@
 				93F4788D239088540082A6FC /* Profile.swift in Sources */,
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
 				CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */,
+				4200234623962B1200A35E18 /* ApiModel.swift in Sources */,
 				93F4789123908FEF0082A6FC /* checkbox.swift in Sources */,
 				CEE360E92383509C00CBC08E /* SignIn.swift in Sources */,
 				CE465FD8237A6B73009D1D06 /* AppDelegate.swift in Sources */,
 				CE465FF3237A6D8A009D1D06 /* IngredientsAdd.swift in Sources */,
+				42002348239630A700A35E18 /* RecipeSearchResultTableViewCell.swift in Sources */,
 				CEE360EB238350C100CBC08E /* Settings.swift in Sources */,
 				CE465FDA237A6B73009D1D06 /* SceneDelegate.swift in Sources */,
 				CEE360ED238350D600CBC08E /* SavedRecipes.swift in Sources */,
