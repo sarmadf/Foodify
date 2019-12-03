@@ -20,6 +20,16 @@ struct Storage {
         }
     }
     
+    static var recentRecipes: [Recipe] {
+        get {
+            return UserDefaults.standard.array(forKey: "recentRecipes") as? [Recipe] ?? []
+        }
+        
+        set(recentRecipes) {
+            UserDefaults.standard.set(recentRecipes, forKey: "recentRecipes")
+        }
+    }
+    
     static var ingredients: [String] {
         get {
             return UserDefaults.standard.array(forKey: "ingredients") as? [String] ?? []
@@ -41,6 +51,24 @@ func addIngredients(array: [String]) {
     for str in array {
         if(Storage.ingredients.contains(str) == false) {
             Storage.ingredients.append(str)
+        }
+    }
+}
+
+func addRecentRecipe(recipe: Recipe) {
+    var recentRecipeIDs = [Int]()
+    for recentRecipe in Storage.recentRecipes {
+        recentRecipeIDs.append(recentRecipe.id)
+    }
+    
+    if(recentRecipeIDs.contains(recipe.id) == false) {
+        Storage.recentRecipes.removeLast()
+        Storage.recentRecipes.insert(recipe, at: 0)
+    }
+    else {
+        if let firstIndex = recentRecipeIDs.firstIndex(of: recipe.id) {
+            Storage.recentRecipes.remove(at: firstIndex)
+            Storage.recentRecipes.insert(recipe, at: 0)
         }
     }
 }

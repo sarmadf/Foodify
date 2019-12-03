@@ -9,8 +9,10 @@
 import UIKit
 // MARK: - Welcome
 
-//A data model struct for a recipe. Utilizes the Codable protocol for easy JSON parsing.
-struct Recipe: Codable {
+//A data model struct for a recipe.
+//Utilizes the Codable protocol for easy JSON parsing.
+//Utilizes Hashable protocol for storage
+struct Recipe: Codable, Hashable {
     let id: Int
     let title: String
     let imageURL: String
@@ -27,6 +29,25 @@ struct Recipe: Codable {
         case sourceURL = "sourceUrl"
         case imageURL = "image"
         case creditsText, instructions, extendedIngredients
+    }
+    
+    /* Hashable functions */
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+        hasher.combine(self.title)
+        hasher.combine(self.imageURL)
+        hasher.combine(self.imageType)
+        hasher.combine(self.readyInMinutes)
+        hasher.combine(self.license)
+        hasher.combine(self.sourceName)
+        hasher.combine(self.sourceURL)
+        hasher.combine(self.creditsText)
+        hasher.combine(self.instructions)
+        hasher.combine(self.extendedIngredients)
     }
 }
 
@@ -45,11 +66,26 @@ struct RecipeSearchResult: Codable {
     }
 }
 
-//A data model struct for an ingredient. Utilizes the Codable protocol for easy JSON parsing.
-struct Ingredient: Codable {
+//A data model struct for an ingredient.
+//Utilizes the Codable protocol for easy JSON parsing.
+//Utilizes the Hashable protocol for saving
+struct Ingredient: Codable, Hashable {
     let amount: Double
     let id: Int
     let name, original: String
+    
+    /* Hashable functions */
+    static func == (lhs: Ingredient, rhs: Ingredient) -> Bool {
+         return lhs.id == rhs.id
+     }
+     
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(self.id)
+         hasher.combine(self.amount)
+         hasher.combine(self.id)
+         hasher.combine(self.name)
+         hasher.combine(self.original)
+     }
 }
 
 typealias RecipeSearchResults = [RecipeSearchResult]
