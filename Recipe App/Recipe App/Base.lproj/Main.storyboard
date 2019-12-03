@@ -133,11 +133,11 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-uw-qNn">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Search" style="plain" id="191-6L-LlX">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZS-WQ-sJ1">
-                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
@@ -149,7 +149,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7hT-o1-2bk"/>
                                     <barButtonItem title="Me" style="plain" id="sZD-g3-y62">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ebb-L3-HTJ">
-                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
@@ -160,7 +160,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jh0-pR-70F"/>
                                     <barButtonItem title="Pantry" style="plain" id="QU3-ne-8Vw">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uUv-0b-y7b">
-                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
@@ -217,11 +217,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJL-fJ-Yu8">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Search" style="plain" id="Vhm-mb-mLr">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q1r-7q-dyf">
-                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
@@ -233,7 +233,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Un9-3R-hDt"/>
                                     <barButtonItem title="Me" style="plain" id="zSn-3v-kp9">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rud-yr-eYp">
-                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
@@ -244,7 +244,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4HN-7Y-U0o"/>
                                     <barButtonItem title="Pantry" style="plain" id="2QH-Q0-stt">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DPy-Gu-8FO">
-                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
@@ -661,11 +661,11 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiW-EN-Qlf">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Search" style="plain" id="6Ns-Rj-kNf">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DEo-BH-6ZB">
-                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Search"/>
@@ -677,7 +677,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jEy-5E-rvN"/>
                                     <barButtonItem title="Me" style="plain" id="qrj-Ai-0Xt">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O6I-8C-lSo">
-                                            <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="184" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Me"/>
                                             <connections>
@@ -688,7 +688,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rf6-Gn-yVV"/>
                                     <barButtonItem title="Pantry" style="plain" id="yLY-SZ-ePE">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hSy-Mi-Iqa">
-                                            <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="348" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Pantry"/>
                                             <connections>
@@ -699,7 +699,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-65-WYa">
-                                <rect key="frame" x="20" y="112" width="374" height="682"/>
+                                <rect key="frame" x="20" y="112" width="374" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PantryViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Ingredient" textLabel="siA-aa-hUm" style="IBUITableViewCellStyleDefault" id="4GO-Hk-SLG" customClass="PantryViewCell" customModule="Recipe_App" customModuleProvider="target">
@@ -1047,7 +1047,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="srq-GZ-AkF">
                                         <rect key="frame" x="187" y="0.0" width="187" height="128"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1086,12 +1085,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="CMp-UC-1Yt"/>
                     <connections>
-                        <outlet property="ingredientsTable" destination="sPs-qh-B8V" id="WjU-9A-rNU"/>
-                        <outlet property="instructionsTable" destination="Zgi-wC-RPi" id="44H-2S-XTy"/>
-                        <outlet property="recipeImage" destination="NAL-fP-pyU" id="Mtg-Aw-vMK"/>
-                        <outlet property="recipeInfoTextField" destination="srq-GZ-AkF" id="bWx-kA-yw7"/>
-                        <outlet property="recipeNameLabel" destination="9FZ-ax-QyM" id="ooh-Nm-IDx"/>
-                        <outlet property="someView" destination="le1-AK-F1f" id="4GB-7r-Dt1"/>
+                        <outlet property="ingredientsTable" destination="sPs-qh-B8V" id="wFt-s9-3OH"/>
+                        <outlet property="instructionsTable" destination="Zgi-wC-RPi" id="PFl-GC-vJN"/>
+                        <outlet property="recipeImageView" destination="NAL-fP-pyU" id="PNf-fO-drK"/>
+                        <outlet property="recipeInfoTextField" destination="srq-GZ-AkF" id="4SA-56-VSl"/>
+                        <outlet property="recipeNameLabel" destination="9FZ-ax-QyM" id="hob-iR-UBd"/>
                         <segue destination="xtR-iP-crC" kind="show" identifier="recipeSearch" id="kGz-JP-oKP"/>
                     </connections>
                 </viewController>

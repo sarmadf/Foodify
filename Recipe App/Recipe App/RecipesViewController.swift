@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, UITableViewDelegate {
+class RecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var ingredientsList:String = ""
     var apiModel:ApiModel?
@@ -78,24 +78,25 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITextFiel
         return cell
     }
     
-//    func loadImages(completion: @escaping () -> ()){
-//        for recipeSearchResult in recipeSearchResults{
-//            loadImage(imageURL: recipeSearchResult.imageURL, completion: {
-//                image, errorStr in
-//                if let image = image, errorStr == nil{
-//                    DispatchQueue.main.async {
-//                        self.recipeImages[imageURL] = image
-//                    }
-//                }
-//                else{
-//                    print(errorStr ?? "")
-//                }
-//            })
-//        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
-//            completion()
-//        }
-//    }
+    //If a row of the table is clicked...
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        performSegue(withIdentifier: "recipeView", sender: index)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? RecipeView, let index = sender as? Int
+        {
+            print("Index = \(index)")
+            vc.recipeID = /*recipeSearchResults[index].id*/716429
+            if let image = recipeImages[recipeSearchResults[index].imageURL]{
+                vc.recipeImage = image
+                vc.apiModel = self.apiModel
+            }
+            
+            
+        }
+    }
     
     
     
