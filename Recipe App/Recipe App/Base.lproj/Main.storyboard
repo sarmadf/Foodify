@@ -38,11 +38,6 @@
                                     <constraint firstAttribute="height" constant="224" id="UG6-tn-Yue"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Recipes including:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fF0-QY-UgZ">
-                                <rect key="frame" x="38" y="268" width="338" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-RK-fao">
                                 <rect key="frame" x="54" y="326" width="352" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -62,59 +57,35 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent1" id="3PC-VF-4bd">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3PC-VF-4bd" customClass="RecentRecipeCell" customModule="Recipe_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bkS-Ia-N64">
                                             <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-ko-9gx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                    <state key="normal" title="Recipe">
+                                                        <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="3PC-VF-4bd" eventType="touchUpInside" id="Z0g-Tt-q1z"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PD5-ko-9gx" firstAttribute="top" secondItem="bkS-Ia-N64" secondAttribute="top" id="5Wr-gm-mfI"/>
+                                                <constraint firstAttribute="bottom" secondItem="PD5-ko-9gx" secondAttribute="bottom" id="CFm-dE-1OD"/>
+                                                <constraint firstItem="PD5-ko-9gx" firstAttribute="leading" secondItem="bkS-Ia-N64" secondAttribute="leading" id="nMN-21-lKT"/>
+                                                <constraint firstAttribute="trailing" secondItem="PD5-ko-9gx" secondAttribute="trailing" id="zhl-Mh-yJb"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="69" height="69"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent2" id="KrT-W7-p8g">
-                                        <rect key="frame" x="118.5" y="0.0" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N9q-Aa-ZkP">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="69"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent3" id="eEV-vn-uTk">
-                                        <rect key="frame" x="237" y="0.0" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2CT-W0-dxg">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="69"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent4" id="dSf-r9-k9Q">
-                                        <rect key="frame" x="0.0" y="99" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jcG-jP-wqR">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="69"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent5" id="xvQ-nj-twj">
-                                        <rect key="frame" x="118.5" y="99" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LoY-8E-NkW">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="69"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostRecent6" id="JRn-nd-Py6">
-                                        <rect key="frame" x="237" y="99" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bsz-Ds-PQx">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="69" height="69"/>
+                                        <connections>
+                                            <outlet property="ImageButton" destination="PD5-ko-9gx" id="8Bv-et-dz9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -135,12 +106,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-uw-qNn">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Search" style="plain" id="191-6L-LlX">
+                                    <barButtonItem title="Home" style="plain" id="191-6L-LlX">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZS-WQ-sJ1">
                                             <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="Search"/>
+                                            <state key="normal" title="Home"/>
                                             <connections>
                                                 <action selector="toolBarSearchButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="N8h-Yc-eqo"/>
                                             </connections>
@@ -174,8 +145,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="g7m-2a-XuE" secondAttribute="trailing" constant="54" id="0yO-V3-OBI"/>
-                            <constraint firstItem="fF0-QY-UgZ" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="38" id="1u3-gJ-C4F"/>
-                            <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="fF0-QY-UgZ" secondAttribute="trailing" constant="38" id="3kB-7b-USd"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="uZp-Ap-9i4" secondAttribute="trailing" constant="173" id="7x6-cH-Iq1"/>
                             <constraint firstItem="g7m-2a-XuE" firstAttribute="top" secondItem="HSP-RK-fao" secondAttribute="bottom" constant="8" id="8np-To-tdt"/>
                             <constraint firstItem="Jva-gI-Mbe" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="AfZ-6Y-ftW"/>
@@ -183,7 +152,6 @@
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="top" secondItem="Gpl-sg-0kT" secondAttribute="top" id="KGE-d9-wTy"/>
                             <constraint firstItem="7WH-uw-qNn" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="NRC-AL-TCb"/>
                             <constraint firstItem="Jva-gI-Mbe" firstAttribute="top" secondItem="uZp-Ap-9i4" secondAttribute="bottom" constant="22" id="Nub-Rr-PHq"/>
-                            <constraint firstItem="fF0-QY-UgZ" firstAttribute="top" secondItem="upE-Bo-W8q" secondAttribute="bottom" id="O6F-2k-xV6"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="trailing" secondItem="Gpl-sg-0kT" secondAttribute="trailing" id="YSh-Xj-Yx5"/>
                             <constraint firstItem="7WH-uw-qNn" firstAttribute="bottom" secondItem="Gpl-sg-0kT" secondAttribute="bottom" id="bTX-f7-bN8"/>
                             <constraint firstItem="g7m-2a-XuE" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="54" id="eoh-JD-c3w"/>
@@ -191,14 +159,16 @@
                             <constraint firstItem="7WH-uw-qNn" firstAttribute="trailing" secondItem="Gpl-sg-0kT" secondAttribute="trailing" id="i9m-JF-Arj"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="HSP-RK-fao" secondAttribute="trailing" constant="8" id="pVB-0R-2v2"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="Jva-gI-Mbe" secondAttribute="trailing" constant="38" id="rH5-gK-DOs"/>
+                            <constraint firstItem="HSP-RK-fao" firstAttribute="top" secondItem="upE-Bo-W8q" secondAttribute="bottom" constant="58" id="ttV-2w-KUi"/>
                             <constraint firstItem="uZp-Ap-9i4" firstAttribute="top" secondItem="g7m-2a-XuE" secondAttribute="bottom" constant="12" id="u4i-yM-bjd"/>
-                            <constraint firstItem="HSP-RK-fao" firstAttribute="top" secondItem="fF0-QY-UgZ" secondAttribute="bottom" constant="24" id="vwS-mM-VPA"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="wE8-f1-2to"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gpl-sg-0kT"/>
                     </view>
                     <navigationItem key="navigationItem" id="GjG-Xm-nFV"/>
                     <connections>
+                        <outlet property="image" destination="upE-Bo-W8q" id="VeO-9a-6Jn"/>
+                        <outlet property="recentlyViewed" destination="g7m-2a-XuE" id="qVj-Aq-x7Q"/>
                         <segue destination="F31-FE-6bV" kind="show" identifier="searchIngredients" id="GZI-bV-xwz"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="pantry" id="cDw-We-W4e"/>
                         <segue destination="jha-Pf-rFY" kind="show" identifier="profile" id="4Gb-DW-Xqg"/>
@@ -219,12 +189,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJL-fJ-Yu8">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Search" style="plain" id="Vhm-mb-mLr">
+                                    <barButtonItem title="Home" style="plain" id="Vhm-mb-mLr">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q1r-7q-dyf">
                                             <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="Search"/>
+                                            <state key="normal" title="Home"/>
                                             <connections>
                                                 <action selector="toolBarSearchButtonDown:" destination="jha-Pf-rFY" eventType="touchUpInside" id="Zl7-6E-EAo"/>
                                             </connections>
@@ -663,12 +633,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiW-EN-Qlf">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Search" style="plain" id="6Ns-Rj-kNf">
+                                    <barButtonItem title="Home" style="plain" id="6Ns-Rj-kNf">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DEo-BH-6ZB">
                                             <rect key="frame" x="20" y="12" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="Search"/>
+                                            <state key="normal" title="Home"/>
                                             <connections>
                                                 <action selector="toolBarSearchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="930-w6-y8I"/>
                                             </connections>
@@ -1315,10 +1285,10 @@
         <image name="pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QEF-UU-Szg"/>
-        <segue reference="Mn9-3O-rVU"/>
-        <segue reference="woo-qw-nbf"/>
-        <segue reference="8PQ-Mq-eq4"/>
-        <segue reference="orJ-D7-lMp"/>
+        <segue reference="ZPt-Bm-Gh4"/>
+        <segue reference="GZI-bV-xwz"/>
+        <segue reference="cDw-We-W4e"/>
+        <segue reference="4Gb-DW-Xqg"/>
+        <segue reference="9Cp-kD-oZ5"/>
     </inferredMetricsTieBreakers>
 </document>
