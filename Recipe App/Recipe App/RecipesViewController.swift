@@ -13,7 +13,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITextFiel
     var ingredientsList:String = ""
     var apiModel:ApiModel?
     var recipeSearchResults:[RecipeSearchResult] = []
-    var recipeImages: [UIImage] = []
+    var recipeImages: [String: UIImage] = [:]
 
     @IBOutlet weak var recipesTable: UITableView!
     
@@ -53,32 +53,21 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITextFiel
         cell.recipeNameLabel.text = recipeSearchResults[indexPath.row].title
         let missedIngredients = recipeSearchResults[indexPath.row].missedIngredients
         let missedIngredientsStr = missedIngredients.reduce("", {$0 + $1.name + "\n"})
+        print("Missing Ingredients string: \(missedIngredientsStr)")
         cell.missingIngredientsLabel.text = "Missing Ingredients:\n \(missedIngredientsStr)"
-        loadImage(imageURL: recipeSearchResults[indexPath.row].imageURL, completion: {
-            image, errorStr in
-            if errorStr == nil{
-                DispatchQueue.main.async {
-                    cell.imageView?.image = image
-                    cell.imageView?.contentMode = .scaleAspectFit
-                    cell.imageView?.clipsToBounds = true
-                    cell.contentView.setNeedsLayout()
-                }
-            }
-            else{
-                print(errorStr ?? "")
-            }
-
-        })
-        return cell
-    }
-    
-    func loadImages(completion: @escaping () -> ()){
-        for recipeSearchResult in recipeSearchResults{
-            loadImage(imageURL: recipeSearchResult.imageURL, completion: {
+        print("Missing Ingredients Label: \(cell.missingIngredientsLabel.text)")
+        cell.imageView?.image = recipeImages[recipeSearchResults[indexPath.row].imageURL]
+        if cell.imageView?.image == nil{
+            loadImage(imageURL: recipeSearchResults[indexPath.row].imageURL, completion: {
                 image, errorStr in
                 if let image = image, errorStr == nil{
                     DispatchQueue.main.async {
-                        self.recipeImages.append(image)
+                        let imageURL = self.recipeSearchResults[indexPath.row].imageURL
+                        self.recipeImages[imageURL] = image
+                        cell.imageView?.image = image
+                        cell.imageView?.contentMode = .scaleAspectFit
+                        cell.imageView?.clipsToBounds = true
+                        cell.setNeedsLayout()
                     }
                 }
                 else{
@@ -86,10 +75,27 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITextFiel
                 }
             })
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
-            completion()
-        }
+        return cell
     }
+    
+//    func loadImages(completion: @escaping () -> ()){
+//        for recipeSearchResult in recipeSearchResults{
+//            loadImage(imageURL: recipeSearchResult.imageURL, completion: {
+//                image, errorStr in
+//                if let image = image, errorStr == nil{
+//                    DispatchQueue.main.async {
+//                        self.recipeImages[imageURL] = image
+//                    }
+//                }
+//                else{
+//                    print(errorStr ?? "")
+//                }
+//            })
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+//            completion()
+//        }
+//    }
     
     
     

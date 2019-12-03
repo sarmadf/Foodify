@@ -10,6 +10,12 @@ import UIKit
 
 class RecipeView: UIViewController {
 
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeInfoTextField: UITextView!
+    @IBOutlet weak var ingredientsTable: UITableView!
+    @IBOutlet weak var instructionsTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
