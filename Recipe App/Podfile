@@ -9,5 +9,6 @@ target 'Recipe App' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Alamofire' # For getting images from URLs
+  pod 'AlamofireImage'
 
 end

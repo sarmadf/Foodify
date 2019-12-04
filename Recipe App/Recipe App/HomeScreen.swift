@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
 
 class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -16,6 +19,11 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let bannerURL = URL(string: "https://truffle-assets.imgix.net/pxqrocxwsjcc_3NgchLQ5ck4sUQoK60eAGM_matcha-gold-crepe-cakes_landscapeThumbnail_en.png") {
+            image.af_setImage(withURL: bannerURL)
+        }
+        
         
         recentlyViewed.dataSource = self
         recentlyViewed.delegate = self
