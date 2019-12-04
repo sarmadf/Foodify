@@ -54,6 +54,11 @@ struct Ingredient: Codable {
 
 typealias RecipeSearchResults = [RecipeSearchResult]
 
+struct IngredientSearchResult: Codable {
+    let image, name: String
+}
+typealias IngredientSearchResults = [IngredientSearchResult]
+
 //A class providing an interface for the spoonacular API. Provides methods for an ingredients-based search and for accessing detailed recipe information. Must be initialized with an API key.
 class ApiModel: NSObject {
     var apiKey:String
@@ -125,15 +130,15 @@ class ApiModel: NSObject {
         
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             if error != nil{
-                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
+                completion(nil, "Couldn't complete the recipe details GET request.")
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{
-                completion(nil, "Couldn't complete the ingredients recipe search GET request.")
+                completion(nil, "Couldn't complete the recipe details GET request.")
                 return
             }
             if !(200...299).contains(httpResponse.statusCode){
-                completion(nil, "Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
+                completion(nil, "Couldn't complete recipe details GET request. HTTP Code: \(httpResponse.statusCode)")
                 return
             }
             if httpResponse.statusCode == 402{
@@ -158,7 +163,57 @@ class ApiModel: NSObject {
         task.resume()
         
     }
-
+    
+    func autocompleteIngredients(ingredient: String, completion: @escaping (String?, String?) -> Void){
+        let requestString = "https://api.spoonacular.com/food/ingredients/autocomplete?query=\(ingredient)&number=1&apiKey=\(self.apiKey)"
+        let session = URLSession.shared
+        guard let url = URL(string: requestString) else{
+            completion(nil, "URL invalid")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+            if error != nil{
+                completion(nil, "Couldn't complete the autocomplete ingredients GET request.")
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else{
+                completion(nil, "Couldn't complete the autocomplete ingredients GET request.")
+                return
+            }
+            if !(200...299).contains(httpResponse.statusCode){
+                completion(nil, "Couldn't complete autocomplete ingredients GET request. HTTP Code: \(httpResponse.statusCode)")
+                return
+            }
+            if httpResponse.statusCode == 402{
+                completion(nil, "Api quota used up")
+                return
+            }
+            
+            do{
+                //Decode the JSON into an array of RecipeSearchResult structs using Swift's Codable and Decodable protocols
+                if let data = data{
+                    let decoder = JSONDecoder()
+                    let ingredientSearchResults = try decoder.decode(IngredientSearchResults.self, from: data)
+                    if ingredientSearchResults.count > 0{
+                        completion(ingredientSearchResults[0].name, nil)
+                    }
+                    else{
+                        completion(nil, nil)
+                    }
+                }
+                else{
+                    completion(nil, "Couldn't complete task")
+                }
+            } catch{
+                completion(nil, "Error: \(error.localizedDescription)")
+            }
+        })
+        task.resume()
+    }
 }
 
 func loadImage(imageURL: String, completion: @escaping (UIImage?, String?) -> Void ){
@@ -179,7 +234,6 @@ func loadImage(imageURL: String, completion: @escaping (UIImage?, String?) -> Vo
         }
         if let data = data{
             let image = UIImage(data: data)
-            print(image)
             completion(image, nil)
         }
         else{

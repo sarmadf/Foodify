@@ -63,30 +63,27 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     
     // NavBar buttons
     @IBAction func submitButtonDown(_ sender: Any) {
-        //MY ADDITION
-        print("Clicked submit button")
-        performSegue(withIdentifier: "recipeSearch", sender: self)
-       //MY ADDITION
-        
-//        var selectedIngredients: [String] = []
-//        for index in self.SearchResultsTable.indexPathsForSelectedRows ?? [] {
-//            let selectedCell = self.SearchResultsTable.cellForRow(at: index) as! SearchResultCell
-//            selectedIngredients.append(selectedCell.NameLabel.text ?? "")
-//        }
-//
-//        if(selectedIngredients.count > 0){
-//            // TODO: send selectedIngredients to recipeSearch view.
-//            print(selectedIngredients)
-//            print("Going to segue")
-//            performSegue(withIdentifier: "recipeSearch", sender: self)
-//        }
+        var selectedIngredients: [String] = []
+        for index in self.SearchResultsTable.indexPathsForSelectedRows ?? [] {
+            let selectedCell = self.SearchResultsTable.cellForRow(at: index) as! SearchResultCell
+            selectedIngredients.append(selectedCell.NameLabel.text ?? "")
+        }
+
+        if(selectedIngredients.count > 0){
+            // TODO: send selectedIngredients to recipeSearch view.
+            print(selectedIngredients)
+            print("Going to segue")
+            performSegue(withIdentifier: "recipeSearch", sender: self)
+        }
     }
     
     @IBAction func backButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
         if let vc = segue.destination as? RecipesViewController
         {
             vc.ingredientsList = "Milk,Butter"

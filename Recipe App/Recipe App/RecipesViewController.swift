@@ -10,12 +10,12 @@ import UIKit
 
 class RecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var ingredientsList:String = ""
-    var apiModel:ApiModel?
-    var recipeSearchResults:[RecipeSearchResult] = []
-    var recipeImages: [String: UIImage] = [:]
+    var ingredientsList:String = "" //List of ingredients passed in from previous view controller. Should be a single comma-separated string of ingredients.
+    var apiModel:ApiModel? //Model used to call the api
+    var recipeSearchResults:[RecipeSearchResult] = [] //List of recipe search results, will be populated after api call.
+    var recipeImages: [String: UIImage] = [:] //List of images, will be loaded after an api call
 
-    @IBOutlet weak var recipesTable: UITableView!
+    @IBOutlet weak var recipesTable: UITableView! //Table displaying recipe search results.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +23,19 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
         self.recipesTable.dataSource = self
         self.recipesTable.rowHeight = UITableView.automaticDimension
         
+        //Search for recipes that contain the ingredients specified in ingredientsList.
         if let apiModel = self.apiModel{
             apiModel.searchRecipes(ingredients: ingredientsList, completion: {
                 recipeSearchResults, errorString in
                 DispatchQueue.main.async {
                     if errorString == nil{
+                        //Populate recipeSearchResults. Reload the table so that it displays these results.
                         self.recipeSearchResults = recipeSearchResults ?? []
-                        print("RecipeSearchResults = \(self.recipeSearchResults)")
                         self.recipesTable.reloadData()
                     }
                 }
             })
         }
-        // Do any additional setup after loading the view.
     }
 
 
@@ -49,13 +49,13 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "RecipeSearchResult", for: indexPath) as! RecipeSearchResultTableViewCell
-        print(recipeSearchResults[indexPath.row])
+        //Populate the name and missing ingredients labels of the cell's content view.
         cell.recipeNameLabel.text = recipeSearchResults[indexPath.row].title
         let missedIngredients = recipeSearchResults[indexPath.row].missedIngredients
         let missedIngredientsStr = missedIngredients.reduce("", {$0 + $1.name + "\n"})
-        print("Missing Ingredients string: \(missedIngredientsStr)")
         cell.missingIngredientsLabel.text = "Missing Ingredients:\n \(missedIngredientsStr)"
-        print("Missing Ingredients Label: \(cell.missingIngredientsLabel.text)")
+        
+        //If the recipe image is not already cached, load it.
         cell.imageView?.image = recipeImages[recipeSearchResults[indexPath.row].imageURL]
         if cell.imageView?.image == nil{
             loadImage(imageURL: recipeSearchResults[indexPath.row].imageURL, completion: {
@@ -63,7 +63,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
                 if let image = image, errorStr == nil{
                     DispatchQueue.main.async {
                         let imageURL = self.recipeSearchResults[indexPath.row].imageURL
-                        self.recipeImages[imageURL] = image
+                        self.recipeImages[imageURL] = image //Cache the image for future use.
                         cell.imageView?.image = image
                         cell.imageView?.contentMode = .scaleAspectFit
                         cell.imageView?.clipsToBounds = true
@@ -78,17 +78,17 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    //If a row of the table is clicked...
+    //If a row of the table is clicked, segue to a RecipeView representing the cell's recipe.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         performSegue(withIdentifier: "recipeView", sender: index)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipeView, populate the RecipeView's id and image fields using the RecipeSearchResult at the index of the table cell that was clicked.
         if let vc = segue.destination as? RecipeView, let index = sender as? Int
         {
-            print("Index = \(index)")
-            vc.recipeID = /*recipeSearchResults[index].id*/716429
+            vc.recipeID = recipeSearchResults[index].id
             if let image = recipeImages[recipeSearchResults[index].imageURL]{
                 vc.recipeImage = image
                 vc.apiModel = self.apiModel
