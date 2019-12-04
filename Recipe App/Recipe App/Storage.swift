@@ -39,6 +39,40 @@ struct Storage {
             UserDefaults.standard.set(ingredients, forKey: "ingredients")
         }
     }
+    
+    static var savedRecipes: [Int] {
+        get {
+            return UserDefaults.standard.array(forKey: "savedRecipes") as? [Int] ?? []
+        }
+        
+        set(savedRecipes) {
+            UserDefaults.standard.set(savedRecipes, forKey: "savedRecipes")
+        }
+    }
+    
+    static func addRecentRecipe(recipe: Recipe) {
+        var recentRecipeIDs = [Int]()
+        for recentRecipe in Storage.recentRecipes {
+            recentRecipeIDs.append(recentRecipe.id)
+        }
+        
+        if(recentRecipeIDs.contains(recipe.id) == false) {
+            if Storage.recentRecipes.count >= 6 {
+                Storage.recentRecipes.removeLast()
+            }
+            Storage.recentRecipes.insert(recipe, at: 0)
+        }
+        else {
+            if let firstIndex = recentRecipeIDs.firstIndex(of: recipe.id) {
+                Storage.recentRecipes.remove(at: firstIndex)
+                Storage.recentRecipes.insert(recipe, at: 0)
+            }
+        }
+    }
+    
+    static func addSavedRecipe(recipeID: Int) {
+        Storage.savedRecipes.append(recipeID)
+    }
 }
 
 func removeIngredients(array: [String]) {
@@ -51,24 +85,6 @@ func addIngredients(array: [String]) {
     for str in array {
         if(Storage.ingredients.contains(str) == false) {
             Storage.ingredients.append(str)
-        }
-    }
-}
-
-func addRecentRecipe(recipe: Recipe) {
-    var recentRecipeIDs = [Int]()
-    for recentRecipe in Storage.recentRecipes {
-        recentRecipeIDs.append(recentRecipe.id)
-    }
-    
-    if(recentRecipeIDs.contains(recipe.id) == false) {
-        Storage.recentRecipes.removeLast()
-        Storage.recentRecipes.insert(recipe, at: 0)
-    }
-    else {
-        if let firstIndex = recentRecipeIDs.firstIndex(of: recipe.id) {
-            Storage.recentRecipes.remove(at: firstIndex)
-            Storage.recentRecipes.insert(recipe, at: 0)
         }
     }
 }

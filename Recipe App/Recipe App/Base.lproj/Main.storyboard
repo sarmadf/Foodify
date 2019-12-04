@@ -653,7 +653,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-65-WYa">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="120" width="374" height="661"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PantryViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PantryViewCell" rowHeight="53" id="4GO-Hk-SLG" customClass="PantryViewCell" customModule="Recipe_App" customModuleProvider="target">
@@ -692,9 +692,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-es-UAe">
-                                <rect key="frame" x="20" y="44" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-es-UAe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Select" id="eRI-yq-7UX">
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="b2L-iQ-hCt">
@@ -705,9 +704,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-Gy-fdJ">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-Gy-fdJ">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Delete" id="Tok-pt-UXn">
                                         <connections>
@@ -725,19 +723,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6J-es-UAe" secondAttribute="trailing" id="4Ss-qs-3Q6"/>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6XO-iO-DG6"/>
+                            <constraint firstItem="h6J-es-UAe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7yc-xa-1Av"/>
+                            <constraint firstItem="jtb-Gy-fdJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9EF-J5-fqY"/>
                             <constraint firstItem="TWU-65-WYa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NkV-zg-QSe"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SRO-Xs-d3A"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SYj-YZ-odr"/>
-                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="top" secondItem="TWU-65-WYa" secondAttribute="bottom" id="a2O-vD-8iV"/>
+                            <constraint firstItem="WiW-EN-Qlf" firstAttribute="top" secondItem="TWU-65-WYa" secondAttribute="bottom" constant="32" id="a2O-vD-8iV"/>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c3O-Vf-Aaf"/>
                             <constraint firstItem="Ilv-lm-rsN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="er9-oE-1BZ"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gGp-Md-3Bo"/>
-                            <constraint firstItem="TWU-65-WYa" firstAttribute="top" secondItem="Ilv-lm-rsN" secondAttribute="bottom" id="hfj-kS-LaM"/>
+                            <constraint firstItem="jtb-Gy-fdJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hBK-KH-oNd"/>
+                            <constraint firstItem="TWU-65-WYa" firstAttribute="top" secondItem="Ilv-lm-rsN" secondAttribute="bottom" constant="32" id="hfj-kS-LaM"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n1N-wj-Vx5"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nMC-jV-n3z"/>
+                            <constraint firstItem="h6J-es-UAe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nQU-2j-0rn"/>
                             <constraint firstItem="WiW-EN-Qlf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qOk-44-669"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWU-65-WYa" secondAttribute="trailing" constant="20" id="qfY-LR-rsR"/>
+                            <constraint firstItem="jtb-Gy-fdJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tbS-ux-juA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -774,36 +778,30 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" id="zus-z6-Te8" customClass="SearchResultCell" customModule="Recipe_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="48"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zus-z6-Te8" id="c82-7W-UYj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs3-mf-cHM">
-                                                    <rect key="frame" x="20" y="11" width="296" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="296" id="T3p-HC-Yag"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="26" y="17" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-R0-dHu" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
-                                                    <rect key="frame" x="324" y="4" width="30" height="34.5"/>
+                                                    <rect key="frame" x="338" y="6" width="30" height="43.5"/>
+                                                    <state key="normal" image="Checkmark"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="leading" secondItem="c82-7W-UYj" secondAttribute="leadingMargin" id="0bh-Le-djQ"/>
-                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="topMargin" id="AMb-I9-IZg"/>
-                                                <constraint firstAttribute="bottom" secondItem="HOU-R0-dHu" secondAttribute="bottom" constant="9.5" id="B9b-TL-r15"/>
-                                                <constraint firstAttribute="trailing" secondItem="HOU-R0-dHu" secondAttribute="trailing" constant="20" id="DYU-mW-ozW"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Qs3-mf-cHM" secondAttribute="bottom" constant="1" id="GIe-pd-2pk"/>
-                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="topMargin" id="UDb-e1-Vak"/>
-                                                <constraint firstItem="HOU-R0-dHu" firstAttribute="leading" secondItem="Qs3-mf-cHM" secondAttribute="trailing" constant="8" id="Vjg-1h-y1P"/>
-                                                <constraint firstItem="HOU-R0-dHu" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="top" constant="4" id="csD-um-hAc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Qs3-mf-cHM" secondAttribute="bottom" constant="1" id="tg4-Ej-h30"/>
-                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="leading" secondItem="c82-7W-UYj" secondAttribute="leadingMargin" id="vga-9A-Qo7"/>
+                                                <constraint firstAttribute="bottom" secondItem="HOU-R0-dHu" secondAttribute="bottom" constant="6" id="CrJ-JS-r7a"/>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="leading" secondItem="c82-7W-UYj" secondAttribute="leadingMargin" constant="6" id="Qre-xR-nNA"/>
+                                                <constraint firstAttribute="trailing" secondItem="HOU-R0-dHu" secondAttribute="trailing" constant="6" id="WVK-ew-o1e"/>
+                                                <constraint firstItem="Qs3-mf-cHM" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="topMargin" constant="6" id="fj4-t6-s4E"/>
+                                                <constraint firstItem="HOU-R0-dHu" firstAttribute="top" secondItem="c82-7W-UYj" secondAttribute="top" constant="6" id="qoA-y6-MdQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qs3-mf-cHM" secondAttribute="bottom" constant="6" id="z6H-lM-Lne"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="SearchResultCell"/>
@@ -1220,13 +1218,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checkmark" width="30" height="30"/>
         <image name="pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kGz-JP-oKP"/>
+        <segue reference="ZPt-Bm-Gh4"/>
         <segue reference="GZI-bV-xwz"/>
-        <segue reference="cDw-We-W4e"/>
-        <segue reference="4Gb-DW-Xqg"/>
-        <segue reference="9Cp-kD-oZ5"/>
+        <segue reference="Fk6-dl-7gP"/>
+        <segue reference="8PQ-Mq-eq4"/>
+        <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>
 </document>

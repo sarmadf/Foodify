@@ -40,6 +40,8 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 recipe, errorString in
                 DispatchQueue.main.async {
                     if errorString == nil, let recipe = recipe{
+                        Storage.addRecentRecipe(recipe: recipe)
+                        
                         self.recipe = recipe
                         self.recipeNameLabel.text = recipe.title
                         self.recipeInfoTextField.text = self.loadRecipeInfo()
