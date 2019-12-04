@@ -1,6 +1,6 @@
 # Sprint Planning Meeting 5
 ### App Description
-Foodify is an app that gives you recipes that uses ingredients in your pantry. Users can search recipes 
+Foodify is an app that gives you recipes that utilizes ingredients in your pantry. Users can search recipes 
 by entering ingredients or using our built in ML Image recognizer, save recipes and more. 
 
 ### Trello Link
@@ -52,19 +52,18 @@ https://github.com/ECS189E/project-f19-recipeapp/commit/c27344eda12f5292e5f58b48
 
 ## Aaron
 ### Accomplishments
-- Implmented the Saved Recipes view controller and a local Storage class using the UserDefaults library
-- Made minor UI changes to the Settings page and researched possible settings. 
+- Finished Pantry view
+- Began Ingredient Search view
 
 ### Planned
-- Finalize Pantry view
-- Start UI in Ingredient Search view: populate when enter is pressed in the search bar, and enable 
-multiple selection to prepare for search. 
-- Be ready to help and integrate other views throughout the week for completion by Tuesday. 
+- Finalize transitions between views 
+- Finalize UI and style
+- Fix Pantry add ingredients bugs
 
 ### Issues
-- Still need to discuss final UI decisions with regards to Pantry and IngredientSearch with others
-- No issues otherwise. 
+- Waiting for the Search view controller to be finished.
 
 ### Links
-- [Saved Recipes View](https://github.com/ECS189E/project-f19-recipeapp/blob/b224c13fb90e0489848743654e9b1ef66f798242/Recipe%20App/Recipe%20App/SavedRecipes.swift#L12)
-- [Storage](https://github.com/ECS189E/project-f19-recipeapp/blob/b224c13fb90e0489848743654e9b1ef66f798242/Recipe%20App/Recipe%20App/Storage.swift#L12)
+- [Pantry: View Controller](https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/PantryViewController.swift)
+- [Pantry: Adding Ingredients](https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/PantryIngredientsAdd.swift)
+- [IngredientsAdd: Filling in table with search results](https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/IngredientsAdd.swift)
