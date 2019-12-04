@@ -22,7 +22,8 @@ Checked in on everyone's progress. Merged our work. Discussed how to finalize th
 - No issues.
 
 ### Links
-- [Example](wwww.google.com)
+-https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/RecipesViewController.swift
+-https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/RecipeView.swift
 
 ## Sarmad
 ### Accomplishments
