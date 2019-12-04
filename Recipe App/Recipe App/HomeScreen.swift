@@ -60,7 +60,7 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 class RecentRecipeCell: UICollectionViewCell {
     @IBOutlet weak var ImageButton: UIButton!
     
-    var recipe : Recipe = Recipe(id: -1, title: "nil", imageURL: "nil", imageType: "nil", readyInMinutes: -1, license: "nil", sourceName: "nil", sourceURL: "nil", creditsText: "nil", instructions: "nil", extendedIngredients: [])
+    var recipe : Recipe = Recipe(id: -1, title: "nil", imageURL: "nil", imageType: "nil", servings: -1, readyInMinutes: -1, license: "nil", sourceName: "nil", sourceURL: "nil", creditsText: "nil", instructions: "nil", extendedIngredients: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()

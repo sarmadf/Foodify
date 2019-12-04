@@ -15,6 +15,8 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     var SearchResults: [String] = []
     var tapGesture = UITapGestureRecognizer()
     
+    var apiModel:ApiModel = ApiModel.init(apiKey: "6096f60da29649f4baa452b3c0746b7c")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,21 +63,31 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     
     // NavBar buttons
     @IBAction func submitButtonDown(_ sender: Any) {
-        var selectedIngredients: [String] = []
-        for index in self.SearchResultsTable.indexPathsForSelectedRows ?? [] {
-            let selectedCell = self.SearchResultsTable.cellForRow(at: index) as! SearchResultCell
-            selectedIngredients.append(selectedCell.NameLabel.text ?? "")
-        }
-        
-        if(selectedIngredients.count > 0){
-            // TODO: send selectedIngredients to recipeSearch view.
-            print(selectedIngredients)
-            performSegue(withIdentifier: "recipeSearch", sender: self)
-        }
+//        var selectedIngredients: [String] = []
+//        for index in self.SearchResultsTable.indexPathsForSelectedRows ?? [] {
+//            let selectedCell = self.SearchResultsTable.cellForRow(at: index) as! SearchResultCell
+//            selectedIngredients.append(selectedCell.NameLabel.text ?? "")
+//        }
+//
+//        if(selectedIngredients.count > 0){
+//            // TODO: send selectedIngredients to recipeSearch view.
+//            print(selectedIngredients)
+//            performSegue(withIdentifier: "recipeSearch", sender: self)
+//        }
+        performSegue(withIdentifier: "recipeSearch", sender: self)
     }
     
     @IBAction func backButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
+        if let vc = segue.destination as? RecipesViewController
+        {
+            vc.ingredientsList = "Milk,Butter"
+            vc.apiModel = self.apiModel
+        }
     }
     
     // Other
