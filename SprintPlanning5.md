@@ -12,41 +12,45 @@ Checked in on everyone's progress. Merged our work. Discussed how to finalize th
 # Individual Reports
 ## Ashwin
 ### Accomplishments
+- Hooked up API to the Search view and Individual Recipe views. 
+- Worked on UI of the Individual Recipe Views
 
 ### Planned
-
+- Finalize Search and Individual Recipe view. 
 
 ### Issues
 - No issues.
 
 ### Links
-[Example](wwww.google.com)
+- [Example](wwww.google.com)
 
 ## Sarmad
 ### Accomplishments
-Worked on image recognition vision API
+- Looked into Apple's vision recognition API
 
 ### Planned
-Complete the text recognition API, integrate the API call with the IngredientsViewController.
+- Looking into Google Vision API. 
+- Finalize Vision API implementation and finish Camera View controller. 
 
 ### Issues
-- No issues.
+- Apple Vision API seems lackluster. We will have to transition to Google's vision API. 
 
 ### Links
-[Example](wwww.google.com)
+- [Example](wwww.google.com)
 
 ## Stephen
 ### Accomplishments
 Fixed all merge conflicts between the PantryView and UI branches. Edited segues and view controllers.
+Implemented recently viewed recipes container on the home screen.
 
 ### Planned
-Work on IngredientsViewController, ensure that a successful ingredient input leads to the ingredient showing up in a table view in the IngredientsViewController.
+Hook up most recently viewed recipe to Storage and home screen.
 
 ### Issues
 - No issues.
 
 ### Links
-https://github.com/ECS189E/project-f19-recipeapp/commit/c27344eda12f5292e5f58b48f1faf9e5e82e80ad
+- [Home Screen](https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/HomeScreen.swift)
 
 
 
