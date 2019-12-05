@@ -12,6 +12,7 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     var SearchResults: [String] = []
     var tapGesture = UITapGestureRecognizer()
     var selectedIngredients: [String] = []
+    var ingredientsFromCamera: [String] = []
     
     var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
     
@@ -28,6 +29,10 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
         self.SearchResultsTable.backgroundView = UIView()
         self.SearchResultsTable.backgroundView?.addGestureRecognizer(tapGesture)
         
+        for ingredient in ingredientsFromCamera{
+            autocompleteAndUpdateUI(ingredient: ingredient)
+        }
+        
         self.IngredientsSearch.becomeFirstResponder()
         
     }
@@ -40,6 +45,15 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     @IBAction func cameraSearch(_ sender: Any) {
         performSegue(withIdentifier: "apcamera", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
+        if let vc = segue.destination as? CameraViewController
+        {
+            vc.seguedFrom = .pantryAdd
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultCell ?? SearchResultCell()
         cell.delegate = self
@@ -81,6 +95,23 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
         }
         IngredientsSearch.text = ""
         self.IngredientsSearch.resignFirstResponder()
+    }
+    
+    func autocompleteAndUpdateUI(ingredient: String){
+        let urlCompatibleIngredient = ingredient.replacingOccurrences(of: " ", with: "%20")
+        apiModel.autocompleteIngredients(ingredient: urlCompatibleIngredient, completion: {
+            ingredientNames, errorString in
+            DispatchQueue.main.async{
+                if errorString == nil, let ingredientNames = ingredientNames{
+                    self.SearchResults.append(contentsOf: ingredientNames)
+                    self.SearchResultsTable.reloadData()
+                }
+                else{
+                    print("Error String: \(errorString)")
+                    self.IngredientsSearch.placeholder = "Please input a valid ingredient"
+                }
+            }
+        })
     }
     
     // NavBar buttons

@@ -28,7 +28,7 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     var tapGesture = UITapGestureRecognizer()
     var selectEnabled = false
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "5f3d62d4d194403ca8f289d2a39b64a6")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.IngredientsList.dataSource = self
@@ -207,21 +207,28 @@ class PantryViewCell: UITableViewCell {
         super.awakeFromNib()
         self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.RenameButton.setImage(UIImage(named:"Rename"), for: .normal)
+        self.RenameButton.isHidden = true
+        self.RenameButton.isUserInteractionEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.RenameButton.isHidden = true
+        self.RenameButton.isUserInteractionEnabled = false
     }
     
     @IBAction func rename(_ sender: Any) {
         self.NameField.isUserInteractionEnabled = true
         self.NameField.becomeFirstResponder()
-         
+     self.RenameButton.isHidden = true
+     self.RenameButton.isUserInteractionEnabled = false
     }
     
     @objc func dismissKeyboard() {
         self.NameField.resignFirstResponder()
         self.NameField.isUserInteractionEnabled = false
+        self.RenameButton.isHidden = true
+        self.RenameButton.isUserInteractionEnabled = false
     }
 }
 

@@ -118,7 +118,7 @@ class ApiModel: NSObject {
     
     
     func searchRecipes(ingredients:String, completion: @escaping ([RecipeSearchResult]?, String?) -> Void){
-        let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=10&apiKey=\(self.apiKey)"
+        let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=20&apiKey=\(self.apiKey)"
         let session = URLSession.shared
         guard let url = URL(string: requestString) else{
             completion(nil, "URL invalid")

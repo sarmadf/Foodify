@@ -14,10 +14,13 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     var tapGesture = UITapGestureRecognizer()
     var selectedIngredients: [String] = []
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "93a8e822746a408cb1daa624c0f439ab")
+    var initialIngredients:[String] = []
+    
+    var apiModel:ApiModel = ApiModel.init(apiKey: "5f3d62d4d194403ca8f289d2a39b64a6")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.SearchResultsTable.dataSource = self
         self.SearchResultsTable.delegate = self
@@ -29,6 +32,9 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         self.SearchResultsTable.backgroundView = UIView()
         self.SearchResultsTable.backgroundView?.addGestureRecognizer(tapGesture)
         
+        for ingredient in initialIngredients{
+            autocompleteAndUpdateUI(ingredient: ingredient)
+        }
         self.IngredientsSearch.becomeFirstResponder()
         
     }
@@ -61,26 +67,30 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     // SearchBar Protocol Implmentation
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchString = IngredientsSearch.text{
-            let ingredient = searchString.replacingOccurrences(of: " ", with: "%20")
-            apiModel.autocompleteIngredients(ingredient: ingredient, completion: {
-                ingredientNames, errorString in
-                DispatchQueue.main.async{
-                    if errorString == nil, let ingredientNames = ingredientNames{
-                        self.SearchResults.append(contentsOf: ingredientNames)
-                        self.SearchResultsTable.reloadData()
-                    }
-                    else{
-                        print("Error String: \(errorString)")
-                        self.IngredientsSearch.placeholder = "Please input a valid ingredient"
-                    }
-                }
-            })
+            autocompleteAndUpdateUI(ingredient: searchString)
             
         }
         IngredientsSearch.text = ""
         self.IngredientsSearch.resignFirstResponder()
         
         
+    }
+    
+    func autocompleteAndUpdateUI(ingredient: String){
+        let urlCompatibleIngredient = ingredient.replacingOccurrences(of: " ", with: "%20")
+        apiModel.autocompleteIngredients(ingredient: urlCompatibleIngredient, completion: {
+            ingredientNames, errorString in
+            DispatchQueue.main.async{
+                if errorString == nil, let ingredientNames = ingredientNames{
+                    self.SearchResults.append(contentsOf: ingredientNames)
+                    self.SearchResultsTable.reloadData()
+                }
+                else{
+                    print("Error String: \(errorString)")
+                    self.IngredientsSearch.placeholder = "Please input a valid ingredient"
+                }
+            }
+        })
     }
     
     // NavBar buttons
@@ -109,6 +119,9 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
             }
             vc.ingredientsList = urlCompatibleSelectedIngredients.joined(separator: ",")
             vc.apiModel = self.apiModel
+        }
+        else if let vc = segue.destination as? CameraViewController{
+            vc.seguedFrom = .ingredientsAdd
         }
     }
     
