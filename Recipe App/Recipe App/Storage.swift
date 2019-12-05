@@ -67,7 +67,7 @@ func addIngredients(array: [String]) {
 
 func addRecentRecipe(id: Int) {
     if(Storage.recentRecipes.contains(id) == false) {
-        if Storage.recentRecipes.count >= 6 {
+        while Storage.recentRecipes.count >= 6 {
             Storage.recentRecipes.removeLast()
         }
         Storage.recentRecipes.insert(id, at: 0)

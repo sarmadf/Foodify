@@ -35,6 +35,15 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return min(Storage.recentRecipes.count, 6)
     }
     
+    // Fixes size of cell
+    func collectionView(_ collectionView: UICollectionView,
+                                layout collectionViewLayout: UICollectionViewLayout,
+                                sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = 80.0
+        let height = 80.0
+        return CGSize(width: CGFloat(width), height: CGFloat(height))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellName = "cell"
         let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
@@ -59,13 +68,18 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         performSegue(withIdentifier: "pantry", sender: self)
     }
     
+    @IBAction func searchIngredientsButtonDown(_ sender: Any) {
+        performSegue(withIdentifier: "searchIngredients", sender: self)
+    }
+    
     @IBAction func toolBarSearchButtonPressed(_ sender: Any) {
         // Already on search destination!
         // Possibly go to ingredient lookup?
     }
     
     @IBAction func toolBarProfileButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "profile", sender: self)
+        //performSegue(withIdentifier: "profile", sender: self)
+        performSegue(withIdentifier: "savedRecipes", sender: self)
     }
     
     @IBAction func toolBarPantryButtonPressed(_ sender: Any) {

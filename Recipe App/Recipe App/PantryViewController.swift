@@ -163,7 +163,8 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     @IBAction func toolBarProfileButtonDown(_ sender: Any) {
         self.deselectCells()
-        performSegue(withIdentifier: "profile", sender: self)
+       // performSegue(withIdentifier: "profile", sender: self)
+       performSegue(withIdentifier: "savedRecipes", sender: self)
     }
     
     @IBAction func toolBarPantryButtonDown(_ sender: Any) {
