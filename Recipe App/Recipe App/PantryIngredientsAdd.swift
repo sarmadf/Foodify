@@ -48,6 +48,10 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
         SearchResultsTable.reloadData()
     }
 
+    @IBAction func cameraSearch(_ sender: Any) {
+        performSegue(withIdentifier: "apcamera", sender: self)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let searchString = searchText
         

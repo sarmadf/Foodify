@@ -46,6 +46,9 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         return cell
     }
     
+    @IBAction func cameraSearch(_ sender: Any) {
+        performSegue(withIdentifier: "scamera", sender: self)
+    }
     // SearchBar Protocol Implmentation
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         IngredientsSearch.text = ""
