@@ -92,6 +92,9 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         }
     }
     
+    @IBAction func cameraSearch(_ sender: Any) {
+        performSegue(withIdentifier: "scamera", sender: self)
+    }
     @IBAction func backButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }

@@ -10,6 +10,7 @@
 		4200234A239760A400A35E18 /* RecipeSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42002349239760A400A35E18 /* RecipeSearchResultCell.swift */; };
 		4647B045239891E0003BD0C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4647B044239891E0003BD0C3 /* GoogleService-Info.plist */; };
 		4647B0472398924A003BD0C3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647B0462398924A003BD0C3 /* CameraViewController.swift */; };
+		4670C95F23990062006415D4 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4670C95E23990062006415D4 /* Resnet50.mlmodel */; };
 		93F3807D2392698600B6F25F /* PantryIngredientsAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3807C2392698600B6F25F /* PantryIngredientsAdd.swift */; };
 		93F4788D239088540082A6FC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4788C239088540082A6FC /* Profile.swift */; };
 		93F4789123908FEF0082A6FC /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4789023908FEF0082A6FC /* checkbox.swift */; };
@@ -39,6 +40,7 @@
 		42002349239760A400A35E18 /* RecipeSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchResultCell.swift; sourceTree = "<group>"; };
 		4647B044239891E0003BD0C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4647B0462398924A003BD0C3 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4670C95E23990062006415D4 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		93F3807C2392698600B6F25F /* PantryIngredientsAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryIngredientsAdd.swift; sourceTree = "<group>"; };
 		93F4788C239088540082A6FC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		93F4789023908FEF0082A6FC /* checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				4647B044239891E0003BD0C3 /* GoogleService-Info.plist */,
 				93F4788C239088540082A6FC /* Profile.swift */,
+				4670C95E23990062006415D4 /* Resnet50.mlmodel */,
 				CEE001142396F7F900C631A9 /* ApiModel.swift */,
 				CEE001122396F7F900C631A9 /* Recipe_App.xcdatamodeld */,
 				CE465FF8237A742E009D1D06 /* RecipeView.swift */,
@@ -286,6 +289,7 @@
 				93F86F6F2391A8D500BE68C9 /* PantryViewController.swift in Sources */,
 				CE465FDC237A6B73009D1D06 /* ViewController.swift in Sources */,
 				CE465FF5237A6DC3009D1D06 /* RecipesViewController.swift in Sources */,
+				4670C95F23990062006415D4 /* Resnet50.mlmodel in Sources */,
 				93F4789123908FEF0082A6FC /* checkbox.swift in Sources */,
 				4200234A239760A400A35E18 /* RecipeSearchResultCell.swift in Sources */,
 				CEE360E92383509C00CBC08E /* SignIn.swift in Sources */,

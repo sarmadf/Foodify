@@ -37,6 +37,9 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
         return self.SearchResults.count
     }
     
+    @IBAction func cameraSearch(_ sender: Any) {
+        performSegue(withIdentifier: "apcamera", sender: self)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultCell ?? SearchResultCell()
         cell.delegate = self

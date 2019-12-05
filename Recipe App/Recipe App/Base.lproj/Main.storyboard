@@ -655,13 +655,25 @@
                     <view key="view" contentMode="scaleToFill" id="tdg-hw-UE8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSA-PN-nqr">
+                                <rect key="frame" x="16" y="20" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mOq-IV-W8N"/>
                     </view>
+                    <connections>
+                        <outlet property="visionOutputTag" destination="aSA-PN-nqr" id="hOH-Xv-KBx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJc-77-dte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2354" y="674"/>
+            <point key="canvasLocation" x="-2354.4000000000001" y="673.31334332833592"/>
         </scene>
         <!--Pantry-->
         <scene sceneID="tne-QT-ifu">
@@ -942,7 +954,7 @@
                                 <rect key="frame" x="331" y="64" width="24" height="56"/>
                                 <state key="normal" image="camera" catalog="system"/>
                                 <connections>
-                                    <action selector="cameraSearch:" destination="F31-FE-6bV" eventType="touchUpInside" id="zUA-Cb-nsF"/>
+                                    <action selector="cameraSearch:" destination="F31-FE-6bV" eventType="touchUpInside" id="qWR-gr-ZhK"/>
                                     <action selector="submitButtonDown:" destination="F31-FE-6bV" eventType="touchUpInside" id="XZz-c7-fvk"/>
                                     <segue destination="qrV-9U-T8p" kind="presentation" identifier="scamera" id="mS1-nC-mEq"/>
                                 </connections>
@@ -1341,7 +1353,7 @@
                                 <rect key="frame" x="331" y="64" width="24" height="56"/>
                                 <state key="normal" image="camera" catalog="system"/>
                                 <connections>
-                                    <action selector="cameraSearch:" destination="Ee3-fR-CdH" eventType="touchUpInside" id="Pc8-qJ-6zr"/>
+                                    <action selector="cameraSearch:" destination="Ee3-fR-CdH" eventType="touchUpInside" id="Pxs-4K-dzw"/>
                                     <segue destination="qrV-9U-T8p" kind="presentation" identifier="apcamera" id="FyN-cn-9ra"/>
                                 </connections>
                             </button>
@@ -1385,9 +1397,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IES-Ou-bJr"/>
-        <segue reference="QEF-UU-Szg"/>
+        <segue reference="ZPt-Bm-Gh4"/>
         <segue reference="Mn9-3O-rVU"/>
-        <segue reference="kx5-u6-mWB"/>
+        <segue reference="woo-qw-nbf"/>
         <segue reference="FyN-cn-9ra"/>
         <segue reference="K5o-Pl-r8R"/>
         <segue reference="8PQ-Mq-eq4"/>
