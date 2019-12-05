@@ -115,25 +115,21 @@ class ApiModel: NSObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
-
+        
+        
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
-
             if error != nil{
                 completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse else{
                 completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
-            
             if !(200...299).contains(httpResponse.statusCode){
                 completion(nil, "Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
-                print("\(httpResponse.statusCode)")
                 return
             }
-            
             if httpResponse.statusCode == 402{
                 completion(nil, "Api quota used up")
                 return
@@ -238,6 +234,7 @@ class ApiModel: NSObject {
                 if let data = data{
                     let decoder = JSONDecoder()
                     let ingredientSearchResults = try decoder.decode(IngredientSearchResults.self, from: data)
+                    print("SearchResults: \(ingredientSearchResults)")
                     if ingredientSearchResults.count > 0{
                         completion(ingredientSearchResults[0].name, nil)
                     }
