@@ -115,21 +115,25 @@ class ApiModel: NSObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
-        
-        
+
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+
             if error != nil{
                 completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
+            
             guard let httpResponse = response as? HTTPURLResponse else{
                 completion(nil, "Couldn't complete the ingredients recipe search GET request.")
                 return
             }
+            
             if !(200...299).contains(httpResponse.statusCode){
                 completion(nil, "Couldn't complete ingredients search GET request. HTTP Code: \(httpResponse.statusCode)")
+                print("\(httpResponse.statusCode)")
                 return
             }
+            
             if httpResponse.statusCode == 402{
                 completion(nil, "Api quota used up")
                 return

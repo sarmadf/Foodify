@@ -20,9 +20,9 @@ struct Storage {
         }
     }
     
-    static var recentRecipes: [Recipe] {
+    static var recentRecipes: [Int] {
         get {
-            return UserDefaults.standard.array(forKey: "recentRecipes") as? [Recipe] ?? []
+            return UserDefaults.standard.array(forKey: "recentRecipes") as? [Int] ?? []
         }
         
         set(recentRecipes) {
@@ -49,30 +49,6 @@ struct Storage {
             UserDefaults.standard.set(savedRecipes, forKey: "savedRecipes")
         }
     }
-    
-    static func addRecentRecipe(recipe: Recipe) {
-        var recentRecipeIDs = [Int]()
-        for recentRecipe in Storage.recentRecipes {
-            recentRecipeIDs.append(recentRecipe.id)
-        }
-        
-        if(recentRecipeIDs.contains(recipe.id) == false) {
-            if Storage.recentRecipes.count >= 6 {
-                Storage.recentRecipes.removeLast()
-            }
-            Storage.recentRecipes.insert(recipe, at: 0)
-        }
-        else {
-            if let firstIndex = recentRecipeIDs.firstIndex(of: recipe.id) {
-                Storage.recentRecipes.remove(at: firstIndex)
-                Storage.recentRecipes.insert(recipe, at: 0)
-            }
-        }
-    }
-    
-    static func addSavedRecipe(recipeID: Int) {
-        Storage.savedRecipes.append(recipeID)
-    }
 }
 
 func removeIngredients(array: [String]) {
@@ -87,4 +63,23 @@ func addIngredients(array: [String]) {
             Storage.ingredients.append(str)
         }
     }
+}
+
+func addRecentRecipe(id: Int) {
+    if(Storage.recentRecipes.contains(id) == false) {
+        if Storage.recentRecipes.count >= 6 {
+            Storage.recentRecipes.removeLast()
+        }
+        Storage.recentRecipes.insert(id, at: 0)
+    }
+    else {
+        if let firstIndex = Storage.recentRecipes.firstIndex(of: id) {
+            Storage.recentRecipes.remove(at: firstIndex)
+            Storage.recentRecipes.insert(id, at: 0)
+        }
+    }
+}
+
+func addSavedRecipe(recipeID: Int) {
+    Storage.savedRecipes.append(recipeID)
 }

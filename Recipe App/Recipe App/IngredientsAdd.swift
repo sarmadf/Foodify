@@ -15,7 +15,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     var SearchResults: [String] = []
     var tapGesture = UITapGestureRecognizer()
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "6096f60da29649f4baa452b3c0746b7c")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "aa084a364a774dc4a25ff376f738f903")
     
     override func viewDidLoad() {
         super.viewDidLoad()

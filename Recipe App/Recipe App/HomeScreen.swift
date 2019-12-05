@@ -15,7 +15,8 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var recentlyViewed: UICollectionView!
-    
+    var apiModel:ApiModel? = ApiModel.init(apiKey: "aa084a364a774dc4a25ff376f738f903")//Model used to call the api
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,20 +32,24 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return min(Storage.recentRecipes.count, 6)
-        return 0
+        return min(Storage.recentRecipes.count, 6)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cellName = "cell"
-//        let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
-//
-//        let index = indexPath.row
-//        if index < Storage.recentRecipes.count {
-//            cell.recipe = Storage.recentRecipes[index]
-//        }
-//        return cell
-        return UICollectionViewCell()
+        let cellName = "cell"
+        let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
+        
+        cell.isHidden = true
+        let index = indexPath.row
+        if index < Storage.recentRecipes.count {
+            //Search for recipes that contain the ingredients specified in ingredientsList.
+            if let apiModel = self.apiModel{
+                apiModel.getRecipeDetails(recipeId: Storage.recentRecipes[index], completion: { (recipe, string) in
+                    cell.setRecipe(recipe: recipe)
+                })
+            }
+        }
+        return cell
     }
     
     
@@ -70,34 +75,21 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 class RecentRecipeCell: UICollectionViewCell {
     @IBOutlet weak var ImageButton: UIButton!
     
-    var recipe : Recipe = Recipe(id: -1, title: "nil", imageURL: "nil", imageType: "nil", servings: -1, readyInMinutes: -1, sourceName: "nil", sourceURL: "nil", creditsText: "nil", instructions: "nil", extendedIngredients: [])
+    var recipe : Recipe?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setRecipe(recipe : Recipe?) -> Void {
+        self.recipe = recipe
         
-        guard let url = URL(string: recipe.imageURL) else { return }
-        //guard let url = URL(string: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190725-delish-air-fryer-burger-ehg-vertical-2-1565299632.png?crop=1.00xw:0.667xh;0,0.193xh&resize=480:*") else { return }
-        let session = URLSession(configuration: .default)
-        let downloadPicTask = session.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                return
-            }
-            else {
-                if (response as? HTTPURLResponse) != nil {
-                    if let imageData = data {
-                        DispatchQueue.main.async { // Must be called on main thread
-                            let image = UIImage(data: imageData)
-                            self.ImageButton.setImage(image, for: .normal)
-                            self.ImageButton.contentVerticalAlignment = .fill
-                            self.ImageButton.contentHorizontalAlignment = .fill
-                            self.ImageButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                        }
+        if let recipeObject = recipe {
+            loadImage(imageURL: recipeObject.imageURL, completion: { imageOptional, string in
+                if let image = imageOptional {
+                    DispatchQueue.main.async {
+                        self.ImageButton.setImage(image, for: .normal)
+                        self.isHidden = false
                     }
                 }
-            }
+            })
         }
-        
-        downloadPicTask.resume()
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
