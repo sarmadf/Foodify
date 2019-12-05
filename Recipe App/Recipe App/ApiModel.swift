@@ -18,14 +18,14 @@ struct Recipe: Codable, Hashable {
     let imageURL: String
     let imageType: String
     let servings, readyInMinutes: Int
-    let license, sourceName: String
+    let sourceName: String
     let sourceURL: String
     let creditsText: String
     let instructions: String
     let extendedIngredients: [Ingredient]
 
     enum CodingKeys: String, CodingKey {
-        case id, title, imageType, license, sourceName, readyInMinutes, servings
+        case id, title, imageType, sourceName, readyInMinutes, servings
         case sourceURL = "sourceUrl"
         case imageURL = "image"
         case creditsText, instructions, extendedIngredients
@@ -42,7 +42,6 @@ struct Recipe: Codable, Hashable {
         hasher.combine(self.imageURL)
         hasher.combine(self.imageType)
         hasher.combine(self.readyInMinutes)
-        hasher.combine(self.license)
         hasher.combine(self.sourceName)
         hasher.combine(self.sourceURL)
         hasher.combine(self.creditsText)

@@ -31,18 +31,20 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return min(Storage.recentRecipes.count, 6)
+        //return min(Storage.recentRecipes.count, 6)
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellName = "cell"
-        let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
-        
-        let index = indexPath.row
-        if index < Storage.recentRecipes.count {
-            cell.recipe = Storage.recentRecipes[index]
-        }
-        return cell
+//        let cellName = "cell"
+//        let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
+//
+//        let index = indexPath.row
+//        if index < Storage.recentRecipes.count {
+//            cell.recipe = Storage.recentRecipes[index]
+//        }
+//        return cell
+        return UICollectionViewCell()
     }
     
     
@@ -68,7 +70,7 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 class RecentRecipeCell: UICollectionViewCell {
     @IBOutlet weak var ImageButton: UIButton!
     
-    var recipe : Recipe = Recipe(id: -1, title: "nil", imageURL: "nil", imageType: "nil", servings: -1, readyInMinutes: -1, license: "nil", sourceName: "nil", sourceURL: "nil", creditsText: "nil", instructions: "nil", extendedIngredients: [])
+    var recipe : Recipe = Recipe(id: -1, title: "nil", imageURL: "nil", imageType: "nil", servings: -1, readyInMinutes: -1, sourceName: "nil", sourceURL: "nil", creditsText: "nil", instructions: "nil", extendedIngredients: [])
     
     override func awakeFromNib() {
         super.awakeFromNib()

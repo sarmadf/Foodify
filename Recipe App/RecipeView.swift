@@ -32,6 +32,9 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.ingredientsTable.dataSource = self
         self.instructionsTable.dataSource = self
         
+//        self.ingredientsTable.rowHeight = UITableView.automaticDimension
+//        self.instructionsTable.rowHeight = UITableView.automaticDimension
+        
         self.recipeInfoTextField.isEditable = false
         
         //Populate the recipe struct using the api. Use the api results to populate the UI.
@@ -40,7 +43,7 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 recipe, errorString in
                 DispatchQueue.main.async {
                     if errorString == nil, let recipe = recipe{
-                        Storage.addRecentRecipe(recipe: recipe)
+                        //Storage.addRecentRecipe(recipe: recipe)
                         
                         self.recipe = recipe
                         self.recipeNameLabel.text = recipe.title
@@ -113,11 +116,15 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.ingredientsTable{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell") ?? UITableViewCell(style: .default, reuseIdentifier: "ingredientCell")
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.lineBreakMode = .byWordWrapping
             cell.textLabel?.text = ingredients[indexPath.row]
             return cell
         }
         if tableView == self.instructionsTable{
             let cell=tableView.dequeueReusableCell(withIdentifier: "instructionCell") ?? UITableViewCell(style: .default, reuseIdentifier: "instructionCell")
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.lineBreakMode = .byWordWrapping
             cell.textLabel?.text = instructions[indexPath.row]
             return cell
         }
