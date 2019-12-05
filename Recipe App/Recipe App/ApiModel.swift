@@ -16,19 +16,32 @@ struct Recipe: Codable, Hashable {
     let id: Int
     let title: String
     let imageURL: String
-    let imageType: String
     let servings, readyInMinutes: Int
     let sourceName: String
     let sourceURL: String
     let creditsText: String
     let instructions: String
     let extendedIngredients: [Ingredient]
-
+    
     enum CodingKeys: String, CodingKey {
-        case id, title, imageType, sourceName, readyInMinutes, servings
+        case id, title, sourceName, readyInMinutes, servings
         case sourceURL = "sourceUrl"
         case imageURL = "image"
         case creditsText, instructions, extendedIngredients
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
+        self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        self.imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL) ?? ""
+        self.servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1
+        self.readyInMinutes = try container.decodeIfPresent(Int.self, forKey: .readyInMinutes) ?? 0
+        self.sourceName = try container.decodeIfPresent(String.self, forKey: .sourceName) ?? ""
+        self.sourceURL = try container.decodeIfPresent(String.self, forKey: .sourceURL) ?? ""
+        self.creditsText = try container.decodeIfPresent(String.self, forKey: .creditsText) ?? ""
+        self.instructions = try container.decodeIfPresent(String.self, forKey: .instructions) ?? ""
+        self.extendedIngredients = try container.decodeIfPresent([Ingredient].self, forKey: .extendedIngredients) ?? []
     }
     
     /* Hashable functions */
@@ -40,7 +53,6 @@ struct Recipe: Codable, Hashable {
         hasher.combine(self.id)
         hasher.combine(self.title)
         hasher.combine(self.imageURL)
-        hasher.combine(self.imageType)
         hasher.combine(self.readyInMinutes)
         hasher.combine(self.sourceName)
         hasher.combine(self.sourceURL)
@@ -76,16 +88,16 @@ struct Ingredient: Codable, Hashable {
     
     /* Hashable functions */
     static func == (lhs: Ingredient, rhs: Ingredient) -> Bool {
-         return lhs.id == rhs.id
-     }
-     
-     func hash(into hasher: inout Hasher) {
-         hasher.combine(self.id)
-         hasher.combine(self.amount)
-         hasher.combine(self.id)
-         hasher.combine(self.name)
-         hasher.combine(self.original)
-     }
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+        hasher.combine(self.amount)
+        hasher.combine(self.id)
+        hasher.combine(self.name)
+        hasher.combine(self.original)
+    }
 }
 
 struct IngredientSearchResult: Codable {
@@ -106,7 +118,7 @@ class ApiModel: NSObject {
     
     
     func searchRecipes(ingredients:String, completion: @escaping ([RecipeSearchResult]?, String?) -> Void){
-        let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=2&apiKey=\(self.apiKey)"
+        let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=10&apiKey=\(self.apiKey)"
         let session = URLSession.shared
         guard let url = URL(string: requestString) else{
             completion(nil, "URL invalid")
@@ -200,8 +212,8 @@ class ApiModel: NSObject {
         
     }
     
-    func autocompleteIngredients(ingredient: String, completion: @escaping (String?, String?) -> Void){
-        let requestString = "https://api.spoonacular.com/food/ingredients/autocomplete?query=\(ingredient)&number=1&apiKey=\(self.apiKey)"
+    func autocompleteIngredients(ingredient: String, completion: @escaping ([String]?, String?) -> Void){
+        let requestString = "https://api.spoonacular.com/food/ingredients/autocomplete?query=\(ingredient)&number=5&apiKey=\(self.apiKey)"
         let session = URLSession.shared
         guard let url = URL(string: requestString) else{
             completion(nil, "URL invalid")
@@ -234,9 +246,12 @@ class ApiModel: NSObject {
                 if let data = data{
                     let decoder = JSONDecoder()
                     let ingredientSearchResults = try decoder.decode(IngredientSearchResults.self, from: data)
-                    print("SearchResults: \(ingredientSearchResults)")
                     if ingredientSearchResults.count > 0{
-                        completion(ingredientSearchResults[0].name, nil)
+                        var ingredientNames:[String] = []
+                        for ingredient in ingredientSearchResults{
+                            ingredientNames.append(ingredient.name)
+                        }
+                        completion(ingredientNames, nil)
                     }
                     else{
                         completion(nil, nil)

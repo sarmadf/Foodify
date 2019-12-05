@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Ck-Jr-CHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Ck-Jr-CHR">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="upE-Bo-W8q">
-                                <rect key="frame" x="0.0" y="82.5" width="375" height="136"/>
+                                <rect key="frame" x="0.0" y="82.5" width="375" height="135.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="UG6-tn-Yue"/>
                                 </constraints>
@@ -52,7 +52,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <state key="normal" title="Recipe">
-                                                        <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                     </state>
                                                     <connections>
@@ -81,12 +81,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jva-gI-Mbe">
-                                <rect key="frame" x="30" y="229" width="315" height="58"/>
+                                <rect key="frame" x="30" y="229" width="315" height="57.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="zlB-8i-YpH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Go to Pantry" backgroundImage="square.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -95,12 +95,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU0-Bt-7CA">
-                                <rect key="frame" x="30" y="309.5" width="315" height="58"/>
+                                <rect key="frame" x="30" y="309.5" width="315" height="57.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Tgz-XI-dSO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Search by Ingredient" backgroundImage="square.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -115,7 +115,7 @@
                                     <constraint firstAttribute="height" constant="80" id="Ghd-Zu-kmt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="60"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-uw-qNn">
@@ -344,7 +344,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uki-cq-oxc">
                                 <rect key="frame" x="20" y="76" width="335" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-5M-MUt">
@@ -863,23 +863,23 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" id="zus-z6-Te8" customClass="SearchResultCell" customModule="Recipe_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="55"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zus-z6-Te8" id="c82-7W-UYj">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs3-mf-cHM">
-                                                    <rect key="frame" x="21" y="17" width="42" height="21"/>
+                                                    <rect key="frame" x="21" y="17" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-R0-dHu" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
-                                                    <rect key="frame" x="299" y="6" width="30" height="43"/>
+                                                    <rect key="frame" x="299" y="6" width="30" height="43.5"/>
                                                     <state key="normal" image="Checkmark"/>
                                                     <connections>
-                                                        <action selector="checkBoxClicked:" destination="zus-z6-Te8" eventType="touchUpInside" id="nrP-e3-0yX"/>
+                                                        <action selector="checkBoxClicked:" destination="zus-z6-Te8" eventType="touchUpInside" id="WIb-Kc-Vku"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -895,7 +895,7 @@
                                         <accessibility key="accessibilityConfiguration" identifier="SearchResultCell"/>
                                         <connections>
                                             <outlet property="NameLabel" destination="Qs3-mf-cHM" id="sih-td-CBs"/>
-                                            <outlet property="checked" destination="HOU-R0-dHu" id="MEr-LL-W7b"/>
+                                            <outlet property="checked" destination="HOU-R0-dHu" id="YLy-hQ-PPt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1064,9 +1064,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="missingIngredientsLabel" destination="QEw-Ko-nmH" id="jci-j5-OCz"/>
-                                            <outlet property="recipeImage" destination="vCL-Bn-zy0" id="jyU-O7-GKy"/>
-                                            <outlet property="recipeNameLabel" destination="p4a-hQ-tw7" id="BTB-qC-1IR"/>
+                                            <outlet property="missingIngredientsLabel" destination="QEw-Ko-nmH" id="6TZ-rj-kpB"/>
+                                            <outlet property="recipeImage" destination="vCL-Bn-zy0" id="ywj-jI-Oso"/>
+                                            <outlet property="recipeNameLabel" destination="p4a-hQ-tw7" id="zvh-Z8-5Gh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1193,7 +1193,7 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpp-PE-jDM" userLabel="Separator">
                                 <rect key="frame" x="0.0" y="394" width="375" height="4"/>
-                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="wfQ-z5-5GA"/>
                                 </constraints>
@@ -1273,6 +1273,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-9R-PTa" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
                                                     <rect key="frame" x="285" y="4" width="30" height="34.5"/>
+                                                    <connections>
+                                                        <action selector="checkBoxClicked:" destination="RiR-IA-4RF" eventType="touchUpInside" id="IQc-BL-OZK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1290,7 +1293,7 @@
                                         <accessibility key="accessibilityConfiguration" identifier="SearchResultCell"/>
                                         <connections>
                                             <outlet property="NameLabel" destination="5jx-PL-1mh" id="MhO-Fx-M3q"/>
-                                            <outlet property="checked" destination="ZbX-9R-PTa" id="gkA-87-acp"/>
+                                            <outlet property="checked" destination="ZbX-9R-PTa" id="Kc6-qM-rLh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1377,7 +1380,7 @@
     <resources>
         <image name="Checkmark" width="30" height="30"/>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="pencil" catalog="system" width="64" height="58"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="square.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
@@ -1387,7 +1390,7 @@
         <segue reference="kx5-u6-mWB"/>
         <segue reference="FyN-cn-9ra"/>
         <segue reference="K5o-Pl-r8R"/>
-        <segue reference="mG9-LR-FOA"/>
-        <segue reference="cjE-m8-grm"/>
+        <segue reference="8PQ-Mq-eq4"/>
+        <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>
 </document>

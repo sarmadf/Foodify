@@ -1,9 +1,8 @@
+//  Created by User on 11/11/19.
+//  Copyright © 2019 ECS 189E Group 11. All rights reserved.
 //
 //  IngredientsAdd.swift
 //  Recipe App
-//
-//  Created by User on 11/11/19.
-//  Copyright © 2019 ECS 189E Group 11. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +14,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     var tapGesture = UITapGestureRecognizer()
     var selectedIngredients: [String] = []
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "9f62f1b5be9d400a9a271f671170ebc1")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "93a8e822746a408cb1daa624c0f439ab")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +63,10 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         if let searchString = IngredientsSearch.text{
             let ingredient = searchString.replacingOccurrences(of: " ", with: "%20")
             apiModel.autocompleteIngredients(ingredient: ingredient, completion: {
-                ingredient, errorString in
+                ingredientNames, errorString in
                 DispatchQueue.main.async{
-                    if errorString == nil, let ingredient = ingredient{
-                        self.SearchResults.append(ingredient)
+                    if errorString == nil, let ingredientNames = ingredientNames{
+                        self.SearchResults.append(contentsOf: ingredientNames)
                         self.SearchResultsTable.reloadData()
                     }
                     else{
@@ -124,10 +123,10 @@ class SearchResultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
+    
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //        super.setSelected(selected, animated: animated)
+    //    }
     
     @IBAction func checkBoxClicked(_ sender: Any) {
         print("SearchResultCell's button clicked: \(self.checked.isSelected)")
@@ -143,4 +142,5 @@ class SearchResultCell: UITableViewCell {
 protocol SearchResultCellDelegate{
     func searchResultCellClicked(ingredient: String, selected: Bool)
 }
+
 

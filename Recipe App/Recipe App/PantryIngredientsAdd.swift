@@ -5,12 +5,15 @@
 
 import UIKit
 
-class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSource, UISearchBarDelegate {
+class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSource, UISearchBarDelegate, SearchResultCellDelegate {
     
     @IBOutlet weak var IngredientsSearch: UISearchBar!
     @IBOutlet weak var SearchResultsTable: UITableView!
     var SearchResults: [String] = []
     var tapGesture = UITapGestureRecognizer()
+    var selectedIngredients: [String] = []
+    
+    var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,38 +39,52 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultCell ?? SearchResultCell()
+        cell.delegate = self
         cell.selectionStyle = .none
+        
         cell.NameLabel?.text = self.SearchResults[indexPath.row]
         return cell
     }
     
-    // SearchBar Protocol Implmentation
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        IngredientsSearch.text = ""
-        self.IngredientsSearch.resignFirstResponder()
-        SearchResultsTable.reloadData()
-    }
-
-    @IBAction func cameraSearch(_ sender: Any) {
-        performSegue(withIdentifier: "apcamera", sender: self)
+    func searchResultCellClicked(ingredient: String, selected: Bool) {
+        if selected {
+            selectedIngredients.append(ingredient)
+        }
+        else {
+            if let index = selectedIngredients.firstIndex(of: ingredient){
+                selectedIngredients.remove(at: index)
+            }
+        }
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let searchString = searchText
-        
-        // TODO: Properly RETURN SEARCH RESULTS
-        self.SearchResults = ["Peas", "Carrots", "Frosting", "Strawberries"]
-        SearchResultsTable.reloadData()
+    // SearchBar Protocol Implmentation
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchString = IngredientsSearch.text{
+            let ingredient = searchString.replacingOccurrences(of: " ", with: "%20")
+            apiModel.autocompleteIngredients(ingredient: ingredient, completion: {
+                ingredientNames, errorString in
+                DispatchQueue.main.async{
+                    if errorString == nil, let ingredientNames = ingredientNames{
+                        self.SearchResults.append(contentsOf: ingredientNames)
+                        self.SearchResultsTable.reloadData()
+                    }
+                    else{
+                        print("Error String: \(errorString)")
+                        self.IngredientsSearch.placeholder = "Please input a valid ingredient"
+                    }
+                }
+            })
+            
+        }
+        IngredientsSearch.text = ""
+        self.IngredientsSearch.resignFirstResponder()
     }
     
     // NavBar buttons
     @IBAction func addButtonDown(_ sender: Any) {
-        var selectedIngredients: [String] = []
-        for index in self.SearchResultsTable.indexPathsForSelectedRows ?? [] {
-            let selectedCell = self.SearchResultsTable.cellForRow(at: index) as! SearchResultCell
-            selectedIngredients.append(selectedCell.NameLabel.text ?? "")
-        }
-        if(selectedIngredients.count > 0){
+        print("Add Button Pressed")
+        print(selectedIngredients)
+        if selectedIngredients.count > 0{
             addIngredients(array: selectedIngredients)
             performSegue(withIdentifier: "pantry", sender: self)
         }

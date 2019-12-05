@@ -24,9 +24,11 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     @IBOutlet weak var SearchButton: UIBarButtonItem!
     @IBOutlet weak var DeleteButton: UIBarButtonItem!
     var Ingredients: [String] = []
+    var selectedIngredients: [String] = []
     var tapGesture = UITapGestureRecognizer()
     var selectEnabled = false
     
+    var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.IngredientsList.dataSource = self
@@ -82,13 +84,37 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     @IBAction func SearchButtonPressed(_ sender: Any) {
         for index in self.IngredientsList.indexPathsForSelectedRows ?? [] {
-            print(index)
-            // TODO: Funnel selected ingredients into API
+            if let curCell = self.IngredientsList.cellForRow(at: index) as? PantryViewCell {
+                self.selectedIngredients.append(curCell.NameField.text)
+            }
         }
-        self.deselectCells()
+        
+//        self.deselectCells()
         performSegue(withIdentifier: "recipeSearch", sender: self)
     }
-    
+//
+//    @IBAction func submitButtonDown(_ sender: Any) {
+//        print("Submit Button Pressed")
+//        print(selectedIngredients)
+//        if selectedIngredients.count > 0{
+//            performSegue(withIdentifier: "recipeSearch", sender: self)
+//        }
+//    }
+//
+
+//
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
+        if let vc = segue.destination as? RecipesViewController
+        {
+            var urlCompatibleSelectedIngredients:[String] = []
+            for ingredient in selectedIngredients{
+                urlCompatibleSelectedIngredients.append(ingredient.replacingOccurrences(of: " ", with: "%20"))
+            }
+            vc.ingredientsList = urlCompatibleSelectedIngredients.joined(separator: ",")
+            vc.apiModel = self.apiModel
+        }
+    }
     
     // Implementing Table View Protocol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,8 +189,7 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     @IBAction func toolBarProfileButtonDown(_ sender: Any) {
         self.deselectCells()
-       // performSegue(withIdentifier: "profile", sender: self)
-       performSegue(withIdentifier: "savedRecipes", sender: self)
+        performSegue(withIdentifier: "savedRecipes", sender: self)
     }
     
     @IBAction func toolBarPantryButtonDown(_ sender: Any) {
