@@ -38,8 +38,9 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellName = "cell"
         let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
-        
+        cell.viewController = self
         cell.isHidden = true
+        
         let index = indexPath.row
         if index < Storage.recentRecipes.count {
             //Search for recipes that contain the ingredients specified in ingredientsList.
@@ -70,12 +71,26 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBAction func toolBarPantryButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipeView, populate the RecipeView's id and image fields using the RecipeSearchResult at the index of the table cell that was clicked.
+        if let cell = sender as? RecentRecipeCell {
+            if let vc = segue.destination as? RecipeView, let recipe = cell.recipe
+            {
+                vc.apiModel = self.apiModel
+                vc.recipeID = recipe.id
+                vc.recipeImage = cell.recipeImage
+            }
+        }
+    }
 }
 
 class RecentRecipeCell: UICollectionViewCell {
     @IBOutlet weak var ImageButton: UIButton!
     
+    var viewController : HomeScreen = HomeScreen()
     var recipe : Recipe?
+    var recipeImage : UIImage = UIImage()
     
     func setRecipe(recipe : Recipe?) -> Void {
         self.recipe = recipe
@@ -84,6 +99,7 @@ class RecentRecipeCell: UICollectionViewCell {
             loadImage(imageURL: recipeObject.imageURL, completion: { imageOptional, string in
                 if let image = imageOptional {
                     DispatchQueue.main.async {
+                        self.recipeImage = image
                         self.ImageButton.setImage(image, for: .normal)
                         self.isHidden = false
                     }
@@ -93,6 +109,7 @@ class RecentRecipeCell: UICollectionViewCell {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        viewController.performSegue(withIdentifier: "recipeView", sender: self)
     }
 }
 
