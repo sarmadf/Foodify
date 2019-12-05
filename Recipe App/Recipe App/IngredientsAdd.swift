@@ -15,7 +15,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     var tapGesture = UITapGestureRecognizer()
     var selectedIngredients: [String] = []
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "9f62f1b5be9d400a9a271f671170ebc1")
     
     override func viewDidLoad() {
         super.viewDidLoad()

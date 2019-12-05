@@ -69,9 +69,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
                         let imageURL = self.recipeSearchResults[indexPath.row].imageURL
                         self.recipeImages[imageURL] = image //Cache the image for future use.
                         cell.imageView?.image = image
-                        cell.imageView?.contentMode = .scaleAspectFit
-                        cell.imageView?.clipsToBounds = true
-                        cell.setNeedsLayout()
+                        //cell.setNeedsLayout()
                     }
                 }
                 else{
