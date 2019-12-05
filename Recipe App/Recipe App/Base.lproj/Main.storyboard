@@ -675,7 +675,7 @@
                                 <state key="normal" title="Quit"/>
                                 <connections>
                                     <action selector="quitButtonPressed:" destination="qrV-9U-T8p" eventType="touchUpInside" id="yAw-Un-YJU"/>
-                                    <segue destination="F31-FE-6bV" kind="show" identifier="toAddIngredients" id="S3H-ie-HLS"/>
+                                    <segue destination="Ee3-fR-CdH" kind="presentation" identifier="cameraToPantryAddIngredients" id="zNy-Y3-PPM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -690,6 +690,7 @@
                     </view>
                     <connections>
                         <outlet property="visionOutputTag" destination="aSA-PN-nqr" id="hOH-Xv-KBx"/>
+                        <segue destination="F31-FE-6bV" kind="presentation" identifier="cameraToIngredientsAdd" id="IHh-ek-RAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJc-77-dte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1041,31 +1042,31 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeSearchResult" rowHeight="120" id="uKl-h8-kvu" customClass="RecipeSearchResultTableViewCell" customModule="Recipe_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeSearchResult" rowHeight="140" id="uKl-h8-kvu" customClass="RecipeSearchResultTableViewCell" customModule="Recipe_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uKl-h8-kvu" id="CRX-tL-8eK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="vCL-Bn-zy0">
-                                                    <rect key="frame" x="23" y="19" width="82" height="82"/>
+                                                    <rect key="frame" x="23" y="19" width="102" height="102"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vCL-Bn-zy0" secondAttribute="height" multiplier="1:1" id="hVL-fV-Unh"/>
                                                     </constraints>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-pL-Hf0">
-                                                    <rect key="frame" x="113" y="19" width="239" height="82"/>
+                                                    <rect key="frame" x="133" y="19" width="219" height="102"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEw-Ko-nmH">
-                                                            <rect key="frame" x="0.0" y="28" width="239" height="54"/>
+                                                            <rect key="frame" x="0.0" y="28" width="219" height="74"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-hQ-tw7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="239" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="219" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Ih4-3r-j4N"/>
                                                             </constraints>
@@ -1132,18 +1133,18 @@
         <!--Recipe-->
         <scene sceneID="0LG-vD-BuQ">
             <objects>
-                <viewController title="Recipe" modalPresentationStyle="fullScreen" id="vRG-tn-2fq" customClass="RecipeView" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Recipe" id="vRG-tn-2fq" customClass="RecipeView" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="le1-AK-F1f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-PV-Huh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
                                     <navigationItem id="GvH-ax-AMe">
                                         <barButtonItem key="leftBarButtonItem" style="done" id="aFs-OA-wbe">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kfS-Li-wV7">
-                                                <rect key="frame" x="16" y="7" width="92" height="30"/>
+                                                <rect key="frame" x="16" y="13" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
@@ -1153,7 +1154,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="SaveButton" style="done" id="hfz-FW-nUC">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Kk-Qi-dvo">
-                                                <rect key="frame" x="267" y="7" width="92" height="30"/>
+                                                <rect key="frame" x="267" y="13" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="✭"/>
                                             </button>
@@ -1162,7 +1163,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B9-3G-1Yi">
-                                <rect key="frame" x="20" y="64" width="335" height="30"/>
+                                <rect key="frame" x="20" y="76" width="335" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6i7-IU-UZj"/>
                                 </constraints>
@@ -1171,7 +1172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ovg-F3-jQf">
-                                <rect key="frame" x="20" y="114" width="335" height="128"/>
+                                <rect key="frame" x="20" y="126" width="335" height="128"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkY-GZ-6Bh">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -1196,7 +1197,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MP-Of-gSa">
-                                <rect key="frame" x="20" y="262" width="335" height="24"/>
+                                <rect key="frame" x="20" y="274" width="335" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="OXJ-tc-7f3"/>
                                 </constraints>
@@ -1205,14 +1206,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-zk-vn1">
-                                <rect key="frame" x="0.0" y="294" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="306" width="375" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Yne-V9-S6A"/>
                                 </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohO-jU-ycn">
-                                <rect key="frame" x="20" y="403" width="335" height="24"/>
+                                <rect key="frame" x="20" y="415" width="335" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Kdu-QJ-vvd"/>
                                 </constraints>
@@ -1221,11 +1222,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-P0-Fsh">
-                                <rect key="frame" x="0.0" y="435" width="375" height="212"/>
+                                <rect key="frame" x="0.0" y="447" width="375" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpp-PE-jDM" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="394" width="375" height="4"/>
+                                <rect key="frame" x="0.0" y="406" width="375" height="4"/>
                                 <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="wfQ-z5-5GA"/>
@@ -1417,11 +1418,12 @@
         <image name="square.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IES-Ou-bJr"/>
-        <segue reference="ZPt-Bm-Gh4"/>
-        <segue reference="S3H-ie-HLS"/>
-        <segue reference="woo-qw-nbf"/>
-        <segue reference="FyN-cn-9ra"/>
+        <segue reference="zNy-Y3-PPM"/>
+        <segue reference="1ae-Pi-pIz"/>
+        <segue reference="kGz-JP-oKP"/>
+        <segue reference="IHh-ek-RAV"/>
+        <segue reference="kx5-u6-mWB"/>
+        <segue reference="mS1-nC-mEq"/>
         <segue reference="K5o-Pl-r8R"/>
         <segue reference="8PQ-Mq-eq4"/>
         <segue reference="orJ-D7-lMp"/>

@@ -45,6 +45,15 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     @IBAction func cameraSearch(_ sender: Any) {
         performSegue(withIdentifier: "apcamera", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
+        if let vc = segue.destination as? CameraViewController
+        {
+            vc.seguedFrom = .pantryAdd
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultCell ?? SearchResultCell()
         cell.delegate = self

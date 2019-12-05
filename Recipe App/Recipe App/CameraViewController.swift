@@ -14,6 +14,10 @@ import FirebaseMLVision
 import Vision
 
 
+enum SeguedFrom{
+    case ingredientsAdd
+    case pantryAdd
+}
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var textRecognizer:VisionTextRecognizer!
     var labler:VisionImageLabeler!
@@ -21,6 +25,10 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     var elementText: String = ""
     let captureSession = AVCaptureSession()
     var addedIngredients : [String] = []
+    var seguedFrom:SeguedFrom?
+    private lazy var sessionQueue = DispatchQueue(label: "videoQueue")
+    var shouldQuit:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let vision = Vision.vision()
@@ -38,7 +46,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         dataOutput.videoSettings = [
           (kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA,
         ]
-        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        dataOutput.setSampleBufferDelegate(self, queue: sessionQueue)
         captureSession.addOutput(dataOutput)
     }
     
@@ -49,16 +57,39 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     
     @IBAction func quitButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toAddIngredients", sender: self )
+//        self.captureSession.stopRunning()
+        self.shouldQuit = true
+        
+        print("shouldve stopped running")
+        if let seguedFrom = self.seguedFrom{
+            switch seguedFrom{
+            case .ingredientsAdd:
+                performSegue(withIdentifier: "cameraToIngredientsAdd", sender: self)
+                break
+            case .pantryAdd:
+                performSegue(withIdentifier: "cameraToPantryAddIngredients", sender: self)
+                break
+            }
+        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sessionQueue.async {
+          self.captureSession.stopRunning()
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //If the segue is to the RecipeView, populate the RecipeView's id and image fields using the RecipeSearchResult at the index of the table cell that was clicked.
         self.captureSession.stopRunning()
         if let vc = segue.destination as? IngredientsAdd
         {
-            print("Element Text: \(elementText)")
+            print("Destination is ingredients add")
             vc.initialIngredients = addedIngredients
+        }
+        else if let vc = segue.destination as? PantryIngredientsAdd{
+            print("Destination is pantry ingredients add")
+            vc.ingredientsFromCamera = addedIngredients
         }
     }
     
@@ -147,13 +178,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             for block in result.blocks {
                 for line in block.lines {
                     let lineText = line.text
-                    let lineConfidence = line.confidence
                     print(lineText)
-                    print(lineConfidence)
                     for element in line.elements {
                         self.elementText = element.text
-                        let elementConfidence = element.confidence
-                        let elementLanguages = element.recognizedLanguages
                         print(self.elementText)
                     }
                 }
@@ -161,6 +188,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             self.visionOutputTag.textColor = .red
             self.visionOutputTag.text = self.elementText
 //            self.captureSession.stopRunning()
+            
             
         }
         

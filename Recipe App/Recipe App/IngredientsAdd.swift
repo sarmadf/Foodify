@@ -120,6 +120,9 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
             vc.ingredientsList = urlCompatibleSelectedIngredients.joined(separator: ",")
             vc.apiModel = self.apiModel
         }
+        else if let vc = segue.destination as? CameraViewController{
+            vc.seguedFrom = .ingredientsAdd
+        }
     }
     
     // Other
