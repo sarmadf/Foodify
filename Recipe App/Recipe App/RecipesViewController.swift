@@ -60,8 +60,8 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.missingIngredientsLabel.text = "Missing Ingredients:\n \(missedIngredientsStr)"
         
         //If the recipe image is not already cached, load it.
-        cell.imageView?.image = recipeImages[recipeSearchResults[indexPath.row].imageURL]
-        if cell.imageView?.image == nil{
+        cell.recipeImage.image = recipeImages[recipeSearchResults[indexPath.row].imageURL]
+        if cell.recipeImage.image == nil{
             loadImage(imageURL: recipeSearchResults[indexPath.row].imageURL, completion: {
                 image, errorStr in
                 if let image = image, errorStr == nil{
