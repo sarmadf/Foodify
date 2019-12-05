@@ -579,6 +579,21 @@
             </objects>
             <point key="canvasLocation" x="-72" y="2354"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="fnn-b0-web">
+            <objects>
+                <viewController id="qrV-9U-T8p" customClass="CameraViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tdg-hw-UE8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mOq-IV-W8N"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJc-77-dte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2354" y="674"/>
+        </scene>
         <!--Pantry-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -778,20 +793,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" id="zus-z6-Te8" customClass="SearchResultCell" customModule="Recipe_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zus-z6-Te8" id="c82-7W-UYj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs3-mf-cHM">
-                                                    <rect key="frame" x="26" y="17" width="42" height="21.5"/>
+                                                    <rect key="frame" x="26" y="17" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-R0-dHu" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
-                                                    <rect key="frame" x="338" y="6" width="30" height="43.5"/>
+                                                    <rect key="frame" x="338" y="6" width="30" height="43"/>
                                                     <state key="normal" image="Checkmark"/>
                                                 </button>
                                             </subviews>
@@ -846,10 +861,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-IB-GL4">
-                                <rect key="frame" x="20" y="107" width="374" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-IB-GL4">
+                                <rect key="frame" x="20" y="107" width="303" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQn-cc-alk">
+                                <rect key="frame" x="338" y="107" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="cameraSearch:" destination="F31-FE-6bV" eventType="touchUpInside" id="zUA-Cb-nsF"/>
+                                    <action selector="submitButtonDown:" destination="F31-FE-6bV" eventType="touchUpInside" id="XZz-c7-fvk"/>
+                                    <segue destination="qrV-9U-T8p" kind="presentation" identifier="scamera" id="mS1-nC-mEq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1184,10 +1209,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Vfp-Ig-nDh">
-                                <rect key="frame" x="20" y="107" width="374" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vfp-Ig-nDh">
+                                <rect key="frame" x="20" y="107" width="307" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKV-CQ-LQd">
+                                <rect key="frame" x="348" y="107" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="cameraSearch:" destination="Ee3-fR-CdH" eventType="touchUpInside" id="Pc8-qJ-6zr"/>
+                                    <segue destination="qrV-9U-T8p" kind="presentation" identifier="apcamera" id="FyN-cn-9ra"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1214,18 +1248,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPN-EX-OYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jC2-ic-drK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="451" y="674"/>
+            <point key="canvasLocation" x="450.72463768115944" y="673.66071428571422"/>
         </scene>
     </scenes>
     <resources>
         <image name="Checkmark" width="30" height="30"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kGz-JP-oKP"/>
+        <segue reference="ZPt-Bm-Gh4"/>
         <segue reference="GZI-bV-xwz"/>
-        <segue reference="cDw-We-W4e"/>
+        <segue reference="woo-qw-nbf"/>
+        <segue reference="FyN-cn-9ra"/>
         <segue reference="4Gb-DW-Xqg"/>
-        <segue reference="orJ-D7-lMp"/>
+        <segue reference="9Cp-kD-oZ5"/>
     </inferredMetricsTieBreakers>
 </document>

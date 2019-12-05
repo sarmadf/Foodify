@@ -7,7 +7,11 @@ target 'Recipe App' do
 
   # Pods for Recipe App
   pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
+  pod 'Firebase/MLVisionLabelModel'
   pod 'Firebase/Database'
+  pod 'Firebase/Analytics'  
   pod 'Alamofire' # For getting images from URLs
   pod 'AlamofireImage'
 
