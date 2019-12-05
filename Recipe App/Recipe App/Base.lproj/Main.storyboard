@@ -663,8 +663,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-O2-Rta">
+                                <rect key="frame" x="16" y="597" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="qrV-9U-T8p" eventType="touchUpInside" id="D0p-qR-ehn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-Px-2vl">
+                                <rect key="frame" x="329" y="597" width="30" height="30"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="quitButtonPressed:" destination="qrV-9U-T8p" eventType="touchUpInside" id="yAw-Un-YJU"/>
+                                    <segue destination="F31-FE-6bV" kind="show" identifier="toAddIngredients" id="S3H-ie-HLS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mOq-IV-W8N" firstAttribute="bottom" secondItem="Vhe-Px-2vl" secondAttribute="bottom" constant="20" id="Tha-yT-aHJ"/>
+                            <constraint firstItem="mOq-IV-W8N" firstAttribute="bottom" secondItem="ccs-O2-Rta" secondAttribute="bottom" constant="20" id="n0C-8u-Gq8"/>
+                            <constraint firstItem="mOq-IV-W8N" firstAttribute="trailing" secondItem="Vhe-Px-2vl" secondAttribute="trailing" constant="16" id="sjm-8V-zzL"/>
+                            <constraint firstItem="ccs-O2-Rta" firstAttribute="leading" secondItem="mOq-IV-W8N" secondAttribute="leading" constant="16" id="uY4-9b-9AR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mOq-IV-W8N"/>
                     </view>
                     <connections>
@@ -1398,7 +1419,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="IES-Ou-bJr"/>
         <segue reference="ZPt-Bm-Gh4"/>
-        <segue reference="Mn9-3O-rVU"/>
+        <segue reference="S3H-ie-HLS"/>
         <segue reference="woo-qw-nbf"/>
         <segue reference="FyN-cn-9ra"/>
         <segue reference="K5o-Pl-r8R"/>

@@ -18,9 +18,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     var textRecognizer:VisionTextRecognizer!
     var labler:VisionImageLabeler!
     var lastFrame:CMSampleBuffer?
-    var elementText: String? = ""
+    var elementText: String = ""
     let captureSession = AVCaptureSession()
-    
+    var addedIngredients : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         let vision = Vision.vision()
@@ -40,6 +40,26 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         ]
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
+    }
+    
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        addedIngredients.append(elementText)
+    }
+    
+    
+    @IBAction func quitButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toAddIngredients", sender: self )
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the segue is to the RecipeView, populate the RecipeView's id and image fields using the RecipeSearchResult at the index of the table cell that was clicked.
+        self.captureSession.stopRunning()
+        if let vc = segue.destination as? IngredientsAdd
+        {
+            print("Element Text: \(elementText)")
+            vc.initialIngredients = addedIngredients
+        }
     }
     
     func imageOrientation(
@@ -115,6 +135,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                     guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
                     guard let firstObservation = results.first else{return}
                     self.visionOutputTag.text = firstObservation.identifier
+                    self.elementText = firstObservation.identifier
                     print(firstObservation.identifier, firstObservation.confidence)
                 }
                 try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
