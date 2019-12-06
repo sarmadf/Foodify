@@ -3,7 +3,7 @@
 ## Our App 
 Foodify is an app that gives you recipes that uses ingredients in your pantry. Users can search recipes 
 by entering ingredients or using our built in ML Image recognizer, view past recipes and more. 
-
+In order to run the App please use davisrecipeapp@gmail.com as your developer ID. Password: Davisecs189
 ### Trello Link
 Our final team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e-project).
 
