@@ -19,6 +19,7 @@ enum SeguedFrom{
     case pantryAdd
     case pantry
 }
+
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var textRecognizer:VisionTextRecognizer!
     var labler:VisionImageLabeler!

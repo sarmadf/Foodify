@@ -9,7 +9,7 @@
 import UIKit
 // MARK: - Welcome
 
-//A data model struct for a recipe.
+//A data model struct for a recipe returned by the get recipe information call of the spoonacular api.
 //Utilizes the Codable protocol for easy JSON parsing.
 //Utilizes Hashable protocol for storage
 struct Recipe: Codable, Hashable {
@@ -30,6 +30,7 @@ struct Recipe: Codable, Hashable {
         case creditsText, instructions, extendedIngredients
     }
     
+    //Default values for each of the api keys
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
@@ -100,6 +101,7 @@ struct Ingredient: Codable, Hashable {
     }
 }
 
+//Data model object representing ingredient search result.
 struct IngredientSearchResult: Codable {
     let image, name: String
 }
@@ -116,7 +118,7 @@ class ApiModel: NSObject {
         self.apiKey = apiKey
     }
     
-    
+    //Search for a recipe. Takes in a comma separated list of ingredients and a closure that takes in an error string and the recipe search results returned by the api
     func searchRecipes(ingredients:String, completion: @escaping ([RecipeSearchResult]?, String?) -> Void){
         let requestString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredients)&number=20&apiKey=\(self.apiKey)"
         let session = URLSession.shared
@@ -164,7 +166,7 @@ class ApiModel: NSObject {
         task.resume()
     }
     
-    
+    //Get detailed information about a particular recipe. Takes in a unique recipe id and a closure that takes in an error string and the recipe returned by the api.
     func getRecipeDetails(recipeId: Int, completion: @escaping (Recipe?, String?) -> Void){
         let requestString = "https://api.spoonacular.com/recipes/\(recipeId)/information?apiKey=\(self.apiKey)"
         let session = URLSession.shared
@@ -212,6 +214,7 @@ class ApiModel: NSObject {
         
     }
     
+    //Given a partial or complete name of an ingredient, returns a list of possible ingredients in the spoonacular database that could match the name. Takes in a closure that takes in an error string and an array of possible ingredient results returned by the spoonacular api.
     func autocompleteIngredients(ingredient: String, completion: @escaping ([String]?, String?) -> Void){
         let requestString = "https://api.spoonacular.com/food/ingredients/autocomplete?query=\(ingredient)&number=5&apiKey=\(self.apiKey)"
         let session = URLSession.shared
@@ -268,6 +271,7 @@ class ApiModel: NSObject {
     }
 }
 
+//Given an image url, asynchronously loads an image. Takes in a closure that takes in the image returned by the HTTP request and an error string.
 func loadImage(imageURL: String, completion: @escaping (UIImage?, String?) -> Void ){
     guard let url = URL(string: imageURL) else{
         completion(nil, "URL invalid")

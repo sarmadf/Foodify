@@ -2,7 +2,7 @@
 //  HomeScreen.swift
 //  Recipe App
 //
-//  Created by User on 11/17/19.
+//  Created by Stephen Ednave on 11/17/19.
 //  Copyright © 2019 ECS 189E Group 11. All rights reserved.
 //
 
@@ -21,21 +21,22 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // Banner image
         if let bannerURL = URL(string: "https://truffle-assets.imgix.net/pxqrocxwsjcc_3NgchLQ5ck4sUQoK60eAGM_matcha-gold-crepe-cakes_landscapeThumbnail_en.png") {
             image.af_setImage(withURL: bannerURL)
         }
-        
         
         recentlyViewed.dataSource = self
         recentlyViewed.delegate = self
         recentlyViewed.reloadData()
     }
 
+    // Amount of recently viewed recipe cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return min(Storage.recentRecipes.count, 6)
+        return min(Storage.recentRecipes.count, 12)
     }
     
-    // Fixes size of cell
+    // Fixes size of recently viewed recipe cell
     func collectionView(_ collectionView: UICollectionView,
                                 layout collectionViewLayout: UICollectionViewLayout,
                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -44,6 +45,7 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: CGFloat(width), height: CGFloat(height))
     }
     
+    // Populates recently viewed recipe cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellName = "cell"
         let cell : RecentRecipeCell = collectionView.dequeueReusableCell(withReuseIdentifier:cellName, for:indexPath) as? RecentRecipeCell ?? RecentRecipeCell()
@@ -63,7 +65,6 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     
-    /* Navigation bar methods*/
     @IBAction func pantryButtonDown(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }
@@ -72,22 +73,17 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         performSegue(withIdentifier: "searchIngredients", sender: self)
     }
     
-    @IBAction func toolBarSearchButtonPressed(_ sender: Any) {
+    @IBAction func toolBarHomeButtonPressed(_ sender: Any) {
         // Already on search destination!
         // Possibly go to ingredient lookup?
-    }
-    
-    @IBAction func toolBarProfileButtonPressed(_ sender: Any) {
-        //performSegue(withIdentifier: "profile", sender: self)
-        performSegue(withIdentifier: "savedRecipes", sender: self)
     }
     
     @IBAction func toolBarPantryButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "pantry", sender: self)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //If the segue is to the RecipeView, populate the RecipeView's id and image fields using the RecipeSearchResult at the index of the table cell that was clicked.
         if let cell = sender as? RecentRecipeCell {
             if let vc = segue.destination as? RecipeView, let recipe = cell.recipe
             {
@@ -98,6 +94,7 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
 }
+
 
 class RecentRecipeCell: UICollectionViewCell {
     @IBOutlet weak var ImageButton: UIButton!

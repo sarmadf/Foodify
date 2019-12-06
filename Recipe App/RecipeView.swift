@@ -32,8 +32,6 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.ingredientsTable.dataSource = self
         self.instructionsTable.dataSource = self
         
-//        self.ingredientsTable.rowHeight = UITableView.automaticDimension
-//        self.instructionsTable.rowHeight = UITableView.automaticDimension
         
         self.recipeInfoTextField.isEditable = false
         
@@ -129,11 +127,6 @@ class RecipeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         return UITableViewCell()
-    }
-
-
-    @IBAction func onBackButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "recipeSearch", sender: self)
     }
 }
 

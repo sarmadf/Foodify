@@ -4,11 +4,7 @@
 
 import Foundation
 
-// Usage:
-// UserDefaults.standard.set(object: test, forKey: "test")
-// Getting: recipes = Storage.recipes
-// Setting: Storage.recipes = recipes
-
+// Local Storage. 
 struct Storage {
     static var recipes: [[String: Any]] {
         get {
@@ -67,7 +63,7 @@ func addIngredients(array: [String]) {
 
 func addRecentRecipe(id: Int) {
     if(Storage.recentRecipes.contains(id) == false) {
-        while Storage.recentRecipes.count >= 6 {
+        while Storage.recentRecipes.count >= 12 {
             Storage.recentRecipes.removeLast()
         }
         Storage.recentRecipes.insert(id, at: 0)

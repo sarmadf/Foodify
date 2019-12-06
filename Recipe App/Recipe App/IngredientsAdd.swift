@@ -21,7 +21,6 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.SearchResultsTable.dataSource = self
         self.SearchResultsTable.delegate = self
         self.SearchResultsTable.allowsMultipleSelection = true
@@ -52,6 +51,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         return cell
     }
     
+    // Protocol function. When the button in a cell is clicked, the cell is marked as selected.
     func searchResultCellClicked(ingredient: String, selected: Bool) {
         if selected{
             selectedIngredients.append(ingredient)
@@ -60,7 +60,6 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
             if let index = selectedIngredients.firstIndex(of: ingredient){
                 selectedIngredients.remove(at: index)
             }
-            
         }
     }
     
@@ -140,10 +139,6 @@ class SearchResultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //    }
     
     @IBAction func checkBoxClicked(_ sender: Any) {
         print("SearchResultCell's button clicked: \(self.checked.isSelected)")

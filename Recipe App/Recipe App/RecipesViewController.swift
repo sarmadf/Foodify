@@ -15,7 +15,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
     var apiModel:ApiModel? //Model used to call the api
     var recipeSearchResults:[RecipeSearchResult] = [] //List of recipe search results, will be populated after api call.
     var recipeImages: [String: UIImage] = [:] //List of images, will be loaded after an api call
-    var seguedFrom:SeguedFrom?
+    var seguedFrom:SeguedFrom? //Identity of the previous view controller
 
     @IBOutlet weak var recipesTable: UITableView! //Table displaying recipe search results.
     
@@ -42,6 +42,7 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
 
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
+        //Segue to the previous view controller. The identity of the previous controller is held in the seguedFrom field.
         if let seguedFrom = self.seguedFrom{
             switch seguedFrom{
             case .ingredientsAdd:

@@ -36,13 +36,13 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
         self.IngredientsList.allowsMultipleSelection = true
         self.IngredientsList.allowsMultipleSelectionDuringEditing = true
         
-        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.IngredientsList.backgroundView = UIView()
         self.IngredientsList.backgroundView?.addGestureRecognizer(tapGesture)
         
         self.Ingredients = Storage.ingredients
     }
     
+    // The Cancel button reverts the navigation bars to their normal states.
     @IBAction func CancelButtonPressed(_ sender: Any) {
         self.TopNavBar.isHidden = false
         self.TopNavBar2.isHidden = true
@@ -50,16 +50,15 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
         self.BottomNavbar.isHidden = false
         self.selectEnabled = false
         self.deselectCells()
-        self.unhideCellButtons()
     }
     
+    // The Select Button pulls up two hidden Navigation bars used for selecting ingredients.
     @IBAction func SelectButtonPressed(_ sender: Any) {
         self.TopNavBar.isHidden = true
         self.TopNavBar2.isHidden = false
         self.OptionsToolbar.isHidden = false
         self.BottomNavbar.isHidden = true
         self.selectEnabled = true
-        self.hideCellButtons()
         
     }
     
@@ -72,10 +71,14 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
     @IBAction func DeleteButtonPressed(_ sender: Any) {
         var toDelete:[String] = []
         let selectedItems = self.IngredientsList.indexPathsForSelectedRows ?? []
+        
+        // Get selected cells in the Ingredients List Table
         for index in selectedItems {
             let temp = self.IngredientsList.cellForRow(at: index) as? PantryViewCell
             toDelete.append(temp?.NameField.text ?? "")
         }
+        
+        // The app deletes the selected ingredients from our Storage class.
         self.CancelButtonPressed(UIButton())
         removeIngredients(array: toDelete)
         self.Ingredients = Storage.ingredients
@@ -88,21 +91,9 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
                 self.selectedIngredients.append(curCell.NameField.text)
             }
         }
-        
-//        self.deselectCells()
         performSegue(withIdentifier: "recipeSearch", sender: self)
     }
-//
-//    @IBAction func submitButtonDown(_ sender: Any) {
-//        print("Submit Button Pressed")
-//        print(selectedIngredients)
-//        if selectedIngredients.count > 0{
-//            performSegue(withIdentifier: "recipeSearch", sender: self)
-//        }
-//    }
-//
-
-//
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //If the segue is to the RecipesViewController, initialize its ingredients list and pass on the api model.
         if let vc = segue.destination as? RecipesViewController
@@ -136,8 +127,6 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
             tableView.cellForRow(at: indexPath)?.contentView.backgroundColor = UIColor(red: 200/255.0, green: 224/255.0, blue: 224/255.0, alpha: 1.0)
             cell.NameField?.backgroundColor = UIColor(red: 200/255.0, green: 224/255.0, blue: 224/255.0, alpha: 1.0)
         }
-        
-        self.dismissKeyboard()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath){
@@ -149,15 +138,8 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
        }
     }
     
-    // Other
-    @objc func dismissKeyboard(){
-        let cells = self.IngredientsList.visibleCells.map{ $0 as? PantryViewCell ?? PantryViewCell() }
-        _ = cells.map { (cell) in
-            cell.NameField.resignFirstResponder()
-            cell.NameField.isUserInteractionEnabled = false
-        }
-    }
-    
+    // Goes through all selected cells and deselects them, ensuring that cells don't stay
+    // selected in and out of other views. 
     func deselectCells() {
         let selectedItems = self.IngredientsList.indexPathsForSelectedRows ?? []
         for index in selectedItems {
@@ -168,29 +150,10 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
             cell?.NameField?.backgroundColor = UIColor.white
         }
     }
-    
-    func hideCellButtons() {
-        _ = self.IngredientsList.visibleCells.map{
-            let curCell = $0 as? PantryViewCell ?? PantryViewCell()
-            curCell.RenameButton.isHidden = true
-        }
-    }
-    
-    func unhideCellButtons() {
-        _ = self.IngredientsList.visibleCells.map{
-            let curCell = $0 as? PantryViewCell ?? PantryViewCell()
-            curCell.RenameButton.isHidden = false
-        }
-    }
-    
-    @IBAction func toolBarSearchButtonDown(_ sender: Any) {
+        
+    @IBAction func toolBarHomeButtonDown(_ sender: Any) {
         self.deselectCells()
         performSegue(withIdentifier: "homeScreen", sender: self)
-    }
-    
-    @IBAction func toolBarProfileButtonDown(_ sender: Any) {
-        self.deselectCells()
-        performSegue(withIdentifier: "savedRecipes", sender: self)
     }
     
     @IBAction func toolBarPantryButtonDown(_ sender: Any) {
@@ -200,36 +163,9 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
 
 class PantryViewCell: UITableViewCell {
     @IBOutlet weak var NameField: UITextView!
-    @IBOutlet weak var RenameButton: UIButton!
-    
-    var tapGesture = UITapGestureRecognizer()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.RenameButton.setImage(UIImage(named:"Rename"), for: .normal)
-        self.RenameButton.isHidden = true
-        self.RenameButton.isUserInteractionEnabled = false
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.RenameButton.isHidden = true
-        self.RenameButton.isUserInteractionEnabled = false
-    }
-    
-    @IBAction func rename(_ sender: Any) {
-        self.NameField.isUserInteractionEnabled = true
-        self.NameField.becomeFirstResponder()
-     self.RenameButton.isHidden = true
-     self.RenameButton.isUserInteractionEnabled = false
-    }
-    
-    @objc func dismissKeyboard() {
-        self.NameField.resignFirstResponder()
-        self.NameField.isUserInteractionEnabled = false
-        self.RenameButton.isHidden = true
-        self.RenameButton.isUserInteractionEnabled = false
     }
 }
 

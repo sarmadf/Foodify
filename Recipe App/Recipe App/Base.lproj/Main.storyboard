@@ -23,17 +23,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-RK-fao">
-                                <rect key="frame" x="30" y="384.5" width="315" height="20.5"/>
+                                <rect key="frame" x="30" y="358.5" width="315" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g7m-2a-XuE">
-                                <rect key="frame" x="20" y="413" width="335" height="190"/>
+                                <rect key="frame" x="20" y="387" width="335" height="216"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="UgI-hT-eHN"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dvW-Oe-VHe">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -129,7 +126,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Home"/>
                                             <connections>
-                                                <action selector="toolBarSearchButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="N8h-Yc-eqo"/>
+                                                <action selector="toolBarHomeButtonPressed:" destination="7Ck-Jr-CHR" eventType="touchUpInside" id="aPc-9x-DSE"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -172,6 +169,7 @@
                             <constraint firstItem="w5t-r8-XrN" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="jtS-Sq-KR9"/>
                             <constraint firstItem="Gpl-sg-0kT" firstAttribute="trailing" secondItem="Jva-gI-Mbe" secondAttribute="trailing" constant="30" id="rH5-gK-DOs"/>
                             <constraint firstItem="YU0-Bt-7CA" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" constant="30" id="sB6-1V-f1I"/>
+                            <constraint firstItem="HSP-RK-fao" firstAttribute="top" secondItem="YU0-Bt-7CA" secondAttribute="bottom" constant="20" id="tZG-F5-iQZ"/>
                             <constraint firstItem="upE-Bo-W8q" firstAttribute="leading" secondItem="Gpl-sg-0kT" secondAttribute="leading" id="wE8-f1-2to"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gpl-sg-0kT"/>
@@ -301,7 +299,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Home"/>
                                             <connections>
-                                                <action selector="toolBarSearchButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="930-w6-y8I"/>
+                                                <action selector="toolBarHomeButtonDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSQ-sj-hHP"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -340,20 +338,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-Re-sHS">
-                                                    <rect key="frame" x="334" y="16" width="15" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Rename"/>
-                                                    <connections>
-                                                        <action selector="rename:" destination="4GO-Hk-SLG" eventType="touchUpInside" id="gvV-7H-4xm"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="PantryViewCell"/>
                                         <connections>
                                             <outlet property="NameField" destination="CDD-Er-VdT" id="wRa-8Y-Yqd"/>
-                                            <outlet property="RenameButton" destination="kbp-Re-sHS" id="Lms-zR-cmL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -947,11 +936,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ka8-rh-XND"/>
-        <segue reference="IES-Ou-bJr"/>
-        <segue reference="ZPt-Bm-Gh4"/>
-        <segue reference="IHh-ek-RAV"/>
-        <segue reference="dOn-n5-fiy"/>
-        <segue reference="mS1-nC-mEq"/>
-        <segue reference="4vi-09-xV7"/>
+        <segue reference="1ae-Pi-pIz"/>
+        <segue reference="QEF-UU-Szg"/>
+        <segue reference="GZI-bV-xwz"/>
+        <segue reference="cDw-We-W4e"/>
+        <segue reference="FyN-cn-9ra"/>
+        <segue reference="orJ-D7-lMp"/>
     </inferredMetricsTieBreakers>
 </document>

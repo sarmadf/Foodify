@@ -5,6 +5,7 @@
 
 import UIKit
 
+// A replica of Ingredients Add, only, it is designed to redirect and add to Pantry, not Recipes List view. 
 class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSource, UISearchBarDelegate, SearchResultCellDelegate {
     
     @IBOutlet weak var IngredientsSearch: UISearchBar!
@@ -63,6 +64,7 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
         return cell
     }
     
+    // Protocol function. When the button in a cell is clicked, the cell is marked as selected.
     func searchResultCellClicked(ingredient: String, selected: Bool) {
         if selected {
             selectedIngredients.append(ingredient)
@@ -116,7 +118,6 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     
     // NavBar buttons
     @IBAction func addButtonDown(_ sender: Any) {
-        print("Add Button Pressed")
         print(selectedIngredients)
         if selectedIngredients.count > 0{
             addIngredients(array: selectedIngredients)
