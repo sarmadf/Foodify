@@ -113,6 +113,7 @@ class PantryViewController: UIViewController, UITableViewDelegate,  UITableViewD
             }
             vc.ingredientsList = urlCompatibleSelectedIngredients.joined(separator: ",")
             vc.apiModel = self.apiModel
+            vc.seguedFrom = .pantry
         }
     }
     

@@ -17,6 +17,7 @@ import Vision
 enum SeguedFrom{
     case ingredientsAdd
     case pantryAdd
+    case pantry
 }
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var textRecognizer:VisionTextRecognizer!
@@ -57,16 +58,15 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     
     @IBAction func quitButtonPressed(_ sender: Any) {
-//        self.captureSession.stopRunning()
-        self.shouldQuit = true
-        
-        print("shouldve stopped running")
         if let seguedFrom = self.seguedFrom{
             switch seguedFrom{
             case .ingredientsAdd:
                 performSegue(withIdentifier: "cameraToIngredientsAdd", sender: self)
                 break
             case .pantryAdd:
+                performSegue(withIdentifier: "cameraToPantryAddIngredients", sender: self)
+                break
+            default:
                 performSegue(withIdentifier: "cameraToPantryAddIngredients", sender: self)
                 break
             }

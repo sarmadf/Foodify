@@ -106,7 +106,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
         performSegue(withIdentifier: "scamera", sender: self)
     }
     @IBAction func backButtonDown(_ sender: Any) {
-        performSegue(withIdentifier: "pantry", sender: self)
+        performSegue(withIdentifier: "homeScreen", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,6 +119,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
             }
             vc.ingredientsList = urlCompatibleSelectedIngredients.joined(separator: ",")
             vc.apiModel = self.apiModel
+            vc.seguedFrom = .ingredientsAdd
         }
         else if let vc = segue.destination as? CameraViewController{
             vc.seguedFrom = .ingredientsAdd

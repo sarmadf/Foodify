@@ -8,12 +8,14 @@
 
 import UIKit
 
+    
 class RecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var ingredientsList:String = "" //List of ingredients passed in from previous view controller. Should be a single comma-separated string of ingredients.
     var apiModel:ApiModel? //Model used to call the api
     var recipeSearchResults:[RecipeSearchResult] = [] //List of recipe search results, will be populated after api call.
     var recipeImages: [String: UIImage] = [:] //List of images, will be loaded after an api call
+    var seguedFrom:SeguedFrom?
 
     @IBOutlet weak var recipesTable: UITableView! //Table displaying recipe search results.
     
@@ -40,7 +42,22 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
 
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "addIngredients", sender: self)
+        if let seguedFrom = self.seguedFrom{
+            switch seguedFrom{
+            case .ingredientsAdd:
+                performSegue(withIdentifier: "addIngredients", sender: self)
+                break
+            case .pantry:
+                performSegue(withIdentifier: "pantry", sender: self)
+                break
+            default:
+                performSegue(withIdentifier: "pantry", sender: self)
+                break
+            }
+        }
+        else {
+            performSegue(withIdentifier: "pantry", sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
