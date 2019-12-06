@@ -27,10 +27,11 @@ Checked in on everyone's progress. Merged our work. Discussed how to finalize th
 
 ## Sarmad
 ### Accomplishments
-- Looked into Apple's vision recognition API
+- Tested solutions for best live capture API, both MLkit and CoreML. Integrated both API to have both text recoginition
+and coreML tagging capabilities
 
 ### Planned
-- Looking into Google Vision API. 
+- Looking for ways to make ingredient add from camera user fiendly
 - Finalize Vision API implementation and finish Camera View controller. 
 
 ### Issues
