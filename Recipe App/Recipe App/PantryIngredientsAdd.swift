@@ -15,7 +15,7 @@ class PantryIngredientsAdd: UIViewController,  UITableViewDelegate,  UITableView
     var selectedIngredients: [String] = []
     var ingredientsFromCamera: [String] = []
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "09a25a561f214661b1d16e44550f4aeb")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "f46182926fb74d808fafa4299a536a6d")
     
     override func viewDidLoad() {
         super.viewDidLoad()

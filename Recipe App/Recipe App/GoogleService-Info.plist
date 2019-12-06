@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>236901377625-77582r024d19f5hpni1s32i4rv03ecrs.apps.googleusercontent.com</string>
+	<string>578726859409-3n41n8m46ne8v4ftkdld60bcr4e49gf7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.236901377625-77582r024d19f5hpni1s32i4rv03ecrs</string>
+	<string>com.googleusercontent.apps.578726859409-3n41n8m46ne8v4ftkdld60bcr4e49gf7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAC8HjBg3yqODkPj8mJbl315pgzsR60neU</string>
+	<string>AIzaSyBKDI-_KVuvPRFIS30nEkcmBt1hj8R-uGY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>236901377625</string>
+	<string>578726859409</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.cs.davis.Recipe-App</string>
+	<string>com.cs.davis.RecipeApp</string>
 	<key>PROJECT_ID</key>
-	<string>recipeapp-5ac37</string>
+	<string>recipe-app-cb196</string>
 	<key>STORAGE_BUCKET</key>
-	<string>recipeapp-5ac37.appspot.com</string>
+	<string>recipe-app-cb196.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:236901377625:ios:b451c6795dc857ae0b7348</string>
+	<string>1:578726859409:ios:a0ab7b471da0d07432e530</string>
 	<key>DATABASE_URL</key>
-	<string>https://recipeapp-5ac37.firebaseio.com</string>
+	<string>https://recipe-app-cb196.firebaseio.com</string>
 </dict>
 </plist>

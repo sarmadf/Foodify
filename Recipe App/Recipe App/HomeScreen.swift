@@ -15,7 +15,7 @@ class HomeScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var recentlyViewed: UICollectionView!
-    var apiModel:ApiModel? = ApiModel.init(apiKey: "5f3d62d4d194403ca8f289d2a39b64a6")//Model used to call the api
+    var apiModel:ApiModel? = ApiModel.init(apiKey: "f46182926fb74d808fafa4299a536a6d")//Model used to call the api
    
     override func viewDidLoad() {
         super.viewDidLoad()

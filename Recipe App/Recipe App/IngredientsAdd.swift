@@ -16,7 +16,7 @@ class IngredientsAdd: UIViewController,  UITableViewDelegate,  UITableViewDataSo
     
     var initialIngredients:[String] = []
     
-    var apiModel:ApiModel = ApiModel.init(apiKey: "5f3d62d4d194403ca8f289d2a39b64a6")
+    var apiModel:ApiModel = ApiModel.init(apiKey: "f46182926fb74d808fafa4299a536a6d")
     
     override func viewDidLoad() {
         super.viewDidLoad()
