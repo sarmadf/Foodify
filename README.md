@@ -6,7 +6,7 @@ by entering ingredients or using our built in ML Image recognizer, view past rec
 
 ### Trello Link
 Our final team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e-project).
-wireframes for app [link]https://github.com/sarmadf/Foodify/blob/master/wireframes.pdf
+wireframes for app [here](https://github.com/sarmadf/Foodify/blob/master/wireframes.pdf).
 
 ### App Description
 Our App contains seven main views: the Home Screen, the IngedientsAdd view, the Camera view, the RecipesList view, the Recipe view, the Pantry View, and the PantryIngredientsAdd View.
