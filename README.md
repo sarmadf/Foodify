@@ -3,7 +3,7 @@
 ## Our App 
 Foodify is an app that gives you recipes that uses ingredients in your pantry. Users can search recipes 
 by entering ingredients or using our built in ML Image recognizer, view past recipes and more. 
-In order to run the App please use davisrecipeapp@gmail.com as your developer ID. Password: Davisecs189
+
 ### Trello Link
 Our final team trello board can be found [here](https://trello.com/b/egF1VdsP/ecs-189e-project).
 
@@ -40,25 +40,15 @@ This view contains ingredients that the user has stored. The Storage class(adapt
 This view allows the user to add new recipes to their pantry, with all the functionality of IngredientsAdd. This view was done by Aaron. <br>
 [Link](https://github.com/ECS189E/project-f19-recipeapp/blob/master/Recipe%20App/Recipe%20App/PantryIngredientsAdd.swift)
 
-### The Team 
-![AshwinPicture](https://user-images.githubusercontent.com/20465283/68833227-d00afa80-0667-11ea-89fa-b5f6e9f20d25.jpg)
-    
+### The Team     
 Ashwin Muralidharan
 ashwinmd
 
-<p>
-  <img src="https://raw.githubusercontent.com/aakim-git/PDFs/master/Forward.jpg" width="350" title="hover text">
-</p>
-
 Aaron Kim
 aakim-git
-
-![StephenPicture](https://avatars1.githubusercontent.com/u/24659025?s=460&v=4)
 
 Stephen Ednave
 StephenEdnave
 
 Sarmad Farooq
 sarmadf
-
-  <img src= "https://user-images.githubusercontent.com/35645151/68896050-7e9e5200-06df-11ea-87a6-458363780de6.jpg" width="350" title="hover text">
